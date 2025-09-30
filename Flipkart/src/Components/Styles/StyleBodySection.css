@@ -1,0 +1,61 @@
+.Add{
+    height: 100%;
+    grid-column: 1/13;
+    order: 3;
+}
+.Add a{
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    margin: 12px 16px;
+}
+.Add img{
+    border-radius: 16px;
+}
+.phone{
+    order: 4;
+    height: 100%;
+    background-color: #ffffff;
+    grid-column: 1/13;
+}
+.phone-main{
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+.phone-text{
+    align-items: center;
+    display: flex;
+    flex-basis: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 16px;
+}
+.phone-texts{
+    display: flex;
+    flex-basis: auto;
+    flex-direction: column;
+    flex-shrink: 1;
+    align-items: stretch;
+}
+
+
+.phone-icon{
+    
+}
+
+
+
+.phone-area{
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 1;
+    margin-right: 4px;
+    margin-left: 16px;
+    margin-bottom: 4px;
+    align-items: center;
+
+}
+/* scjiskf */

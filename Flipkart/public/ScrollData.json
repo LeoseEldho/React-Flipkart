@@ -1,0 +1,123 @@
+{
+  "slider": [
+    {
+      "image": "https://rukminim2.flixcart.com/fk-p-flap/960/460/image/bca4fb20c720b443.jpeg?q=60"
+    },
+    {
+      "image": "https://rukminim2.flixcart.com/fk-p-flap/960/460/image/d895a5818be0058d.jpg?q=60"
+    },
+    {
+      "image": "https://rukminim2.flixcart.com/fk-p-flap/960/460/image/342a31bd7832f0aa.jpg?q=60"
+    },
+    {
+      "image": "https://rukminim2.flixcart.com/fk-p-flap/960/460/image/49cc5c785392e8f9.jpeg?q=60"
+    },
+    {
+      "image": "https://rukminim2.flixcart.com/fk-p-flap/960/460/image/f9602bc8b7875cbf.jpeg?q=60"
+    },
+    {
+      "image": "https://rukminim2.flixcart.com/fk-p-flap/960/460/image/40cd3e702a0a0688.jpeg?q=60"
+    },
+    {
+      "image": "https://rukminim2.flixcart.com/fk-p-flap/960/460/image/35b3b41986b41f58.jpeg?q=60"
+    },
+    {
+      "image": "https://rukminim2.flixcart.com/fk-p-flap/960/460/image/c86ae8b10b130787.jpeg?q=60"
+    },
+    {
+      "image": "https://rukminim2.flixcart.com/fk-p-flap/960/460/image/ae15d6df83339246.jpeg?q=60"
+    },
+    {
+      "image": "https://rukminim2.flixcart.com/fk-p-flap/960/460/image/edfe8d901fb3c739.jpeg?q=60"
+    },
+    {
+      "image": "https://rukminim2.flixcart.com/fk-p-flap/960/460/image/bca4fb20c720b443.jpeg?q=60"
+    },
+    {
+      "image": "https://rukminim2.flixcart.com/fk-p-flap/960/460/image/d895a5818be0058d.jpg?q=60"
+    }
+  ],
+  "product": [
+    {
+      "image": "https://rukminim1.flixcart.com/fk-p-flap/102/102/image/beafe85b4e962cfb.png?q=60",
+      "tiltle": "Travel"
+    },
+    {
+      "image": "https://rukminim1.flixcart.com/fk-p-flap/102/102/image/6b79283f85932299.png?q=60",
+
+      "tiltle": "Appliances"
+    },
+    {
+      "image": "https://rukminim1.flixcart.com/fk-p-flap/102/102/image/24049721b6a996c2.png?q=60",
+
+      "tiltle": "Furniture"
+    },
+    {
+      "image": "https://rukminim1.flixcart.com/fk-p-flap/102/102/image/91ee58a2f1934174.png?q=60",
+
+      "tiltle": "Sell Phone"
+    },
+    {
+      "image": "https://rukminim1.flixcart.com/fk-p-flap/102/102/image/8ba03f9880daf2a4.png?q=60",
+
+      "tiltle": "SuperCoin"
+    },
+    {
+      "image": "https://rukminim1.flixcart.com/fk-p-flap/102/102/image/694c74c9c558a0a0.png?q=60",
+
+      "tiltle": "Sports"
+    },
+    {
+      "image": "https://rukminim1.flixcart.com/fk-p-flap/102/102/image/062cd83915ff81a3.png?q=60",
+
+      "tiltle": "GenZ Trends"
+    },
+    {
+      "image": "https://rukminim1.flixcart.com/fk-p-flap/102/102/image/59bd97ec3586e007.png?q=60",
+
+      "tiltle": "Beauty"
+    }
+  ],
+  "productSec":[
+    {
+        "image":"https://rukminim1.flixcart.com/fk-p-flap/102/102/image/c03d8db0ea41f693.png?q=60",
+        "title":"Grocery"
+    },
+    {
+        "image":"https://rukminim1.flixcart.com/fk-p-flap/102/102/image/99036b9ae35bd9f6.png?q=60",
+        "title":"Fashion"
+    },
+    {
+        "image":"https://rukminim1.flixcart.com/fk-p-flap/102/102/image/ead8121496fe6445.png?q=60",
+        "title":"Mobiles"
+    },
+    {
+        "image":"https://rukminim1.flixcart.com/fk-p-flap/102/102/image/eb94e3451501e0ce.png?q=60",
+        "title":"Electronics"
+    },
+    {
+        "image":"https://rukminim1.flixcart.com/fk-p-flap/102/102/image/d41c19e0143c3982.jpg?q=60",
+        "title":"Home & "
+    },
+    {
+        "image":"https://rukminim1.flixcart.com/fk-p-flap/102/102/image/414a923a350eb806.png?q=60",
+        "title":"Next Gen"
+    },
+    {
+        "image":"https://rukminim1.flixcart.com/fk-p-flap/102/102/image/6ed7f826f395dde0.png?q=60",
+        "title":"Auto Acc"
+    },
+    {
+        "image":"https://rukminim1.flixcart.com/fk-p-flap/102/102/image/f9b3eb64f674d8c1.png?q=60",
+        "title":"Food & Health"
+    },
+    {
+        "image":"https://rukminim1.flixcart.com/fk-p-flap/102/102/image/70381f29de5ba1c0.png?q=60",
+        "title":"Toys, Baby"
+    },
+    {
+        "image":"https://rukminim1.flixcart.com/fk-p-flap/102/102/image/8910869559d2d560.png?q=60",
+        "title":"2 Wheelers"
+    }
+  ]
+}
