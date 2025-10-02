@@ -1,30 +1,171 @@
-import React from 'react'
-import '../Styles/StyleBodySection.css'
+import React, { useState } from "react";
+import "../Styles/StyleBodySection.css";
 
 const BodySection = () => {
+  const [phone, setPhone] = useState([]);
+  async function fetchPhone() {
+    let response = await fetch("/ScrollData.json");
+    let data = await response.json();
+    setPhone(data.phone);
+  }
+  useState(() => {
+    fetchPhone();
+  });
+  //sdshuckjsf dfhkcjshf
+  console.log(phone);
   return (
     <>
-      <div className='Add'>
-        <a href="" >
-          <img src="https://rukminim2.flixcart.com/fk-p-flap/880/200/image/965f1b90f21c6b6a.jpeg?q=60" alt="" />
+      <div className="Add">
+        <a href="">
+          <img
+            src="https://rukminim2.flixcart.com/fk-p-flap/880/200/image/965f1b90f21c6b6a.jpeg?q=60"
+            alt=""
+          />
         </a>
       </div>
-      <div className='phone'>
-        <div className='phone-main'>
-        <div className="phone-text">
-          <div className='phone-texts'></div>
-          <div className='phone-icon'></div>
-        </div>
-        <div className="phone-area">
-
-        </div>
+      <div className="phone">
+        <div className="phone-main">
+          <div className="phone-text">
+            <div className="phone-texts">
+              <div>Suggested For You</div>
+            </div>
+            <div className="phone-icon">
+              <div>
+                <svg width="17" height="17" viewBox="0 0 16 16" fill="none">
+                  <path
+                    d="M1 8H14"
+                    stroke="#FFFFFF"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  ></path>
+                  <path
+                    d="M10 3.5L14.5 8L10 12.5"
+                    stroke="#FFFFFF"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div className="phone-area">
+            {phone.map((x) => {
+              return (
+                <div className="phone-container">
+                  <a href="">
+                    <div className="phone-pic">
+                      <div>
+                        <div className="phone-pic-image">
+                          <picture>
+                            <img src={x.image} alt="" />
+                          </picture>
+                        </div>
+                        <div className="phone-pic-setting">
+                          <div></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="phone-line">
+                      <div>
+                        <div className="phone-rating">{x.rating}</div>
+                        <div className="phone-star">
+                          <svg
+                            width="12"
+                            height="12"
+                            viewBox="0 0 24 24"
+                            fill="#0E772D"
+                            Style="flex-shrink: 0;"
+                          >
+                            <path
+                              d="m12.002 2.588 2.222 6.838h7.19l-5.816 4.227 2.222 6.839-5.818-4.227-5.817 4.227 2.222-6.84L2.59 9.427h7.19z"
+                              stroke="#0E772D"
+                              strokeWidth="1.6"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            ></path>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="phone-details">
+                      <div className="phone-name">{x.brand}</div>
+                      <div className="phone-price">
+                        <div className="phone-cost">₹{x.price}</div>
+                        <div className="phone-total">{x.og}</div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
-      </>
-  )
-}
+      <div className="mobile">
+        <div className="mobile-main">
+          <div className="mobile-top">
+            <div className="mobile-image-top">
+              <div className="mobile-main-image">
+                <picture>
+                  <img
+                    src="https://rukminim1.flixcart.com/www/920/300/promos/16/09/2025/2c784011-39e8-44bf-931b-502875b49c75.jpg?q=60"
+                    alt=""
+                  />
+                </picture>
+              </div>
+              <div className="mobile-main-text">
+                <div className="mobile-text">
+                  <div className="mobile-text-main">
+                    Best Value Deals on Fashion
+                  </div>
+                  <a className="mobile-text-btn">
+                    <div className="mobile-text-button">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                      >
+                        <path
+                          d="M1 8H14"
+                          stroke="#000000"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        ></path>
+                        <path
+                          d="M10 3.5L14.5 8L10 12.5"
+                          stroke="#000000"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        ></path>
+                      </svg>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="mobile-bottom">
+            <div className="mobile-bottom-main">
+              <div className="mobile-pic-setting">
+                {/* To be map */}
+                <div className="mobile-container-box"> 
 
-export default BodySection
-//sasdhjbajsbd dfhukcjsbf
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+    // hjkjn jnmjbkj kjj
+  );
+};
 
-//yiugkujgbuik
+export default BodySection;
+
+//jdsfnkc,sdfjilkhdsfkjn

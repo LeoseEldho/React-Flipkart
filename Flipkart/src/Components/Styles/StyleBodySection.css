@@ -40,22 +40,284 @@
     flex-shrink: 1;
     align-items: stretch;
 }
-
-
-.phone-icon{
-    
+.phone-texts div{
+    display: inline;
+    white-space: nowrap;
+    max-width: 100%;
+    font-size: 17px;
+    line-height: 24px ;
+    letter-spacing: -.01px;
+    font-family: font3;
 }
-
-
-
+.phone-icon{
+    display: flex;
+    flex-basis: auto;
+    flex-direction: column;
+    flex-shrink: 0;
+    margin-left: 24px;
+}
+.phone-icon div{
+    background: linear-gradient(90deg,rgb(7,121,255),rgb(1,101,253));
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40px;
+    height: 24px;
+    justify-content: center;
+    border-radius: 30px;
+}
 .phone-area{
-    flex-direction: row;
-    flex-wrap: wrap;
-    flex: 1;
+    flex-flow: wrap;
+    flex: 1 1 0%;
     margin-right: 4px;
     margin-left: 16px;
     margin-bottom: 4px;
-    align-items: center;
-
+    display: flex;
 }
-/* scjiskf */
+.phone-container{
+    flex-basis: 33.33333%;
+    max-width: 33.33333%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 100%;
+}
+.phone-container a{
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    background-color: rgb(255, 255, 255);
+    margin-right: 12px;
+    margin-bottom: 12px;
+    position: relative;
+}
+.phone-pic{
+    display: flex;
+    flex-basis: auto;
+    flex-direction: column;
+    flex-shrink: 0;
+    align-items: stretch;
+    border-radius: 8px;
+}
+.phone-details{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin: 8px 0 4px 0;
+}
+.phone-pic div{
+    display: flex;
+    flex: 1 1 0%;
+    flex-direction: column;
+    height: 160px;
+    
+}
+.phone-pic-image{
+    flex: 1 1 0%;
+    aspect-ratio: 13/17;
+    width: 100%;
+    position: relative;
+}
+.phone-pic-image img{
+    aspect-ratio: 13/17;
+    object-fit: contain;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.phone-line{
+    display: flex;
+    flex-basis: auto;
+    flex-direction: row;
+    align-items: stretch;
+    position: absolute;
+    left: 4px ;
+    bottom: 55px;
+     border-radius: 6px;
+    border-width: 1px;
+     background-color: #fff;
+    padding: 2px 6px;
+    margin-left: 4px;
+    margin-bottom: 4px;
+}
+.phone-line div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.phone-rating{
+    display: inline;
+    padding-right: 2px;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    color: #1f1f1f;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0;
+}
+.phone-star{
+    display: flex;
+}
+.phone-pic-setting{
+    display: flex;
+    flex-basis: auto;
+    flex-direction: column;
+}
+.phone-pic-setting div{
+    display: inline;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+}
+.phone-name{
+    color: rgb(31, 31, 31);
+    display: inline;
+    white-space: nowrap;
+    max-width: 100%;
+    text-overflow: ellipsis;
+    font-size: 12px ;
+    line-height: 18px ;
+    letter-spacing: 0;
+    overflow: hidden;
+}
+.phone-price{
+    display: flex;
+    flex: 1 1 0%;
+    flex-direction: row;
+    place-items: center;
+    margin-top: 2px;
+}
+.phone-cost{
+    color: rgb(31, 31, 31);
+    display: inline;
+    align-self: center;
+    font-size: 12px;
+    line-height: 18px;
+}
+.phone-total{
+    color: rgb(194, 194, 194);
+    display: inline;
+    align-self: flex-end;
+    margin-left: 4px;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0;
+    text-decoration: line-through;
+}
+.mobile{
+    height: 100%;
+    background-color: #ffffff;
+    grid-column: 1/13;
+    order: 6;
+}
+.mobile-main{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin: 12px 16px;
+    overflow: hidden;
+}
+.mobile-top{
+    display: flex;
+    flex-basis: auto;
+    flex-direction: column;
+    align-items: stretch;
+    height: 108px;
+    position: relative;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+.mobile-image-top{
+    display: flex;
+    flex: 1 1 0%;
+    flex-direction: column;
+    align-items: stretch;
+    position: relative;
+    background: linear-gradient(90deg ,rgb(162,105,242),rgb(162,105,242));
+    border-radius: 6px;
+}
+.mobile-main-image{
+    flex: 1 1 0%;
+    aspect-ratio: 82/27;
+}
+.mobile-main-image img{
+    width: 100%;
+    height: 100%;
+}
+.mobile-main-text{
+    display: flex;
+    flex-basis: auto;
+    flex-direction: column;
+    flex-shrink: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.mobile-text{
+    display: flex;
+    flex: 1 1 0%;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    margin: 16px 16px 0 16px;
+}
+.mobile-text-main{
+    display: flex;
+    flex: 1 1 0%;
+    flex-direction: column;
+    color: #fff;
+    font-size: 17px;
+    line-height: 24px;
+    letter-spacing: -.01px;
+}
+.mobile-text-btn{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+    margin-left: 12px;
+    background: linear-gradient(90deg,rgb(255,255,255),rgb(255,255,255));
+}
+.mobile-text-button{
+    margin: 4px 12px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+}
+/* ujtjhhghjgh  sdjilk  sdfjkl*/ 
+
+.mobile-bottom{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex: 1 1 0%;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    background-color: rgb(162, 105, 242);
+}
+.mobile-bottom-main{
+    display: flex;
+    flex: 1 1 0%;
+    flex-direction: column;
+    align-items: stretch;
+    border-radius: 12px;
+    margin: -56px 12px 12px;
+    padding-left: 8px;
+    padding-top: 8px;
+}
+.mobile-pic-setting{
+    flex-flow: wrap;
+    flex: 1 1 0%;
+    align-items: stretch;
+    display: flex;
+    position: relative;
+}
+.mobile-container-box{
+    flex-basis: 50%;
+    max-width: 50%;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+/* sdfhukj jgfikjfgi werji  */

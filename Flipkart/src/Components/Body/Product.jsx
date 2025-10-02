@@ -15,12 +15,10 @@ const Product = () => {
     }
   }
 
- 
-    console.log(prodTwo);
   useEffect(() => {
     productFetch()
    }, []);
-  //asdfjklc
+  //sdfhjbcjs
   //sdfsf
   return (
     <div className="product-section-main">
