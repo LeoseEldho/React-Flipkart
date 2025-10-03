@@ -164,5 +164,119 @@
     "price":"15,999",
     "og":"19,999"
   }
+  ],
+  "imageBox":[
+    {
+      "image":"https://rukminim1.flixcart.com/image/280/374/xif0q/headphone/3/c/f/new-edition-tws-m19-gaming-earbuds-bluetooth-5-0-wireless-led-original-imah96zwnpzh4gu7.jpeg?q=60",
+      "name":"True Wireless",
+      "offer":"Min. 50% Off"
+    },
+    {
+      "image":"https://rukminim1.flixcart.com/image/280/374/xif0q/headphone/u/w/m/nb119-titanium-pro-upto-100-hr-playtime-enc-fast-charging-dual-original-imahd8bgyhjdmu6w.jpeg?q=60",
+      "name":"Neckband",
+      "offer":"Top Collection"
+    },
+    {
+      "image":"https://rukminim1.flixcart.com/image/280/374/xif0q/power-bank/o/2/a/-original-imahdthbvkfxrdnf.jpeg?q=60",
+      "name":"Power Banks",
+      "offer":"Min. 50% Off"
+    },
+    {
+      "image":"https://rukminim1.flixcart.com/image/280/374/xif0q/headphone/z/a/j/wireless-running-premium-deep-bass-noise-cancelling-stereo-original-imahdqck5uqaykyz.jpeg?q=60",
+      "name":"Wireless Headphones",
+      "offer":"Special offer"
+    }
+  ],
+  "itemsPro":[
+    {
+      "image":"https://rukminim1.flixcart.com/image/460/620/l0igvww0/sandal/i/x/u/10-454-navy-silver-10-density-grey-original-imagcae9hnepvcqr.jpeg?q=60",
+      "rating":"4",
+      "buyer":"1,07,431",
+      "product":"density",
+      "gender":"Men Sandal",
+      "discount":false,
+      "price":"464"
+    },
+    {
+      "image":"https://rukminim1.flixcart.com/image/460/620/xif0q/shopsy-ethnic-set/8/c/s/s-ma-lamba-creations-original-imahdmsktttnrbgr.jpeg?q=60",
+      "rating":false,
+      "buyer":false,
+      "product":"Lamba Creations",
+      "gender":"Women",
+      "discount":"2,199",
+      "price":"476"
+    },
+    {
+      "image":"https://rukminim1.flixcart.com/image/460/620/xif0q/watch/9/2/1/2-drw006001-americanviber-women-original-imahcc4smm2txxng.jpeg?q=60",
+      "rating":"4.1",
+      "buyer":"2,904",
+      "product":"Americanviber",
+      "gender":"Premium",
+      "discount":"1,199",
+      "price":"369"
+    },
+    {
+      "image":"https://rukminim1.flixcart.com/image/460/620/xif0q/mobile/0/7/s/-original-imahgy26hqbqjfgb.jpeg?q=60",
+      "rating":"4.4",
+      "buyer":"38,445",
+      "product":"Samsung",
+      "gender":"Galaxy A35 5",
+      "discount":"33,999",
+      "price":"21,999"
+    },
+    {
+      "image":"https://rukminim1.flixcart.com/image/460/620/xif0q/slipper-flip-flop/w/o/i/7-brd-732-birde-blue-original-imahbpuac5ejgq2e.jpeg?q=60",
+      "rating":"4",
+      "buyer":"44,533",
+      "product":"Bride",
+      "gender":"Stylish Comfortable",
+      "discount":"999",
+      "price":"219"
+    },
+    {
+      "image":"https://rukminim1.flixcart.com/image/460/620/xif0q/ethnic-set/f/q/z/xl-350-redsqn-shedika-original-imah4tz8phwdskjf.jpeg?q=60",
+      "rating":false,
+      "buyer":false,
+      "product":"HANDISH",
+      "gender":"Women Visca",
+      "discount":"2,999",
+      "price":"699"
+    },
+    {
+      "image":"https://rukminim1.flixcart.com/image/460/620/xif0q/watch/a/r/j/-original-imahgyc4hudwkpbu.jpeg?q=60",
+      "rating":"4.4",
+      "buyer":"36,973",
+      "product":"Casio",
+      "gender":"Vintage A158W",
+      "discount":"1,895",
+      "price":"1,705"
+    },
+    {
+      "image":"https://rukminim1.flixcart.com/image/460/620/xif0q/mobile/j/n/1/-original-imah9gtmya9qhqse.jpeg?q=60",
+      "rating":"4.4",
+      "buyer":"38,846",
+      "product":"relme",
+      "gender":"P3x 5G (Midnight",
+      "discount":"16,999",
+      "price":"11,999"
+    },
+    {
+      "image":"https://rukminim1.flixcart.com/image/460/620/xif0q/shoe/c/r/x/-original-imahd2zbveyfarzm.jpeg?q=60",
+      "rating":"4",
+      "buyer":"40,374",
+      "product":"BEEROCK",
+      "gender":"Kosko Running",
+      "discount":"1,499",
+      "price":"436"
+    },
+    {
+      "image":"https://rukminim1.flixcart.com/image/460/620/xif0q/ethnic-set/c/c/h/s-2pc-floral-brown-prisca-original-imahg4kfhwgyhvfe.jpeg?q=60",
+      "rating":"4.2",
+      "buyer":"1,288",
+      "product":"PRISCA",
+      "gender":"Women Pure Compformt",
+      "discount":"999",
+      "price":"500"
+    }
   ]
 }

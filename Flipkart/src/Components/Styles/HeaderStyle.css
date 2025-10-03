@@ -240,7 +240,7 @@
   max-width: 996px;
 }
 .header-logo-img{
-  display: none;
+  display: none ;
 }
 .header-search-box{
   min-width: 200px;
@@ -305,4 +305,3 @@
   padding: 0 6px;
 }
 }
-/* fdskf */

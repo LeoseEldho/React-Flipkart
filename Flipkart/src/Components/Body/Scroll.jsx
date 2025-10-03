@@ -18,27 +18,26 @@ const Scroll = () => {
   useEffect(() => {
     scrollImage()
   }, [])
-//suijkjk
-//ghyftufchgfytd
-  useEffect(() => {
-    if (Alldata.length > 0) {
-      const interval = setInterval(() => {
-        setActiveIndex(prev => (prev + 1) % Alldata.length)
-      }, 3000)
-
-      return () => clearInterval(interval)
+  useEffect(()=>{
+    if(Alldata.length>0){
+      const intervel=setInterval(()=>{
+        setActiveIndex(prev=>(prev+1)% Alldata.length)
+      },300)
+      return ()=> clearInterval(intervel)
     }
-  }, [Alldata])
-//fhgfhklckfyfhdrtld  tsdfhubcjs  ifyghpkf,l csdfjlkc
+  },[Alldata])
+//sdfdf
+//sdsdfhkh
+
+//sdfjik  ujoihij  hohsdf
   return (
     <div className='scroll-section'>
       <div className='scroll-section-main'>
         <div className='scroll-section-sub'>
           {Alldata.map((x, index) => (
             <div
-              className={`scroll-card ${index === activeIndex ? "active" : ""}`}
-              key={index}
-              onClick={() => setActiveIndex(index)}
+              className={`scroll-card`}
+              onChange={()=>setActiveIndex()}
             >
               <div className='scroll-card-main'>
                 <a href="">
@@ -53,7 +52,7 @@ const Scroll = () => {
           ))}
         </div>
 
-        {/*kv mvhjvbv jhv */}
+        {/* To Be Map */}
         <div className='scroll-button'>
           {Alldata.map((_, index) => (
             <div
@@ -67,5 +66,5 @@ const Scroll = () => {
     </div>
   )
 }
-//ssdnjcbjs
+//hukbj  dfhukjbsufhu
 export default Scroll

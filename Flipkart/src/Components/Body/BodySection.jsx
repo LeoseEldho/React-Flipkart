@@ -1,17 +1,20 @@
 import React, { useState } from "react";
 import "../Styles/StyleBodySection.css";
+import Button from "../Elements/Button";
 
 const BodySection = () => {
   const [phone, setPhone] = useState([]);
+  const [phoneImg,setPhoneImg]=useState([])
   async function fetchPhone() {
     let response = await fetch("/ScrollData.json");
     let data = await response.json();
     setPhone(data.phone);
+    setPhoneImg(data.imageBox)
   }
   useState(() => {
     fetchPhone();
   });
-  //sdshuckjsf dfhkcjshf
+
   console.log(phone);
   return (
     <>
@@ -118,54 +121,47 @@ const BodySection = () => {
               <div className="mobile-main-text">
                 <div className="mobile-text">
                   <div className="mobile-text-main">
-                    Best Value Deals on Fashion
+                    On everybody's list
                   </div>
-                  <a className="mobile-text-btn">
-                    <div className="mobile-text-button">
-                      <svg
-                        width="16"
-                        height="16"
-                        viewBox="0 0 16 16"
-                        fill="none"
-                      >
-                        <path
-                          d="M1 8H14"
-                          stroke="#000000"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        ></path>
-                        <path
-                          d="M10 3.5L14.5 8L10 12.5"
-                          stroke="#000000"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        ></path>
-                      </svg>
-                    </div>
-                  </a>
+                 <Button/>
+                  {/* button */}
                 </div>
               </div>
             </div>
           </div>
           <div className="mobile-bottom">
             <div className="mobile-bottom-main">
-              <div className="mobile-pic-setting">
+              {
+                phoneImg.map((x)=>{
+                  return(
+                    <div className="mobile-pic-setting">
                 {/* To be map */}
                 <div className="mobile-container-box"> 
+                  <div className="mobile-box">
+                    <div className="mobile-image">
+                      <img src={x.image} alt={x.name} />
+                    </div>
+                    <div className="mobile-box-text">
+                      <div className="mobile-box-item">{x.name}</div>
+                      <div className="mobile-box-heading">{x.offer}</div>
+                    </div>
+                  </div>
 
                 </div>
               </div>
+                  )
+                })
+              }
             </div>
           </div>
         </div>
       </div>
+
     </>
-    // hjkjn jnmjbkj kjj
+
   );
 };
 
 export default BodySection;
 
-//jdsfnkc,sdfjilkhdsfkjn
+

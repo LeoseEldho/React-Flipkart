@@ -1,0 +1,27 @@
+.footer-container{
+    background-color: #fff;
+    padding: 14px 16px;
+    border-top: 1px solid #f1f2f4;
+}
+.footer-box{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    font-size: 14px;
+    line-height: 20px;
+    color: #212121;
+}
+.footer-text{
+    display: inline-block;
+    width: 70%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 14px;
+    line-height: 20px;
+    color: #212121;
+}
+.footer-icon{
+    font-size: 24px;
+}

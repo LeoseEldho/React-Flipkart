@@ -44,6 +44,7 @@
     display: grid;
     grid-auto-flow: column;
 }
+
 .scroll-card-main{
     display: flex;
     flex-direction: column;
@@ -96,5 +97,3 @@
     width: 43px;
     background-color: #1254E7;
 }
-/* dsdfjhjkn*/
-/*hciksfhuj g*/
