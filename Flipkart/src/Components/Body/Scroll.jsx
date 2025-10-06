@@ -18,27 +18,28 @@ const Scroll = () => {
   useEffect(() => {
     scrollImage()
   }, [])
+
   useEffect(()=>{
     if(Alldata.length>0){
       const intervel=setInterval(()=>{
         setActiveIndex(prev=>(prev+1)% Alldata.length)
-      },300)
+      },3000)
       return ()=> clearInterval(intervel)
     }
-  },[Alldata])
-//sdfdf
-//sdsdfhkh
+  },[Alldata.length])
+// bnmbb j  j ghbj  njm ,,
+//mk., 
 
-//sdfjik  ujoihij  hohsdf
+//nj, m    hukjhj
   return (
     <div className='scroll-section'>
       <div className='scroll-section-main'>
         <div className='scroll-section-sub'>
+
           {Alldata.map((x, index) => (
-            <div
-              className={`scroll-card`}
-              onChange={()=>setActiveIndex()}
-            >
+            <div key={index}
+              className={`scroll-card ${index===activeIndex?'active':''}` }>
+
               <div className='scroll-card-main'>
                 <a href="">
                   <div className='scroll-card-img'>
@@ -57,7 +58,7 @@ const Scroll = () => {
           {Alldata.map((_, index) => (
             <div
               key={index}
-              className={`scroll-width ${index === activeIndex ? "active-bar" : ""}`}
+              className={`scroll-width ${index === activeIndex ? "active-bar" : "bar"}`}
               onClick={() => setActiveIndex(index)}
             ></div>
           ))}
@@ -66,5 +67,5 @@ const Scroll = () => {
     </div>
   )
 }
-//hukbj  dfhukjbsufhu
+
 export default Scroll

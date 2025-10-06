@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../Styles/StyleProduct.css";
+import { Link } from "react-router-dom";
 const Product = () => {
   const [prod, setprod] = useState([]);
   const [prodTwo,setprodTwo]=useState([]);
@@ -18,9 +19,9 @@ const Product = () => {
   useEffect(() => {
     productFetch()
    }, []);
-  //sdfhjbcjs
-  //sdfsf
+
   return (
+    <Link className="product-section-main" to={"/productPage"}>
     <div className="product-section-main">
       <div className="product-section">
         <div className="product-scroll">
@@ -102,10 +103,8 @@ const Product = () => {
         </div>
       </div>
     </div>
+    </Link>
   );
 };
-//jsdfhjn
 
-//fsfhumslfkj
-//sadfg
 export default Product;

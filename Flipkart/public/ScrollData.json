@@ -278,5 +278,23 @@
       "discount":"999",
       "price":"500"
     }
+  ],
+  "stickers":[
+    {
+      "image":"https://rukminim1.flixcart.com/www/64/64/promos/03/10/2025/fab7ebe1-ff85-4a7d-92d9-6219b369e69d.jpg?q=60",
+      "text":"Top Sale Discounts"
+    },
+    {
+      "image":"https://rukminim1.flixcart.com/www/64/64/promos/08/08/2025/341198eb-c61b-4195-9dfa-7452ecc1c000.png?q=60",
+      "text":"Popular Brands"
+    },
+    {
+      "image":"https://rukminim1.flixcart.com/www/64/64/promos/26/06/2024/ab4e6d76-ca81-434b-91fc-30daa6e34110.png?q=60",
+      "text":"Latest Trends"
+    },
+    {
+      "image":"https://rukminim1.flixcart.com/www/64/64/promos/08/08/2025/54535d93-bc01-41d6-8ae8-a1cbf16a337f.png?q=60",
+      "text":"Top Rated"
+    }
   ]
 }

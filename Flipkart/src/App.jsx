@@ -1,19 +1,17 @@
-import Body from "./Components/Body/Body";
-import Header from "./Components/Header/Header";
-import React, { useState } from "react";
-
+import { Routes, Route } from 'react-router-dom'
+import Header from './Components/Header/Header'
+import Body from './Components/Body/Body'
+import ProductPage from './Components/Body/ProductPage'
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-
-          <Header />
-          <Body />
-
+      <Routes>
+        <Route path="/" element={<Body />} />
+        <Route path="/productPage" element={<ProductPage />} />
+      </Routes>
     </>
-  );
+  )
 }
 
-export default App;
+export default App

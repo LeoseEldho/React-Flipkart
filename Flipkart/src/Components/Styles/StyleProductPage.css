@@ -1,0 +1,310 @@
+.watches{
+    height: 156px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+.watches-header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 52px;
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    transform: translateY(0px);
+}
+.watches-head{
+    color: black;
+    font-size: 16px;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    min-height: 52px;
+    height: 52px;
+}
+.watch-back{
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    width: 42px;
+    max-height: 16px;
+    line-height: 10px;
+    position: relative;
+    min-width: 42px;
+    overflow: hidden;
+}
+.watch-logo{
+    width: 23px;
+    display: table-cell;
+    vertical-align: middle;
+    overflow: hidden;
+    height: 28px;
+    line-height: 10px;
+    max-width: 111px;
+    padding-top: 2px;
+    position: relative;
+}
+.watch-logo img{
+    width: 23px;
+    max-height: 30px;
+}
+.watch-head{
+    color: #212121;
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    white-space: nowrap;
+    padding-left: 12px;
+    overflow-x:scroll ;
+}
+.watch-head h1{
+    font-size: 16px;
+    text-align: left;
+    font-weight: 400;
+    display: inline-block;
+    overflow: auto;
+}
+.watch-login{
+    color: #000;
+    width: 90px;
+    display: table-cell;
+    text-align: center;
+    max-height: 16px;
+    line-height: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.sort-filter{
+    position: absolute;
+    top: 52px;
+    left: 0;
+    right: 0;
+    height: 48px;
+    overflow: hidden;
+    transform: translateY(0px);
+}
+/* sdfesdfe */
+.sort-filter-container{
+    background-color: rgb(255, 255, 255);
+    flex-direction: column;
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+    position: relative;
+}
+.sort-filter-container-box{
+    border-top-width: 1px;
+    height: 48px;
+    width: 100%;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    border-bottom-width: 1px;
+    background-color: rgb(255, 255, 255);
+    border: 0 solid black;
+    display: flex;
+    position: relative;
+    border-bottom: 1px solid rgb(234, 234, 234);
+    border-top: 1px solid rgb(234, 234, 234);
+    z-index: 1px;
+}
+.watch-sort{
+    flex: 1 1 0%;
+}
+.watch-line{
+    height: 16px;
+    width: 1px;
+    background-color: rgb(213, 215, 219);
+    display: flex;
+    position: relative;
+}
+.watch-sort{
+    flex: 1 1 0%;
+}
+.watch-sort-box{
+    display: flex;
+    flex-direction: row;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+}
+.watch-sort-box-text{
+    color: rgb(17, 17, 18);
+    line-height: 20px;
+    margin-left: 8px;
+    font-size: 14px;
+    letter-spacing: -0.01px;
+    flex-shrink: 1;
+    font-family: font3;
+}
+.stickers{
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+    height: 56px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    transform: translateY(0px);
+    min-height: 56px;
+    flex: 1;
+    width: 100%;
+     background-color: rgb(255, 255, 255);
+}
+.sticker-scroll{
+    min-width: 1px;
+    min-height: 1px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    flex-shrink: 1;
+    transform: translateZ(0px);
+    flex-grow: 1;
+    flex-direction: row;
+}
+.sticker-scroll-box{
+    padding-left: 11px;
+    align-items: center;
+    flex-direction: row;
+    display: flex;
+    height: 56px;
+    padding-right: 11px;
+}
+.sticker-container{
+    display: flex;
+    flex-direction: row;
+    height: 56px;
+    width: 418px;
+    transform: translate(0px, 0px);
+}
+.sticker-main-box{
+    background-color: rgb(255, 255, 255);
+    padding: 0 8px 0 4px;
+    margin: 8px 4px 0 4px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    border: 1.5px solid rgb(234, 234, 234);
+     border-radius: 4px;
+}
+.sticker-pic{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 8px;
+    align-items: center;
+    flex-direction: row;
+    z-index: 1;
+    border: 0 solid black;
+     position: relative;
+}
+.sticker-pic img{
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+.sticker-text{
+    max-width: 100%;
+     text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+ }
+.sticker-text span{
+    color: rgb(33, 33, 33);
+    font-size: 12px;
+    line-height: 16px;
+    display: inline;
+        letter-spacing: -0.2px;
+    font-family: font1;
+}
+.watch-add{
+    padding-top: 156px;
+    display: flex;
+    flex-direction: column;
+    width: 375px;
+}
+.watch-add img{
+    margin-left: -1px;
+}
+.watch-product{
+    display: flex;
+    align-items: stretch;
+    width: 375px;
+    flex: 1;
+    background-color: rgb(255, 255, 255);
+}
+.watch-product-main{
+    padding: 8px 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+
+}
+.product-watch{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+.watch-box{
+    width: 165.5px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    display: flex;
+}
+.watch-box-add{
+    top: 4px;
+    text-align: center;
+    border-top-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    margin: 2px 0 0 6px;
+    padding: 2.5px 4px 1.5 4px;
+    letter-spacing: 0.5px;
+    border-bottom-right-radius: 4px;
+    border-top-left-radius: 4px;
+    left: 0;
+    color: rgba(113, 116, 120, 1.00);
+    font-size: 10px;
+    display: inline;
+}
+.watch-item{
+    width: 165.5px;
+    flex-direction: column;
+    display: flex;
+    min-height: 216px;
+    align-items: stretch;
+}
+
+
+.watch-cart{
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    border-width: 1px;
+    border-color: rgb(255, 255, 255);
+    justify-content: center;
+    height: 28px;
+    align-items: center;
+    width: 28px;
+    position: absolute;
+    right: 6px;
+    top: 6px;
+    display: flex;
+}
+
+
+.product-gap{
+    width: 12px;
+    display: flex;
+}
