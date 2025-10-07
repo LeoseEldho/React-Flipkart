@@ -78,223 +78,444 @@
       "tiltle": "Beauty"
     }
   ],
-  "productSec":[
+  "productSec": [
     {
-        "image":"https://rukminim1.flixcart.com/fk-p-flap/102/102/image/c03d8db0ea41f693.png?q=60",
-        "title":"Grocery"
+      "image": "https://rukminim1.flixcart.com/fk-p-flap/102/102/image/c03d8db0ea41f693.png?q=60",
+      "title": "Grocery"
     },
     {
-        "image":"https://rukminim1.flixcart.com/fk-p-flap/102/102/image/99036b9ae35bd9f6.png?q=60",
-        "title":"Fashion"
+      "image": "https://rukminim1.flixcart.com/fk-p-flap/102/102/image/99036b9ae35bd9f6.png?q=60",
+      "title": "Fashion"
     },
     {
-        "image":"https://rukminim1.flixcart.com/fk-p-flap/102/102/image/ead8121496fe6445.png?q=60",
-        "title":"Mobiles"
+      "image": "https://rukminim1.flixcart.com/fk-p-flap/102/102/image/ead8121496fe6445.png?q=60",
+      "title": "Mobiles"
     },
     {
-        "image":"https://rukminim1.flixcart.com/fk-p-flap/102/102/image/eb94e3451501e0ce.png?q=60",
-        "title":"Electronics"
+      "image": "https://rukminim1.flixcart.com/fk-p-flap/102/102/image/eb94e3451501e0ce.png?q=60",
+      "title": "Electronics"
     },
     {
-        "image":"https://rukminim1.flixcart.com/fk-p-flap/102/102/image/d41c19e0143c3982.jpg?q=60",
-        "title":"Home & "
+      "image": "https://rukminim1.flixcart.com/fk-p-flap/102/102/image/d41c19e0143c3982.jpg?q=60",
+      "title": "Home & "
     },
     {
-        "image":"https://rukminim1.flixcart.com/fk-p-flap/102/102/image/414a923a350eb806.png?q=60",
-        "title":"Next Gen"
+      "image": "https://rukminim1.flixcart.com/fk-p-flap/102/102/image/414a923a350eb806.png?q=60",
+      "title": "Next Gen"
     },
     {
-        "image":"https://rukminim1.flixcart.com/fk-p-flap/102/102/image/6ed7f826f395dde0.png?q=60",
-        "title":"Auto Acc"
+      "image": "https://rukminim1.flixcart.com/fk-p-flap/102/102/image/6ed7f826f395dde0.png?q=60",
+      "title": "Auto Acc"
     },
     {
-        "image":"https://rukminim1.flixcart.com/fk-p-flap/102/102/image/f9b3eb64f674d8c1.png?q=60",
-        "title":"Food & Health"
+      "image": "https://rukminim1.flixcart.com/fk-p-flap/102/102/image/f9b3eb64f674d8c1.png?q=60",
+      "title": "Food & Health"
     },
     {
-        "image":"https://rukminim1.flixcart.com/fk-p-flap/102/102/image/70381f29de5ba1c0.png?q=60",
-        "title":"Toys, Baby"
+      "image": "https://rukminim1.flixcart.com/fk-p-flap/102/102/image/70381f29de5ba1c0.png?q=60",
+      "title": "Toys, Baby"
     },
     {
-        "image":"https://rukminim1.flixcart.com/fk-p-flap/102/102/image/8910869559d2d560.png?q=60",
-        "title":"2 Wheelers"
+      "image": "https://rukminim1.flixcart.com/fk-p-flap/102/102/image/8910869559d2d560.png?q=60",
+      "title": "2 Wheelers"
     }
   ],
-  "phone":[
-  {
-    "image":"https://rukminim1.flixcart.com/image/260/340/xif0q/mobile/q/i/j/-original-imah4k2fteym4hhz.jpeg?q=60",
-    "rating":"4.4",
-    "brand":"OPPO F27 Pro+ (Midnight Navy, 128 GB) 8 GB RAM",
-    "price":"18,772",
-    "og":"32,999"
-  },
-  {
-    "image":"https://rukminim1.flixcart.com/image/260/340/xif0q/mobile/v/z/z/-original-imahbxpfagg54gcw.jpeg?q=60",
-    "rating":"4.3",
-    "brand":"vivo Y19 5G (Majestic Green, 64 GB) 4 GB RAM",
-    "price":"10,499",
-    "og":"13,999"
-  },
-  {
-
-    "image":"https://rukminim1.flixcart.com/image/260/340/xif0q/mobile/j/n/1/-original-imah9gtmya9qhqse.jpeg?q=60",
-    "rating":"4.4",
-    "brand":"realme P3x 5G (Midnight Blue, 128 GB) 6 GB RAM",
-    "price":"10,999",
-    "og":"16,999"
-  },
-  {
-    "image":"https://rukminim1.flixcart.com/image/260/340/xif0q/mobile/y/l/1/-original-imahbfd4cgh53kmh.jpeg?q=60",
-    "rating":"4.5",
-    "brand":"OPPO K13 5G with 7000mAh and 80W SUPERVOOC Charger In-The-Box (Prism Black, 128 GB) 8 GB RAM",
-    "price":"17,999",
-    "og":"22,999"
-  },
-  {
-    "image":"https://rukminim1.flixcart.com/image/260/340/xif0q/mobile/s/v/h/-original-imahd57g62dfepkh.jpeg?q=60",
-    "rating":"4.5",
-    "brand":"vivo T4 Ultra 5G (Phoenix Gold, 256 GB) 8 GB RAM",
-    "price":"35,999",
-    "og":"40,999"
-  },
-  {
-    "image":"https://rukminim1.flixcart.com/image/260/340/xif0q/mobile/t/c/y/-original-imahaff2rbuykhcw.jpeg?q=60",
-    "rating":"4.4",
-    "brand":"realme P3 5G (Space Silver, 128 GB) 6 GB RAM",
-    "price":"15,999",
-    "og":"19,999"
-  }
-  ],
-  "imageBox":[
+  "phone": [
     {
-      "image":"https://rukminim1.flixcart.com/image/280/374/xif0q/headphone/3/c/f/new-edition-tws-m19-gaming-earbuds-bluetooth-5-0-wireless-led-original-imah96zwnpzh4gu7.jpeg?q=60",
-      "name":"True Wireless",
-      "offer":"Min. 50% Off"
+      "image": "https://rukminim1.flixcart.com/image/260/340/xif0q/mobile/q/i/j/-original-imah4k2fteym4hhz.jpeg?q=60",
+      "rating": "4.4",
+      "brand": "OPPO F27 Pro+ (Midnight Navy, 128 GB) 8 GB RAM",
+      "price": "18,772",
+      "og": "32,999"
     },
     {
-      "image":"https://rukminim1.flixcart.com/image/280/374/xif0q/headphone/u/w/m/nb119-titanium-pro-upto-100-hr-playtime-enc-fast-charging-dual-original-imahd8bgyhjdmu6w.jpeg?q=60",
-      "name":"Neckband",
-      "offer":"Top Collection"
+      "image": "https://rukminim1.flixcart.com/image/260/340/xif0q/mobile/v/z/z/-original-imahbxpfagg54gcw.jpeg?q=60",
+      "rating": "4.3",
+      "brand": "vivo Y19 5G (Majestic Green, 64 GB) 4 GB RAM",
+      "price": "10,499",
+      "og": "13,999"
     },
     {
-      "image":"https://rukminim1.flixcart.com/image/280/374/xif0q/power-bank/o/2/a/-original-imahdthbvkfxrdnf.jpeg?q=60",
-      "name":"Power Banks",
-      "offer":"Min. 50% Off"
+      "image": "https://rukminim1.flixcart.com/image/260/340/xif0q/mobile/j/n/1/-original-imah9gtmya9qhqse.jpeg?q=60",
+      "rating": "4.4",
+      "brand": "realme P3x 5G (Midnight Blue, 128 GB) 6 GB RAM",
+      "price": "10,999",
+      "og": "16,999"
     },
     {
-      "image":"https://rukminim1.flixcart.com/image/280/374/xif0q/headphone/z/a/j/wireless-running-premium-deep-bass-noise-cancelling-stereo-original-imahdqck5uqaykyz.jpeg?q=60",
-      "name":"Wireless Headphones",
-      "offer":"Special offer"
+      "image": "https://rukminim1.flixcart.com/image/260/340/xif0q/mobile/y/l/1/-original-imahbfd4cgh53kmh.jpeg?q=60",
+      "rating": "4.5",
+      "brand": "OPPO K13 5G with 7000mAh and 80W SUPERVOOC Charger In-The-Box (Prism Black, 128 GB) 8 GB RAM",
+      "price": "17,999",
+      "og": "22,999"
+    },
+    {
+      "image": "https://rukminim1.flixcart.com/image/260/340/xif0q/mobile/s/v/h/-original-imahd57g62dfepkh.jpeg?q=60",
+      "rating": "4.5",
+      "brand": "vivo T4 Ultra 5G (Phoenix Gold, 256 GB) 8 GB RAM",
+      "price": "35,999",
+      "og": "40,999"
+    },
+    {
+      "image": "https://rukminim1.flixcart.com/image/260/340/xif0q/mobile/t/c/y/-original-imahaff2rbuykhcw.jpeg?q=60",
+      "rating": "4.4",
+      "brand": "realme P3 5G (Space Silver, 128 GB) 6 GB RAM",
+      "price": "15,999",
+      "og": "19,999"
     }
   ],
-  "itemsPro":[
+  "imageBox": [
     {
-      "image":"https://rukminim1.flixcart.com/image/460/620/l0igvww0/sandal/i/x/u/10-454-navy-silver-10-density-grey-original-imagcae9hnepvcqr.jpeg?q=60",
-      "rating":"4",
-      "buyer":"1,07,431",
-      "product":"density",
-      "gender":"Men Sandal",
-      "discount":false,
-      "price":"464"
+      "image": "https://rukminim1.flixcart.com/image/280/374/xif0q/headphone/3/c/f/new-edition-tws-m19-gaming-earbuds-bluetooth-5-0-wireless-led-original-imah96zwnpzh4gu7.jpeg?q=60",
+      "name": "True Wireless",
+      "offer": "Min. 50% Off"
     },
     {
-      "image":"https://rukminim1.flixcart.com/image/460/620/xif0q/shopsy-ethnic-set/8/c/s/s-ma-lamba-creations-original-imahdmsktttnrbgr.jpeg?q=60",
-      "rating":false,
-      "buyer":false,
-      "product":"Lamba Creations",
-      "gender":"Women",
-      "discount":"2,199",
-      "price":"476"
+      "image": "https://rukminim1.flixcart.com/image/280/374/xif0q/headphone/u/w/m/nb119-titanium-pro-upto-100-hr-playtime-enc-fast-charging-dual-original-imahd8bgyhjdmu6w.jpeg?q=60",
+      "name": "Neckband",
+      "offer": "Top Collection"
     },
     {
-      "image":"https://rukminim1.flixcart.com/image/460/620/xif0q/watch/9/2/1/2-drw006001-americanviber-women-original-imahcc4smm2txxng.jpeg?q=60",
-      "rating":"4.1",
-      "buyer":"2,904",
-      "product":"Americanviber",
-      "gender":"Premium",
-      "discount":"1,199",
-      "price":"369"
+      "image": "https://rukminim1.flixcart.com/image/280/374/xif0q/power-bank/o/2/a/-original-imahdthbvkfxrdnf.jpeg?q=60",
+      "name": "Power Banks",
+      "offer": "Min. 50% Off"
     },
     {
-      "image":"https://rukminim1.flixcart.com/image/460/620/xif0q/mobile/0/7/s/-original-imahgy26hqbqjfgb.jpeg?q=60",
-      "rating":"4.4",
-      "buyer":"38,445",
-      "product":"Samsung",
-      "gender":"Galaxy A35 5",
-      "discount":"33,999",
-      "price":"21,999"
-    },
-    {
-      "image":"https://rukminim1.flixcart.com/image/460/620/xif0q/slipper-flip-flop/w/o/i/7-brd-732-birde-blue-original-imahbpuac5ejgq2e.jpeg?q=60",
-      "rating":"4",
-      "buyer":"44,533",
-      "product":"Bride",
-      "gender":"Stylish Comfortable",
-      "discount":"999",
-      "price":"219"
-    },
-    {
-      "image":"https://rukminim1.flixcart.com/image/460/620/xif0q/ethnic-set/f/q/z/xl-350-redsqn-shedika-original-imah4tz8phwdskjf.jpeg?q=60",
-      "rating":false,
-      "buyer":false,
-      "product":"HANDISH",
-      "gender":"Women Visca",
-      "discount":"2,999",
-      "price":"699"
-    },
-    {
-      "image":"https://rukminim1.flixcart.com/image/460/620/xif0q/watch/a/r/j/-original-imahgyc4hudwkpbu.jpeg?q=60",
-      "rating":"4.4",
-      "buyer":"36,973",
-      "product":"Casio",
-      "gender":"Vintage A158W",
-      "discount":"1,895",
-      "price":"1,705"
-    },
-    {
-      "image":"https://rukminim1.flixcart.com/image/460/620/xif0q/mobile/j/n/1/-original-imah9gtmya9qhqse.jpeg?q=60",
-      "rating":"4.4",
-      "buyer":"38,846",
-      "product":"relme",
-      "gender":"P3x 5G (Midnight",
-      "discount":"16,999",
-      "price":"11,999"
-    },
-    {
-      "image":"https://rukminim1.flixcart.com/image/460/620/xif0q/shoe/c/r/x/-original-imahd2zbveyfarzm.jpeg?q=60",
-      "rating":"4",
-      "buyer":"40,374",
-      "product":"BEEROCK",
-      "gender":"Kosko Running",
-      "discount":"1,499",
-      "price":"436"
-    },
-    {
-      "image":"https://rukminim1.flixcart.com/image/460/620/xif0q/ethnic-set/c/c/h/s-2pc-floral-brown-prisca-original-imahg4kfhwgyhvfe.jpeg?q=60",
-      "rating":"4.2",
-      "buyer":"1,288",
-      "product":"PRISCA",
-      "gender":"Women Pure Compformt",
-      "discount":"999",
-      "price":"500"
+      "image": "https://rukminim1.flixcart.com/image/280/374/xif0q/headphone/z/a/j/wireless-running-premium-deep-bass-noise-cancelling-stereo-original-imahdqck5uqaykyz.jpeg?q=60",
+      "name": "Wireless Headphones",
+      "offer": "Special offer"
     }
   ],
-  "stickers":[
+  "itemsPro": [
     {
-      "image":"https://rukminim1.flixcart.com/www/64/64/promos/03/10/2025/fab7ebe1-ff85-4a7d-92d9-6219b369e69d.jpg?q=60",
-      "text":"Top Sale Discounts"
+      "image": "https://rukminim1.flixcart.com/image/460/620/l0igvww0/sandal/i/x/u/10-454-navy-silver-10-density-grey-original-imagcae9hnepvcqr.jpeg?q=60",
+      "rating": "4",
+      "buyer": "1,07,431",
+      "product": "density",
+      "gender": "Men Sandal",
+      "discount": false,
+      "price": "464"
     },
     {
-      "image":"https://rukminim1.flixcart.com/www/64/64/promos/08/08/2025/341198eb-c61b-4195-9dfa-7452ecc1c000.png?q=60",
-      "text":"Popular Brands"
+      "image": "https://rukminim1.flixcart.com/image/460/620/xif0q/shopsy-ethnic-set/8/c/s/s-ma-lamba-creations-original-imahdmsktttnrbgr.jpeg?q=60",
+      "rating": false,
+      "buyer": false,
+      "product": "Lamba Creations",
+      "gender": "Women",
+      "discount": "2,199",
+      "price": "476"
     },
     {
-      "image":"https://rukminim1.flixcart.com/www/64/64/promos/26/06/2024/ab4e6d76-ca81-434b-91fc-30daa6e34110.png?q=60",
-      "text":"Latest Trends"
+      "image": "https://rukminim1.flixcart.com/image/460/620/xif0q/watch/9/2/1/2-drw006001-americanviber-women-original-imahcc4smm2txxng.jpeg?q=60",
+      "rating": "4.1",
+      "buyer": "2,904",
+      "product": "Americanviber",
+      "gender": "Premium",
+      "discount": "1,199",
+      "price": "369"
     },
     {
-      "image":"https://rukminim1.flixcart.com/www/64/64/promos/08/08/2025/54535d93-bc01-41d6-8ae8-a1cbf16a337f.png?q=60",
-      "text":"Top Rated"
+      "image": "https://rukminim1.flixcart.com/image/460/620/xif0q/mobile/0/7/s/-original-imahgy26hqbqjfgb.jpeg?q=60",
+      "rating": "4.4",
+      "buyer": "38,445",
+      "product": "Samsung",
+      "gender": "Galaxy A35 5",
+      "discount": "33,999",
+      "price": "21,999"
+    },
+    {
+      "image": "https://rukminim1.flixcart.com/image/460/620/xif0q/slipper-flip-flop/w/o/i/7-brd-732-birde-blue-original-imahbpuac5ejgq2e.jpeg?q=60",
+      "rating": "4",
+      "buyer": "44,533",
+      "product": "Bride",
+      "gender": "Stylish Comfortable",
+      "discount": "999",
+      "price": "219"
+    },
+    {
+      "image": "https://rukminim1.flixcart.com/image/460/620/xif0q/ethnic-set/f/q/z/xl-350-redsqn-shedika-original-imah4tz8phwdskjf.jpeg?q=60",
+      "rating": false,
+      "buyer": false,
+      "product": "HANDISH",
+      "gender": "Women Visca",
+      "discount": "2,999",
+      "price": "699"
+    },
+    {
+      "image": "https://rukminim1.flixcart.com/image/460/620/xif0q/watch/a/r/j/-original-imahgyc4hudwkpbu.jpeg?q=60",
+      "rating": "4.4",
+      "buyer": "36,973",
+      "product": "Casio",
+      "gender": "Vintage A158W",
+      "discount": "1,895",
+      "price": "1,705"
+    },
+    {
+      "image": "https://rukminim1.flixcart.com/image/460/620/xif0q/mobile/j/n/1/-original-imah9gtmya9qhqse.jpeg?q=60",
+      "rating": "4.4",
+      "buyer": "38,846",
+      "product": "relme",
+      "gender": "P3x 5G (Midnight",
+      "discount": "16,999",
+      "price": "11,999"
+    },
+    {
+      "image": "https://rukminim1.flixcart.com/image/460/620/xif0q/shoe/c/r/x/-original-imahd2zbveyfarzm.jpeg?q=60",
+      "rating": "4",
+      "buyer": "40,374",
+      "product": "BEEROCK",
+      "gender": "Kosko Running",
+      "discount": "1,499",
+      "price": "436"
+    },
+    {
+      "image": "https://rukminim1.flixcart.com/image/460/620/xif0q/ethnic-set/c/c/h/s-2pc-floral-brown-prisca-original-imahg4kfhwgyhvfe.jpeg?q=60",
+      "rating": "4.2",
+      "buyer": "1,288",
+      "product": "PRISCA",
+      "gender": "Women Pure Compformt",
+      "discount": "999",
+      "price": "500"
+    }
+  ],
+  "stickers": [
+    {
+      "image": "https://rukminim1.flixcart.com/www/64/64/promos/03/10/2025/fab7ebe1-ff85-4a7d-92d9-6219b369e69d.jpg?q=60",
+      "text": "Top Sale Discounts"
+    },
+    {
+      "image": "https://rukminim1.flixcart.com/www/64/64/promos/08/08/2025/341198eb-c61b-4195-9dfa-7452ecc1c000.png?q=60",
+      "text": "Popular Brands"
+    },
+    {
+      "image": "https://rukminim1.flixcart.com/www/64/64/promos/26/06/2024/ab4e6d76-ca81-434b-91fc-30daa6e34110.png?q=60",
+      "text": "Latest Trends"
+    },
+    {
+      "image": "https://rukminim1.flixcart.com/www/64/64/promos/08/08/2025/54535d93-bc01-41d6-8ae8-a1cbf16a337f.png?q=60",
+      "text": "Top Rated"
+    }
+  ],
+  "ProductPagee": [
+    {
+      "image": "https://rukminim1.flixcart.com/www/24/24/promos/15/12/2024/a72b6403-9a02-41f8-b683-a78d9f54a61e.png?q=60",
+      "rating": "4.1",
+      "users": "2L",
+      "name": "LOSI CARON",
+      "details": "Trending Day & Date Funtioning for Boys Analog Watch - For Men LCS-8326",
+      "off": "84%",
+      "discount": "1,799",
+      "price": "279",
+      "bankoff": "265",
+      "image1": "https://rukminim1.flixcart.com/image/332/440/xif0q/watch/y/i/7/1-abx4568-skb-abrexo-men-original-imahgdejbyshbxsz.jpeg?q=60&crop=false",
+      "rating1": "3.9",
+      "users1": "16k",
+      "name1": "LOSI CARON",
+      "details1": "Nautilus Date Working Square Blue Dial Silver Quartz Mechanism Watch For Boys Analog Watch  - For Men Abx4568-SKB",
+      "off1": "86%",
+      "discount1": "1,999",
+      "price1": "279",
+      "bankoff1": "265"
+    },
+    {
+      "image": "",
+      "rating": "4.4",
+      "users": "94k",
+      "name": "TIMEX",
+      "details": "Silver Dial Stainless Steel Analog Watch  - For Men TW00ZR347",
+      "off": "53",
+      "discount": "1,494",
+      "price": "689",
+      "bankoff": "654",
+      "image1": "",
+      "rating1": "",
+      "users1": "",
+      "name1": "",
+      "details1": "",
+      "off1": "",
+      "discount1": "1,199",
+      "price1": "1,705",
+      "bankoff1": ""
+    },
+    {
+      "image": "",
+      "rating": "4.4",
+      "users": "94k",
+      "name": "TIMEX",
+      "details": "Silver Dial Stainless Steel Analog Watch  - For Men TW00ZR347",
+      "off": "53",
+      "discount": "1,494",
+      "price": "689",
+      "bankoff": "654",
+      "image1": "",
+      "rating1": "",
+      "users1": "",
+      "name1": "",
+      "details1": "",
+      "off1": "",
+      "discount1": "1,199",
+      "price1": "1,705",
+      "bankoff1": ""
+    },
+    {
+      "image": "",
+      "rating": "4.4",
+      "users": "94k",
+      "name": "TIMEX",
+      "details": "Silver Dial Stainless Steel Analog Watch  - For Men TW00ZR347",
+      "off": "53",
+      "discount": "1,494",
+      "price": "689",
+      "bankoff": "654",
+      "image1": "",
+      "rating1": "",
+      "users1": "",
+      "name1": "",
+      "details1": "",
+      "off1": "",
+      "discount1": "1,199",
+      "price1": "1,705",
+      "bankoff1": ""
+    },
+    {
+      "image": "",
+      "rating": "4.4",
+      "users": "94k",
+      "name": "TIMEX",
+      "details": "Silver Dial Stainless Steel Analog Watch  - For Men TW00ZR347",
+      "off": "53",
+      "discount": "1,494",
+      "price": "689",
+      "bankoff": "654",
+      "image1": "",
+      "rating1": "",
+      "users1": "",
+      "name1": "",
+      "details1": "",
+      "off1": "",
+      "discount1": "1,199",
+      "price1": "1,705",
+      "bankoff1": ""
+    },
+    {
+      "image": "",
+      "rating": "4.4",
+      "users": "94k",
+      "name": "TIMEX",
+      "details": "Silver Dial Stainless Steel Analog Watch  - For Men TW00ZR347",
+      "off": "53",
+      "discount": "1,494",
+      "price": "689",
+      "bankoff": "654",
+      "image1": "",
+      "rating1": "",
+      "users1": "",
+      "name1": "",
+      "details1": "",
+      "off1": "",
+      "discount1": "1,199",
+      "price1": "1,705",
+      "bankoff1": ""
+    },
+    {
+      "image": "",
+      "rating": "4.4",
+      "users": "94k",
+      "name": "TIMEX",
+      "details": "Silver Dial Stainless Steel Analog Watch  - For Men TW00ZR347",
+      "off": "53",
+      "discount": "1,494",
+      "price": "689",
+      "bankoff": "654",
+      "image1": "",
+      "rating1": "",
+      "users1": "",
+      "name1": "",
+      "details1": "",
+      "off1": "",
+      "discount1": "1,199",
+      "price1": "1,705",
+      "bankoff1": ""
+    },
+    {
+      "image": "",
+      "rating": "4.4",
+      "users": "94k",
+      "name": "TIMEX",
+      "details": "Silver Dial Stainless Steel Analog Watch  - For Men TW00ZR347",
+      "off": "53",
+      "discount": "1,494",
+      "price": "689",
+      "bankoff": "654",
+      "image1": "",
+      "rating1": "",
+      "users1": "",
+      "name1": "",
+      "details1": "",
+      "off1": "",
+      "discount1": "1,199",
+      "price1": "1,705",
+      "bankoff1": ""
+    },
+    {
+      "image": "",
+      "rating": "4.4",
+      "users": "94k",
+      "name": "TIMEX",
+      "details": "Silver Dial Stainless Steel Analog Watch  - For Men TW00ZR347",
+      "off": "53",
+      "discount": "1,494",
+      "price": "689",
+      "bankoff": "654",
+      "image1": "",
+      "rating1": "",
+      "users1": "",
+      "name1": "",
+      "details1": "",
+      "off1": "",
+      "discount1": "1,199",
+      "price1": "1,705",
+      "bankoff1": ""
+    },
+    {
+      "image": "",
+      "rating": "4.4",
+      "users": "94k",
+      "name": "TIMEX",
+      "details": "Silver Dial Stainless Steel Analog Watch  - For Men TW00ZR347",
+      "off": "53",
+      "discount": "1,494",
+      "price": "689",
+      "bankoff": "654",
+      "image1": "",
+      "rating1": "",
+      "users1": "",
+      "name1": "",
+      "details1": "",
+      "off1": "",
+      "discount1": "1,199",
+      "price1": "1,705",
+      "bankoff1": ""
+    },
+    {
+      "image": "",
+      "rating": "4.4",
+      "users": "94k",
+      "name": "TIMEX",
+      "details": "Silver Dial Stainless Steel Analog Watch  - For Men TW00ZR347",
+      "off": "53",
+      "discount": "1,494",
+      "price": "689",
+      "bankoff": "654",
+      "image1": "",
+      "rating1": "",
+      "users1": "",
+      "name1": "",
+      "details1": "",
+      "off1": "",
+      "discount1": "1,199",
+      "price1": "1,705",
+      "bankoff1": ""
     }
   ]
 }
