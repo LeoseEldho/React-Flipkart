@@ -27,10 +27,6 @@ const Scroll = () => {
       return ()=> clearInterval(intervel)
     }
   },[Alldata.length])
-// bnmbb j  j ghbj  njm ,,
-//mk., 
-
-//nj, m    hukjhj
   return (
     <div className='scroll-section'>
       <div className='scroll-section-main'>

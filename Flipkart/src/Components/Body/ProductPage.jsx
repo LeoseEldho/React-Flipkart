@@ -5,6 +5,10 @@ import "../Styles/StyleProductPage.css";
 const ProductPage = () => {
   const [pic, setPic] = useState([]);
   const [product, setproduct] = useState([]);
+  const[popup,setpopup]=useState(false)
+  const[select,setSelect]=useState("Relavance")
+  console.log(select)
+
   async function fetchPic() {
     try {
       let res = await fetch("/ScrollData.json");
@@ -15,12 +19,21 @@ const ProductPage = () => {
       console.log(error);
     }
   }
-  console.log(product);
+
+let result=[...product]
+if(select=="Relavance"){
+ }else if(select=="Low"){
+   result=product.sort((x,y)=> x.price.replace(/,/g,"")-y.price.replace(/,/g,""))
+}else if(select=="High"){
+  result=product.sort((x,y)=> y.price.replace(/,/g,"")-x.price.replace(/,/g,""))
+}else if(select=="Popularity"){
+  result=product.sort((x,y)=> parseFloat(y.rating)-parseFloat(x.rating))
+}
+//sdfkjnsdf ghjk
   useEffect(() => {
     fetchPic();
   }, []);
   return (
-    //sdfioj  ;bnm sdfjikhsdfe
     <>
       <div className="watches">
         <div className="watches-header">
@@ -116,11 +129,11 @@ const ProductPage = () => {
             </a>
           </div>
         </div>
-
+        {/* sort  */}
         <div className="sort-filter">
           <div className="sort-filter-container">
             <div className="sort-filter-container-box">
-              <div className="watch-sort">
+              <div className="watch-sort"  onClick={()=>setpopup(!popup)}>
                 <div className="watch-sort-box">
                   <svg width="20" height="20" viewBox="0 0 256 256">
                     <path fill="none" d="M0 0h256v256H0z"></path>
@@ -138,7 +151,7 @@ const ProductPage = () => {
               </div>
               <div className="watch-line"></div>
               <div className="watch-sort">
-                <div className="watch-sort-box">
+                <Link div className="watch-sort-box" to={'/filterpage'}>
                   <svg width="20" height="20" viewBox="0 0 256 256">
                     <path fill="none" d="M0 0h256v256H0z"></path>
                     <path
@@ -179,7 +192,7 @@ const ProductPage = () => {
                     ></circle>
                   </svg>
                   <div className="watch-sort-box-text">Filter</div>
-                </div>
+                </Link>
               </div>
             </div>
           </div>
@@ -213,90 +226,175 @@ const ProductPage = () => {
         />
       </div>
       <div className="watch-product">
-        {product.map((x) =>  
-          <div className="watch-product-main">
-            {/* map  ashdubjad  */}
-            <div className="product-watch">
-              <div className="watch-box">
-                <div className="watch-items">
-                  <div className="watch-item-box">
-                    <div className="watch-item-pic">
-                      <img src={x.image} alt="" />
-                      <div className="back-ground"></div>
+        {result.map((x, index) => (
+          <>
+            <div className="watch-product-main" key={index}>
+              {/* map */}
+              <div className="product-watch">
+                <div className="watch-box">
+                  <div className="watch-items">
+                    <div className="watch-item-box">
+                      <div className="watch-item-pic">
+                        <img src={x.image} alt={x.name} />
+                        <div className="back-ground"></div>
+                      </div>
+                      <div className="watch-rating-box">
+                        <div className="watch-rating-box-container">
+                          <div className="watch-rating-count">{x.rating}</div>
+                          <div className="watch-rating-star">
+                            <img
+                              src="https://rukminim1.flixcart.com/www/24/24/promos/15/12/2024/a72b6403-9a02-41f8-b683-a78d9f54a61e.png?q=60"
+                              alt=""
+                            />
+                          </div>
+                          <div className="watch-rating-users">| {x.users}</div>
+                        </div>
+                      </div>
                     </div>
-                    <div className="watch-rating-box">
-                      <div className="watch-rating-box-container">
-                        <div className="watch-rating-count">{x.rating}</div>
-                        <div className="watch-rating-star">
+                    <div className="watch-item-text">
+                      <div className="watch-item-text-name">
+                        <div>{x.name}</div>
+                      </div>
+                      <div className="watch-item-text-detail">
+                        <div>{x.details}</div>
+                      </div>
+                      <div className="watch-item-text-price">
+                        <div className="watch-item-priceoffer">
+                          <svg
+                            width="14"
+                            height="14"
+                            viewBox="0 0 12 12"
+                            fill="none"
+                          >
+                            <path
+                              d="M6.73461 1V8.46236L9.5535 5.63352L10.5876 6.65767L5.99384 11.2415L1.41003 6.65767L2.42424 5.63352L5.25307 8.46236V1H6.73461Z"
+                              fill="#4BB550"
+                            ></path>
+                          </svg>
+                          <div className="watch-item-priceoffer-text">
+                            {x.off}%
+                          </div>
+                        </div>
+                        <div className="watch-item-priceog">₹{x.discount}</div>
+                        <div className="watch-item-pricesale">₹{x.price}</div>
+                      </div>
+                      <div className="watch-item-text-offer">
+                        <div className="watch-textoffer-pic">
                           <img
-                            src="https://rukminim1.flixcart.com/www/24/24/promos/15/12/2024/a72b6403-9a02-41f8-b683-a78d9f54a61e.png?q=60"
+                            src="https://rukminim1.flixcart.com/www/76/32/promos/30/08/2023/59dc7885-72bf-4135-9099-025f074b0eb1.png?q=90"
                             alt=""
                           />
                         </div>
-                        <div className="watch-rating-users">| {x.users}</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="watch-item-text">
-                    <div className="watch-item-text-name">
-                      <div>{x.name}</div>
-                    </div>
-                    <div className="watch-item-text-detail">
-                      <div>{x.details}</div>
-                    </div>
-                    <div className="watch-item-text-price">
-                      <div className="watch-item-priceoffer">
-                        <svg
-                          width="14"
-                          height="14"
-                          viewBox="0 0 12 12"
-                          fill="none"
-                        >
-                          <path
-                            d="M6.73461 1V8.46236L9.5535 5.63352L10.5876 6.65767L5.99384 11.2415L1.41003 6.65767L2.42424 5.63352L5.25307 8.46236V1H6.73461Z"
-                            fill="#4BB550"
-                          ></path>
-                        </svg>
-                        <div className="watch-item-priceoffer-text">
-                          {x.off}%
+                        <div className="watch-textoffer-price"> ₹{x.bank} </div>
+                        <div className="watch-textoffer-bank">
+                          with Bank offer
                         </div>
                       </div>
-                      <div className="watch-item-priceog">₹{x.discount}</div>
-                      <div className="watch-item-pricesale">₹{x.price}</div>
                     </div>
-                    <div className="watch-item-text-offer">
-                      <div className="watch-textoffer-pic">
-                        <img
-                          src="https://rukminim1.flixcart.com/www/76/32/promos/30/08/2023/59dc7885-72bf-4135-9099-025f074b0eb1.png?q=90"
-                          alt=""
-                        />
-                      </div>
-                      <div className="watch-textoffer-price"> ₹{x.bank} </div>
-                      <div className="watch-textoffer-bank">
-                        with Bank offer
-                      </div>
+                  </div>
+                  <div className="watch-cart">
+                    <div className="watch-cart-item">
+                      <img
+                        src="https://rukminim1.flixcart.com/www/40/40/promos/30/06/2025/ca99011a-0436-4c4c-a3e6-3a5d6ef01f75.png?q=60"
+                        alt=""
+                      />
                     </div>
                   </div>
                 </div>
-                <div className="watch-cart">
-                  <div className="watch-cart-item">
-                    <img
-                      src="https://rukminim1.flixcart.com/www/40/40/promos/30/06/2025/ca99011a-0436-4c4c-a3e6-3a5d6ef01f75.png?q=60"
-                      alt=""
-                    />
-                  </div>
-                </div>
+                <div className="watch-box-add">AD</div>
               </div>
-              <div className="watch-box-add">AD</div>
+              <div></div>
             </div>
-            <div className="product-gap"></div>
-
-          </div>
-        )}
+            <div
+              className="product-gap"
+              style={{ display: index % 2 == 0 ? "block" : "none" }}
+            ></div>
+          </>
+        ))}
       </div>
+      {/* sort */}
+        {popup&&(
+                <div className="sort-box" >
+        <div className="sort-box-text">SORT BY</div>
+        <div className="sort-margin"></div>
+        <div className="sort-box-selection" onClick={()=>setSelect("Relavance")||setpopup(!popup)}>
+          <div className="sort-selection-name">
+            <div>Relavance</div>
+          </div>
+          <div className="sort-selection-box">
+            <img
+              src={select=="Relavance"?"https://rukminim1.flixcart.com/www/32/32/promos/28/04/2022/7c0ab296-0784-44d3-be1b-7aaa4c36d990.png?q=90"
+              :"https://rukminim1.flixcart.com/www/32/32/promos/28/04/2022/7b036604-c843-4bb5-af27-7c675bf60f67.png?q=60"}
+              alt=""
+              height="16"
+              width="16"
+            ></img>
+          </div>
+        </div>
+        {/* sdfsdf */}
+        <div className="sort-box-selection" onClick={()=>{setSelect("Popularity") ;setpopup(!popup);}}>
+          <div className="sort-selection-name">
+            <div>Popularity</div>
+          </div>
+          <div className="sort-selection-box">
+            <img
+              src={select=="Popularity"?"https://rukminim1.flixcart.com/www/32/32/promos/28/04/2022/7c0ab296-0784-44d3-be1b-7aaa4c36d990.png?q=90"
+                :"https://rukminim1.flixcart.com/www/32/32/promos/28/04/2022/7b036604-c843-4bb5-af27-7c675bf60f67.png?q=60"}
+              alt=""
+              height="16"
+              width="16"
+            ></img>
+          </div>
+        </div>
+        <div className="sort-box-selection" onClick={()=>{setSelect("Low"); setpopup(!popup)}}>
+          <div className="sort-selection-name">
+            <div>Price-- Low to High</div>
+          </div>
+          <div className="sort-selection-box">
+            <img
+              src={select=="Low"?"https://rukminim1.flixcart.com/www/32/32/promos/28/04/2022/7c0ab296-0784-44d3-be1b-7aaa4c36d990.png?q=90"
+              :"https://rukminim1.flixcart.com/www/32/32/promos/28/04/2022/7b036604-c843-4bb5-af27-7c675bf60f67.png?q=60"}
+              alt=""
+              height="16"
+              width="16"
+            ></img>
+          </div>
+        </div>
+        <div className="sort-box-selection" onClick={()=>{setSelect("High");setpopup(!popup)}}>
+          <div className="sort-selection-name">
+            <div>Price-- High to Low</div>
+          </div>
+          <div className="sort-selection-box">
+            <img
+              src={select=="High"?"https://rukminim1.flixcart.com/www/32/32/promos/28/04/2022/7c0ab296-0784-44d3-be1b-7aaa4c36d990.png?q=90":"https://rukminim1.flixcart.com/www/32/32/promos/28/04/2022/7b036604-c843-4bb5-af27-7c675bf60f67.png?q=60"
+              }
+              alt=""
+              
+              height="16"
+              width="16"
+            ></img>
+          </div>
+        </div>
+                <div className="sort-box-selection" onClick={()=>{setSelect("Newest");setpopup(!popup)}}>
+          <div className="sort-selection-name">
+            <div>Newest Frist</div>
+          </div>
+          <div className="sort-selection-box">
+            <img
+              src={product=="Newest"?"https://rukminim1.flixcart.com/www/32/32/promos/28/04/2022/7c0ab296-0784-44d3-be1b-7aaa4c36d990.png?q=90"
+                :"https://rukminim1.flixcart.com/www/32/32/promos/28/04/2022/7b036604-c843-4bb5-af27-7c675bf60f67.png?q=60"}
+              alt=""
+              height="16"
+              width="16"
+            ></img>
+          </div>
+        </div>
+      </div>
+        )}
+        <div className="filter-box"></div>
+       {popup&&(<div className="overlay" onClick={()=>setpopup(false)}></div>)} 
     </>
   );
 };
 
-//sdfsdf
 export default ProductPage;
