@@ -429,5 +429,81 @@
       "price": "1,1295",
       "bankoff": "1,230"
     }
+  ],
+  "filterKey":[
+    {
+      "name":"Brand",
+      "value":["Titan","Fastrack","CASIO","Allen Solly","PETTER ENGLAND","TOMMY HILFIGER"],
+      "search":true
+    },
+    {
+      "name":"Strap Material",
+      "value":["Metal","Stainless Steel","Silicone","Leather","Rubber","Fabric"]
+    },
+    {
+      "name":"Strap Color",
+      "value":["Black","Gold","Sliver","Blue","Green","White"]
+    },
+    {
+      "name":"Dial Shape",
+      "value":["Oval","Rectangle","Round","Square"," Octagonal","Hexagonal"]
+    },
+    {
+      "name":"Type",
+      "value":["Analog","Digital","Analog-Digital","Smart Analog","Hybrid Smartwatch"]
+    },
+    {
+      "name":"Price",
+      "value":[""]
+    },
+    {
+      "name":"Movement",
+      "value":["LCD","Digital","Solar","Quartz","Mechanical Automatic"]
+    },
+    {
+      "name":"Occasion",
+      "value":["Formal","Casual","Sports","Part-Wedding","Casual,Sports"]
+    },
+    {
+      "name":"Customer Ratings",
+      "value":["4★ & above","3★ & above","2★ & above","1★ & above"]
+    },
+    {
+      "name":"Discount",
+      "value":["90% or more","80% or more","50% or more","30% or more","10% or more"]
+    },
+    {
+      "name":"F-Assured",
+      "value":["F-Assured"]
+    },
+    {
+      "name":"Features",
+      "value":["Water Resistant","Date Display","Alarm Clock","Compass"]
+    },
+    {
+      "name":"Offers",
+      "value":["Special Price","Buy More, Save More"]
+    },
+    {
+      "name":"Collections",
+      "value":["Metallic","Minimal","oversized","All Blacks","Sport Smart"]
+    },
+    {
+      "name":"New Arrivals",
+      "value":["New Arrivals"]
+    },
+    {
+      "name":"Ideal for",
+      "value":["Couple","Women","Men","Boys","Girls"]
+    },
+    {
+      "name":"Avaliability",
+      "value":["Include Out of Stock"]
+    },
+    {
+      "name":"Category",
+      "value":["Wrist Watch"]
+    }
   ]
 }
+

@@ -11,5 +11,5 @@ const Footer = () => {
     </div>
   )
 }
-//sdfhuk sdfhjk sdfhkj
+
 export default Footer

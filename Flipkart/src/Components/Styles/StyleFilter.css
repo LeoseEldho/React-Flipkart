@@ -17,6 +17,7 @@
     transform: translateZ(0px);
     padding-top: 52px;
     padding-bottom: 56px;
+    position: relative;
 }
 .filter-body-container{
     display: flex;
@@ -24,8 +25,195 @@
     height: 583px;
     width: 375px;
 }
+.filter-list{
+    transform: translate(0px ,0px);
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    position: absolute;
+    top: 52px;
+    left: 0;
+    width: 125px;
+    min-height: 0px;
+    min-width: 0px;
+    /* background-color: rgb(255, 255, 255); */
+    flex: 1 1 0%;
+}
+.filter-list-main{
+    height: 582px;
+    transform: translateZ(0px);
+    overflow-y: auto;
+    flex-shrink: 1;
+    /* background-color: rgb(241, 243, 246); */
+    flex-grow: 1;
+    flex-direction: column;
+    scrollbar-width: none;
+    overflow-x: hidden;
+    display: flex;
+}
+.filter-list-scroll{
+    height: 1008px;
+    width: 125px;
+    display: flex;
+    flex-direction: column;
+}
+.filter-list-box-main{
+    height: 56px;
+    position: relative;;
+    overflow: hidden;
+    width: 125px;
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+}
+.filter-box-sub{
+   padding: 12px 8px 12px 16px;
+   justify-content: space-between;
+    flex-direction: row;
+    display: flex;
+    position: relative;
+}
+.filter-box-sub-text{
+    line-clamp: 2;
+    line-height: 20px;
+    color: black;
+    margin-right: 8px;
+    font-size: 14px;
+    max-width: 100%;
+    font-family: roboto;
 
+}
+.filter-list-line{
+    height: 1px;
+    background-color: rgb(234, 234, 234);
+    display: flex;
+}
+.filter-filter{
+    transform: translate(125px ,0px);
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    left: 0;
+    top: 0;
+    min-height: 0px;
+    min-width: 0px;
+    background-color: rgb(255, 255, 255);
+    flex: 1 1 0%;
+}
+.filter-filter-container{
+    display: flex;
+    flex-direction: column;
+    height: 582px;
+}
+.filter-filter-search{
+    height: 40px;
+    padding: 13px 12px;
+    margin: 8px 16px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid rgb(233, 233, 233);
+}
+.filter-filter-search input{
+    outline: 0;
+    font-family: Roboto;
+    letter-spacing: 0;
+    color: rgb(0, 0, 0);
+    height: 39px;
+    font-size: 12px;
+    border-width: 0;
+}
+.filter-filter-search-icon{
+    display: flex;
+    position: relative;
+    height: 18px;
+    width: 18px;
+    margin-right: 10px;
+}
+.filter-filter-search-icon img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.filter-scroll-main{
+    transform: translateZ(0px);
+    overflow-y: auto;
+    flex-shrink: 1;
+    flex-grow: 1;
+    flex-direction: column;
+    scrollbar-width: none;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 570px;
+    width: 250px;
+}
 
+.filter-scroll-sub{
+    height: 42px;
+    overflow: hidden;
+    width: 250px;
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+}
+.filter-scroll-sub-box{
+    padding: 13px 16px 0 16px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+.filter-scroll-sub-text{
+    line-clamp: 2;
+    color: rgb(135, 135, 135);
+    font-family: Roboto;
+    font-size: 12px;
+    max-width: 100%;
+}
+.filter-scroll-box{
+    height: 48px;
+    overflow: hidden;
+    width: 250px;
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    padding: 12px 19px ;
+    justify-content: space-between;
+}
+.filter-scroll-box-container{
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    flex: 1 1 0%;
+}
+.filter-scroll-box-container-icon{
+    display: flex;
+    position: relative;
+    margin-right: 19px;
+    width: 18px;
+    height: 18px;
+}
+.filter-scroll-box-container-icon img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.filter-scroll-box-container-text{
+    flex: 1 1 0%;
+    display: flex;
+}
+.filter-scroll-box-container-text div{
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+    font-family: Roboto;
+    white-space: nowrap;
+    max-width: 100%;
+}
+.filter-filter-line{
+    height: 1px;
+    background-color: rgb(234, 234, 234);
+}
 .filter{
     position: absolute;
     top: 0;
@@ -68,9 +256,8 @@
 .filter-text h1{
     font-size: 16px;
     font-weight: 400;
+    font-family: Roboto;
 }
-
-
 .filter-apply{
     background-color: rgba(0, 0, 0, 0);
     position: absolute;
@@ -79,4 +266,51 @@
     right: 0;
     height: 56px;
     display: flex;
+    width: 100%;
+    flex: 1 1 0%;
+    background-color: rgb(255, 255, 255);
+}
+.filter-apply-main{
+    margin: 8px 8px 8px 16px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+.filter-apply-count{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+.filter-apply-count-no{
+    line-height: 19px;
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    display: inline;
+    font-family: Roboto;
+}
+.filter-apply-count-text{
+    color: rgb(135, 135, 135);
+    font-size: 12px;
+    max-width: 100%;
+    display: inline;
+    font-family: Roboto;
+}
+.filter-apply-btn{
+    min-height: 40px;
+    background-color: rgb(255, 88, 0);
+    align-self: center;
+    align-items: center;
+    flex-direction: row;
+    padding: 0 65px;
+    border-radius: 2px;
+    display: flex;
+}
+.filter-apply-btn-text{
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    display: inline;
+    font-family: Roboto;
 }

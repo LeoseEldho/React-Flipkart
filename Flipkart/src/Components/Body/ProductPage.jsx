@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "../Styles/StyleProductPage.css";
 
 const ProductPage = () => {
   const [pic, setPic] = useState([]);
   const [product, setproduct] = useState([]);
-  const[popup,setpopup]=useState(false)
-  const[select,setSelect]=useState("Relavance")
-  console.log(select)
+  const [popup, setpopup] = useState(false);
+  const [select, setSelect] = useState("Relavance");
 
   async function fetchPic() {
     try {
@@ -20,16 +19,36 @@ const ProductPage = () => {
     }
   }
 
-let result=[...product]
-if(select=="Relavance"){
- }else if(select=="Low"){
-   result=product.sort((x,y)=> x.price.replace(/,/g,"")-y.price.replace(/,/g,""))
-}else if(select=="High"){
-  result=product.sort((x,y)=> y.price.replace(/,/g,"")-x.price.replace(/,/g,""))
-}else if(select=="Popularity"){
-  result=product.sort((x,y)=> parseFloat(y.rating)-parseFloat(x.rating))
-}
-//sdfkjnsdf ghjk
+  const location = useLocation();
+  const appliedFilters = location.state?.filters || {};
+
+
+const [result,setResult]=useState([])
+useEffect(()=>{
+   let sorted = [...product]
+    if (select == "Relavance") {
+    sorted=[...product]
+  } else if (select == "Low") {
+    sorted = [...product].sort(
+      (x, y) => x.price.replace(/,/g, "") - y.price.replace(/,/g, "")
+    );
+  } else if (select == "High") {
+    sorted = [...product].sort(
+      (x, y) => y.price.replace(/,/g, "") - x.price.replace(/,/g, "")
+    );
+  } else if (select == "Popularity") {
+    sorted = [...product].sort(
+      (x, y) => parseFloat(y.rating) - parseFloat(x.rating)
+    );
+  }
+ 
+ 
+  if (appliedFilters.brand?.length > 0) {
+    sorted = sorted.filter((x) => appliedFilters.brand.includes(x.name));
+  }
+  setResult(sorted);
+},[product,select,appliedFilters]);
+
   useEffect(() => {
     fetchPic();
   }, []);
@@ -129,11 +148,11 @@ if(select=="Relavance"){
             </a>
           </div>
         </div>
-        {/* sort  */}
+        {/* sort    */}
         <div className="sort-filter">
           <div className="sort-filter-container">
             <div className="sort-filter-container-box">
-              <div className="watch-sort"  onClick={()=>setpopup(!popup)}>
+              <div className="watch-sort" onClick={() => setpopup(!popup)}>
                 <div className="watch-sort-box">
                   <svg width="20" height="20" viewBox="0 0 256 256">
                     <path fill="none" d="M0 0h256v256H0z"></path>
@@ -151,7 +170,7 @@ if(select=="Relavance"){
               </div>
               <div className="watch-line"></div>
               <div className="watch-sort">
-                <Link div className="watch-sort-box" to={'/filterpage'}>
+                <Link  className="watch-sort-box" to={"/filterpage"}>
                   <svg width="20" height="20" viewBox="0 0 256 256">
                     <path fill="none" d="M0 0h256v256H0z"></path>
                     <path
@@ -201,9 +220,9 @@ if(select=="Relavance"){
           <div className="sticker-scroll">
             <div className="sticker-scroll-box">
               <div className="sticker-container">
-                {pic.map((x) => {
+                {pic.map((x,ind) => {
                   return (
-                    <div className="sticker-main-box">
+                    <div className="sticker-main-box" key={ind}>
                       <div className="sticker-pic">
                         {" "}
                         <img src={x.image}></img>
@@ -313,86 +332,127 @@ if(select=="Relavance"){
         ))}
       </div>
       {/* sort */}
-        {popup&&(
-                <div className="sort-box" >
-        <div className="sort-box-text">SORT BY</div>
-        <div className="sort-margin"></div>
-        <div className="sort-box-selection" onClick={()=>setSelect("Relavance")||setpopup(!popup)}>
-          <div className="sort-selection-name">
-            <div>Relavance</div>
+      {popup && (
+        <div className="sort-box">
+          <div className="sort-box-text">SORT BY</div>
+          <div className="sort-margin"></div>
+          <div
+            className="sort-box-selection"
+            onClick={() => setSelect("Relavance") || setpopup(!popup)}
+          >
+            <div className="sort-selection-name">
+              <div>Relavance</div>
+            </div>
+            <div className="sort-selection-box">
+              <img
+                src={
+                  select == "Relavance"
+                    ? "https://rukminim1.flixcart.com/www/32/32/promos/28/04/2022/7c0ab296-0784-44d3-be1b-7aaa4c36d990.png?q=90"
+                    : "https://rukminim1.flixcart.com/www/32/32/promos/28/04/2022/7b036604-c843-4bb5-af27-7c675bf60f67.png?q=60"
+                }
+                alt=""
+                height="16"
+                width="16"
+              ></img>
+            </div>
           </div>
-          <div className="sort-selection-box">
-            <img
-              src={select=="Relavance"?"https://rukminim1.flixcart.com/www/32/32/promos/28/04/2022/7c0ab296-0784-44d3-be1b-7aaa4c36d990.png?q=90"
-              :"https://rukminim1.flixcart.com/www/32/32/promos/28/04/2022/7b036604-c843-4bb5-af27-7c675bf60f67.png?q=60"}
-              alt=""
-              height="16"
-              width="16"
-            ></img>
+          {/* map */}
+          <div
+            className="sort-box-selection"
+            onClick={() => {
+              setSelect("Popularity");
+              setpopup(!popup);
+            }}
+          >
+            <div className="sort-selection-name">
+              <div>Popularity</div>
+            </div>
+            <div className="sort-selection-box">
+              <img
+                src={
+                  select == "Popularity"
+                    ? "https://rukminim1.flixcart.com/www/32/32/promos/28/04/2022/7c0ab296-0784-44d3-be1b-7aaa4c36d990.png?q=90"
+                    : "https://rukminim1.flixcart.com/www/32/32/promos/28/04/2022/7b036604-c843-4bb5-af27-7c675bf60f67.png?q=60"
+                }
+                alt=""
+                height="16"
+                width="16"
+              ></img>
+            </div>
+          </div>
+          <div
+            className="sort-box-selection"
+            onClick={() => {
+              setSelect("Low");
+              setpopup(!popup);
+            }}
+          >
+            <div className="sort-selection-name">
+              <div>Price-- Low to High</div>
+            </div>
+            <div className="sort-selection-box">
+              <img
+                src={
+                  select == "Low"
+                    ? "https://rukminim1.flixcart.com/www/32/32/promos/28/04/2022/7c0ab296-0784-44d3-be1b-7aaa4c36d990.png?q=90"
+                    : "https://rukminim1.flixcart.com/www/32/32/promos/28/04/2022/7b036604-c843-4bb5-af27-7c675bf60f67.png?q=60"
+                }
+                alt=""
+                height="16"
+                width="16"
+              ></img>
+            </div>
+          </div>
+          <div
+            className="sort-box-selection"
+            onClick={() => {
+              setSelect("High");
+              setpopup(!popup);
+            }}
+          >
+            <div className="sort-selection-name">
+              <div>Price-- High to Low</div>
+            </div>
+            <div className="sort-selection-box">
+              <img
+                src={
+                  select == "High"
+                    ? "https://rukminim1.flixcart.com/www/32/32/promos/28/04/2022/7c0ab296-0784-44d3-be1b-7aaa4c36d990.png?q=90"
+                    : "https://rukminim1.flixcart.com/www/32/32/promos/28/04/2022/7b036604-c843-4bb5-af27-7c675bf60f67.png?q=60"
+                }
+                alt=""
+                height="16"
+                width="16"
+              ></img>
+            </div>
+          </div>
+          <div
+            className="sort-box-selection"
+            onClick={() => {
+              setSelect("Newest");
+              setpopup(!popup);
+            }}
+          >
+            <div className="sort-selection-name">
+              <div>Newest Frist</div>
+            </div>
+            <div className="sort-selection-box">
+              <img
+                src={
+                  product == "Newest"
+                    ? "https://rukminim1.flixcart.com/www/32/32/promos/28/04/2022/7c0ab296-0784-44d3-be1b-7aaa4c36d990.png?q=90"
+                    : "https://rukminim1.flixcart.com/www/32/32/promos/28/04/2022/7b036604-c843-4bb5-af27-7c675bf60f67.png?q=60"
+                }
+                alt=""
+                height="16"
+                width="16"
+              ></img>
+            </div>
           </div>
         </div>
-        {/* sdfsdf */}
-        <div className="sort-box-selection" onClick={()=>{setSelect("Popularity") ;setpopup(!popup);}}>
-          <div className="sort-selection-name">
-            <div>Popularity</div>
-          </div>
-          <div className="sort-selection-box">
-            <img
-              src={select=="Popularity"?"https://rukminim1.flixcart.com/www/32/32/promos/28/04/2022/7c0ab296-0784-44d3-be1b-7aaa4c36d990.png?q=90"
-                :"https://rukminim1.flixcart.com/www/32/32/promos/28/04/2022/7b036604-c843-4bb5-af27-7c675bf60f67.png?q=60"}
-              alt=""
-              height="16"
-              width="16"
-            ></img>
-          </div>
-        </div>
-        <div className="sort-box-selection" onClick={()=>{setSelect("Low"); setpopup(!popup)}}>
-          <div className="sort-selection-name">
-            <div>Price-- Low to High</div>
-          </div>
-          <div className="sort-selection-box">
-            <img
-              src={select=="Low"?"https://rukminim1.flixcart.com/www/32/32/promos/28/04/2022/7c0ab296-0784-44d3-be1b-7aaa4c36d990.png?q=90"
-              :"https://rukminim1.flixcart.com/www/32/32/promos/28/04/2022/7b036604-c843-4bb5-af27-7c675bf60f67.png?q=60"}
-              alt=""
-              height="16"
-              width="16"
-            ></img>
-          </div>
-        </div>
-        <div className="sort-box-selection" onClick={()=>{setSelect("High");setpopup(!popup)}}>
-          <div className="sort-selection-name">
-            <div>Price-- High to Low</div>
-          </div>
-          <div className="sort-selection-box">
-            <img
-              src={select=="High"?"https://rukminim1.flixcart.com/www/32/32/promos/28/04/2022/7c0ab296-0784-44d3-be1b-7aaa4c36d990.png?q=90":"https://rukminim1.flixcart.com/www/32/32/promos/28/04/2022/7b036604-c843-4bb5-af27-7c675bf60f67.png?q=60"
-              }
-              alt=""
-              
-              height="16"
-              width="16"
-            ></img>
-          </div>
-        </div>
-                <div className="sort-box-selection" onClick={()=>{setSelect("Newest");setpopup(!popup)}}>
-          <div className="sort-selection-name">
-            <div>Newest Frist</div>
-          </div>
-          <div className="sort-selection-box">
-            <img
-              src={product=="Newest"?"https://rukminim1.flixcart.com/www/32/32/promos/28/04/2022/7c0ab296-0784-44d3-be1b-7aaa4c36d990.png?q=90"
-                :"https://rukminim1.flixcart.com/www/32/32/promos/28/04/2022/7b036604-c843-4bb5-af27-7c675bf60f67.png?q=60"}
-              alt=""
-              height="16"
-              width="16"
-            ></img>
-          </div>
-        </div>
-      </div>
-        )}
-        <div className="filter-box"></div>
-       {popup&&(<div className="overlay" onClick={()=>setpopup(false)}></div>)} 
+      )}
+      <div className="filter-box"></div>
+      {popup && <div className="overlay" onClick={() => setpopup(false)}></div>}
     </>
   );
 };
