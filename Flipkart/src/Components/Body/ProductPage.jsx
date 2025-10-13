@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "../Styles/StyleProductPage.css";
 
@@ -19,12 +19,20 @@ const ProductPage = () => {
     }
   }
 
+
   const location = useLocation();
-  const appliedFilters = location.state?.filters || {};
+  const [appliedFilters,setAppliedFilters] = useState({})
+ 
+  useEffect(()=>{
+    if(location.state?.filters){
+      setAppliedFilters(location.state.filters);
+    }
+  },[location.state])
 
 
 const [result,setResult]=useState([])
 useEffect(()=>{
+  // sorting 
    let sorted = [...product]
     if (select == "Relavance") {
     sorted=[...product]
@@ -42,22 +50,47 @@ useEffect(()=>{
     );
   }
  
- 
-  if (appliedFilters.brand?.length > 0) {
-    sorted = sorted.filter((x) => appliedFilters.brand.includes(x.name));
+ // Filtering
+  if (appliedFilters.Brand?.length > 0) {
+    sorted = sorted.filter((x) => appliedFilters.Brand.includes(x.Brand||x.name));
   }
+  if(appliedFilters["strapMaterial"]?.length>0){
+    sorted=sorted.filter((x)=> appliedFilters["strapMaterial"].includes(x["strapMaterial"]))
+   }
+  if(appliedFilters.Type?.length>0){
+    sorted=sorted.filter((x)=> appliedFilters.Type.includes(x.Type))
+  }
+  if(appliedFilters["Dial Shape"]?.length>0){
+    sorted=sorted.filter((x)=> appliedFilters["Dial Shape"].includes(x["Dial Shape"]))
+  }
+  if(appliedFilters.price?.length>0){
+    sorted=sorted.filter((x)=> {
+      const productPrice=parseFloat(x.price.replace(/,/g,""))
+      return appliedFilters.price.some((range)=>{
+        if(range.includes("500 and Below")) return productPrice <=500;
+        if(range.includes("501 - Rs. 2000")) return productPrice>=501 && productPrice<=2000;
+        if(range.includes("2001 - Rs. 5000")) return productPrice>=2001 && productPrice<=5000;
+        if(range.includes("5001 - Rs. 10000")) return productPrice>=5001 && productPrice<=10000;
+        return false
+      })
+    })
+  }
+
   setResult(sorted);
 },[product,select,appliedFilters]);
 
   useEffect(() => {
     fetchPic();
   }, []);
+  console.log(appliedFilters)
+
   return (
     <>
       <div className="watches">
         <div className="watches-header">
           <div className="watches-head">
-            <a href="" className="watch-back">
+            
+            <Link href="" className="watch-back" to="/">
               <svg
                 width="19"
                 height="16"
@@ -73,7 +106,7 @@ useEffect(()=>{
                   fill="none"
                 ></path>
               </svg>
-            </a>
+            </Link>
             <a href="" className="watch-logo">
               <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/logo_lite-ea579c.png" />
             </a>
@@ -170,7 +203,8 @@ useEffect(()=>{
               </div>
               <div className="watch-line"></div>
               <div className="watch-sort">
-                <Link  className="watch-sort-box" to={"/filterpage"}>
+                <Link  className="watch-sort-box" to="/filterpage"
+                  state={{ filters: appliedFilters }}>
                   <svg width="20" height="20" viewBox="0 0 256 256">
                     <path fill="none" d="M0 0h256v256H0z"></path>
                     <path
@@ -211,6 +245,7 @@ useEffect(()=>{
                     ></circle>
                   </svg>
                   <div className="watch-sort-box-text">Filter</div>
+                  
                 </Link>
               </div>
             </div>
@@ -246,8 +281,8 @@ useEffect(()=>{
       </div>
       <div className="watch-product">
         {result.map((x, index) => (
-          <>
-            <div className="watch-product-main" key={index}>
+          <div key={index}>
+            <div className="watch-product-main">
               {/* map */}
               <div className="product-watch">
                 <div className="watch-box">
@@ -328,7 +363,7 @@ useEffect(()=>{
               className="product-gap"
               style={{ display: index % 2 == 0 ? "block" : "none" }}
             ></div>
-          </>
+          </div>
         ))}
       </div>
       {/* sort */}

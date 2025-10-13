@@ -14,11 +14,10 @@ const Scroll = () => {
       console.error("Failed to load scroll data:", err)
     }
   }
-
   useEffect(() => {
     scrollImage()
   }, [])
-
+  
   useEffect(()=>{
     if(Alldata.length>0){
       const intervel=setInterval(()=>{

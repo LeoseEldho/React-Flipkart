@@ -242,14 +242,14 @@
     flex-wrap: wrap;
     padding-left: 16px;
     padding-right: 16px;
-    /* column-gap: 13px; */
+    column-gap: 12px;
 }
 .watch-product-main{
     /* padding: 8px 16px; */
     display: flex;
     flex-direction: row;
     align-items: stretch;
-    width: 45%;
+    width: 100%;
     padding-top: 8px;
     padding-bottom: 8px;
 }

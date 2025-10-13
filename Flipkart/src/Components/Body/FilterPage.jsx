@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "../Styles/StyleFilter.css";
-import { useNavigate } from "react-router-dom";
+import { Link, useLocation,useNavigate } from "react-router-dom";
 const FilterPage = () => {
   const [key, setkey] = useState([]);
   const [item, setitem] = useState(0);
+  const [btn,setBtn]=useState(false)
 
   async function fetchKey() {
     let res = await fetch("./ScrollData.json");
@@ -14,15 +15,17 @@ const FilterPage = () => {
   useEffect(() => {
     fetchKey();
   }, []);
-  
 
-  // Filter 
+const location = useLocation();
+const previousFilters = location.state?.filters || {};
+
+
 const filters = {
-    brand: [],
-    strapMaterial: [],
+    Brand: [],
+    "strap Material": [],
     strapColor: [],
-    dialShape: [],
-    type: [],
+    "Dial Shape": [],
+    Type: [],
     price: [],
     movement: [],
     occasion: [],
@@ -37,7 +40,9 @@ const filters = {
     availabilty: [],
     category: [],
   };
-  const [click, setClick] = useState(filters);
+console.log(btn)
+const [click, setClick] = useState({ ...filters, ...previousFilters});
+
 
 let filterProduct = (category, value) => {
   setClick((prev)=>{
@@ -52,13 +57,18 @@ let filterProduct = (category, value) => {
     };
   });
 };
- console.log("jj",click)
 
  let navigate=useNavigate()
 
  let filterApply=()=>{
   navigate("/productPage",{state:{filters:click}})
  }
+
+const clearFliter=()=>{
+  setClick(filters)
+  navigate("/productPage",{state:{filters}});
+}
+
   return (
     <div className="filter-container">
       <div className="filter-body">
@@ -68,8 +78,10 @@ let filterProduct = (category, value) => {
               <div className="filter-list-scroll">
                 {/* map  */}
                 {key.map((x, index) => {
+                  let clickCount=click[x.name]?.length||" "
+                  // clickCount>0?setBtn(true):setBtn(false)
                   return (
-                    <div
+                    <div 
                       className="filter-list-box-main"
                       key={index}
                       onClick={() => setitem(index)}
@@ -89,6 +101,7 @@ let filterProduct = (category, value) => {
                         >
                           {x.name}
                         </div>
+                       { <div className="filter-count" >{clickCount}</div>}
                       </div>
                     </div>
                   );
@@ -130,13 +143,12 @@ let filterProduct = (category, value) => {
                 </div>
                 {key[item]?.value.map((value, ind) => {
                   return (
-                    <>
+                    <div key={ind}>
                       <div className="filter-scroll-box">
                         <div className="filter-scroll-box-container">
                           <div
                             className="filter-scroll-box-container-icon"
-                            key={ind}
-                          >
+                            key={ind}>
                             <img
                               onClick={()=>filterProduct (key[item].name, value)}
                               src={click[key[item].name]?.includes(value)?"https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png"
@@ -148,7 +160,7 @@ let filterProduct = (category, value) => {
                           </div>
                         </div>
                       </div>
-                    </>
+                    </div>
                   );
                 })}
               </div>
@@ -158,7 +170,7 @@ let filterProduct = (category, value) => {
         </div>
       </div>
       <div className="filter">
-        <a className="filter-back">
+        <Link className="filter-back" to="/productPage" >
           <svg
             width="19"
             height="16"
@@ -174,10 +186,11 @@ let filterProduct = (category, value) => {
               fill="none"
             ></path>
           </svg>
-        </a>
+        </Link>
         <div className="filter-text">
           <h1>Filters</h1>
         </div>
+        <a className="filter-clear" onClick={clearFliter}><span>Clear Filters</span></a>
       </div>
       <div className="filter-apply">
         <div className="filter-apply-main">
@@ -194,5 +207,4 @@ let filterProduct = (category, value) => {
   );
 };
 
-sdfsdf
 export default FilterPage;

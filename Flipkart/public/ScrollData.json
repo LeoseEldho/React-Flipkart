@@ -306,7 +306,11 @@
       "off": "20%",
       "discount": "1,995",
       "price": "1,595",
-      "bankoff": "1,515"
+      "bankoff": "1,515",
+      "Brand":"CASIO",
+      "strapMaterial":"Metal",
+      "Dial Shape":"Rectangle",
+      "Type":"Digital"
     },
     {
       "image": "https://rukminim1.flixcart.com/image/332/440/xif0q/watch/k/j/y/1-lcs-4295-lois-caron-men-original-imahgmzcu9cp2eh9.jpeg?q=60&crop=false",
@@ -317,7 +321,11 @@
       "off": "86",
       "discount": "1,999",
       "price": "279",
-      "bankoff": "265"
+      "bankoff": "265",
+      "Brand":"LOIS CARON",
+      "strapMaterial":"Leather",
+      "Dial Shape":"Rectangle",
+      "Type":"Analog"
     },
     {
       "image": "https://rukminim1.flixcart.com/image/332/440/xif0q/watch/f/u/v/1-spm01-spinner-men-original-imahgfcfmrxyvzzd.jpeg?q=60&crop=false",
@@ -328,7 +336,11 @@
       "off": "85",
       "discount": "2,999",
       "price": "440",
-      "bankoff": "418"
+      "bankoff": "418",
+      "Brand":"Sprinner",
+      "strapMaterial":"Metal",
+      "Dial Shape":"Round",
+      "Type":"Analog"
     },
     {
       "image": "https://rukminim1.flixcart.com/image/332/440/xif0q/watch/q/7/2/-original-imahgfgegfsuehq3.jpeg?q=60&crop=false",
@@ -339,7 +351,11 @@
       "off": "74",
       "discount": "3,499",
       "price": "900",
-      "bankoff": "855"
+      "bankoff": "855",
+      "Brand":"Dressberry",
+      "strapMaterial":"Metal",
+      "Dial Shape":"Round",
+      "Type":"Analog"
     },
     {
       "image": "https://rukminim1.flixcart.com/image/332/440/xif0q/watch/l/r/1/1-girls-miss-ladies-nijamrut-women-original-imahg6ngen38qaj2.jpeg?q=60&crop=false",
@@ -350,7 +366,11 @@
       "off": "70",
       "discount": "999",
       "price": "299",
-      "bankoff": "284"
+      "bankoff": "284",
+      "Brand":"NIJAMRUT",
+      "strapMaterial":"Metal",
+      "Dial Shape":"Round",
+      "Type":"Analog"
     },
     {
       "image": "https://rukminim1.flixcart.com/image/332/440/xif0q/watch/r/d/h/1-cikoharf-loof-trader-men-women-original-imahg6yupwkhpnvg.jpeg?q=60&crop=false",
@@ -361,7 +381,11 @@
       "off": "65",
       "discount": "999",
       "price": "349",
-      "bankoff": "331"
+      "bankoff": "331",
+      "Brand":"zyrowear",
+      "strapMaterial":"Rubber",
+      "Dial Shape":"Rectangle",
+      "Type":"Smart Analog"
     },
     {
       "image": "https://rukminim1.flixcart.com/image/332/440/xif0q/watch/z/a/q/1-new-generation-2025-attractive-mat-black-color-dial-watch-for-original-imahggy9y8nyctjk.jpeg?q=60&crop=false",
@@ -372,7 +396,11 @@
       "off": "56",
       "discount": "999",
       "price": "436",
-      "bankoff": "414"
+      "bankoff": "414",
+      "Brand":"TAOSTRY",
+      "strapMaterial":"Fabric",
+      "Dial Shape":"Hexagonal",
+      "Type":"Analog"
     },
     {
       "image": "https://rukminim1.flixcart.com/image/332/440/xif0q/watch/s/c/g/-original-imahc7gf5hhcbzzy.jpeg?q=60&crop=false",
@@ -383,7 +411,11 @@
       "off": "49",
       "discount": "14,995",
       "price": "7,499",
-      "bankoff": "6,749"
+      "bankoff": "6,749",
+      "Brand":"GUESS",
+      "strapMaterial":"Rubber",
+      "Dial Shape":"Hexagonal",
+      "Type":"Analog"
     },
     {
       "image": "https://rukminim1.flixcart.com/image/332/440/xif0q/watch/y/i/7/1-abx4568-skb-abrexo-men-original-imahgdejbyshbxsz.jpeg?q=60&crop=false",
@@ -394,18 +426,26 @@
       "off": "87",
       "discount": "2,499",
       "price": "300",
-      "bankoff": "285"
+      "bankoff": "285",
+      "Brand":"ABREXO",
+      "strapMaterial":"Silicone",
+      "Dial Shape":"Hexagonal",
+      "Type":"Analog"
     },
     {
       "image": "https://rukminim1.flixcart.com/image/332/440/xif0q/watch/v/i/u/-original-imahfsz95vhgd6f3.jpeg?q=60&crop=false",
       "rating": "4.4",
       "users": "1L",
-      "name": "PETTER ENGLAND",
+      "name": "PETER ENGLAND",
       "details": "Analog Watch  - For Men PE000017B",
       "off": "49",
       "discount": "3,045",
       "price": "1,539",
-      "bankoff":"1,462"
+      "bankoff":"1,462",
+      "Brand":"PETER ENGLAND",
+      "strapMaterial":"Silicone",
+      "Dial Shape":"Round",
+      "Type":"Analog"
     },
     {
       "image": "https://rukminim1.flixcart.com/image/332/440/xif0q/watch/s/c/g/-original-imahc7gf5hhcbzzy.jpeg?q=60&crop=false",
@@ -416,7 +456,11 @@
       "off": "49",
       "discount": "14,995",
       "price": "7,499",
-      "bankoff": "6,749"
+      "bankoff": "6,749",
+      "Brand":"GUESS",
+      "strapMaterial":"Silicone",
+      "Dial Shape":"Ovel",
+      "Type":"Analog"
     },
     {
       "image": "https://rukminim1.flixcart.com/image/332/440/xif0q/watch/u/j/g/-original-imahftq3rzytf2ga.jpeg?q=60&crop=false",
@@ -426,14 +470,18 @@
       "details": "Youth ( F-91W-1Q ) Digital Watch  - For Men D002",
       "off": "12",
       "discount": "1,295",
-      "price": "1,1295",
-      "bankoff": "1,230"
+      "price": "1,295",
+      "bankoff": "1,230",
+      "Brand":"CASIO",
+      "strapMaterial":"Metal",
+      "Dial Shape":"Rectangle",
+      "Type":"Digital"
     }
   ],
   "filterKey":[
     {
       "name":"Brand",
-      "value":["Titan","Fastrack","CASIO","Allen Solly","PETTER ENGLAND","TOMMY HILFIGER"],
+      "value":["Titan","Fastrack","CASIO","Allen Solly","PETER ENGLAND","TOMMY HILFIGER"],
       "search":true
     },
     {
@@ -454,7 +502,7 @@
     },
     {
       "name":"Price",
-      "value":[""]
+      "value":["Rs. 500 and Below","Rs. 501 - Rs. 2000","Rs. 2001 - Rs. 5000","Rs. 5001 - Rs.10000"]
     },
     {
       "name":"Movement",
