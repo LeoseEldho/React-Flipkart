@@ -99,9 +99,7 @@ const Header = () => {
                     {" "}
                     Select delivery location{" "}
                   </div>
-                  <svg width="16" height="16">
-                    <path d="m6.627 3.749 5 5-5 5"></path>
-                  </svg>
+                  <svg width="16" height="16" fill="none" viewBox="0 0 17 17" ><path d="m6.627 3.749 5 5-5 5" stroke="#1254E7" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"></path></svg>
                 </div>
               </div>
             </div>
@@ -127,3 +125,4 @@ const Header = () => {
 };
 
 export default Header;
+//sdfjk

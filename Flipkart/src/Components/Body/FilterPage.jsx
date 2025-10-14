@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "../Styles/StyleFilter.css";
-import { Link, useLocation,useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { FilterContext } from "./Context/FilterContext";
+
 const FilterPage = () => {
+  const {filters,setFilters,sort,setSort}=useContext(FilterContext)
+
   const [key, setkey] = useState([]);
   const [item, setitem] = useState(0);
-  const [btn,setBtn]=useState(false)
 
   async function fetchKey() {
     let res = await fetch("./ScrollData.json");
@@ -14,13 +17,10 @@ const FilterPage = () => {
 
   useEffect(() => {
     fetchKey();
-  }, []);
+  }, []); 
 
-const location = useLocation();
-const previousFilters = location.state?.filters || {};
-
-
-const filters = {
+//filter  gvjhbjn
+  const defaultFilters = {
     Brand: [],
     "strap Material": [],
     strapColor: [],
@@ -40,35 +40,39 @@ const filters = {
     availabilty: [],
     category: [],
   };
-console.log(btn)
-const [click, setClick] = useState({ ...filters, ...previousFilters});
 
+  const [click, setClick] = useState({ ...defaultFilters, ...filters });
 
-let filterProduct = (category, value) => {
-  setClick((prev)=>{
-    const current=prev[category]||[];
-    const alreadySelected=current.includes(value);
+  const filterProduct = (category, value) => {
+    setClick((prev) => {
+      const current = prev[category] || [];
+      const alreadySelected = current.includes(value);
 
-    const updateCategory=alreadySelected?
-    current.filter((v)=> v !==value):[...current,value];
-    return{
-      ...prev,
-      [category]:updateCategory,
-    };
-  });
-};
+      const updateCategory = alreadySelected
+        ? current.filter((v) => v !== value)
+        : [...current, value];
 
- let navigate=useNavigate()
+      return {
+        ...prev,
+        [category]: updateCategory,
+      };
+    });
+  };
 
- let filterApply=()=>{
-  navigate("/productPage",{state:{filters:click}})
- }
+  const navigate=useNavigate()
+  //Apply filters 
+  const filterApply = () => {
+    setFilters(click)
+    navigate("/productPage")
+  };
 
-const clearFliter=()=>{
-  setClick(filters)
-  navigate("/productPage",{state:{filters}});
-}
-
+  // Clear filters 
+  const clearFliter = () => {
+    setClick(defaultFilters);
+    setFilters(defaultFilters)
+    setSort("Relavance")
+    navigate("/productPage")
+  }
   return (
     <div className="filter-container">
       <div className="filter-body">
@@ -79,7 +83,6 @@ const clearFliter=()=>{
                 {/* map  */}
                 {key.map((x, index) => {
                   let clickCount=click[x.name]?.length||" "
-                  // clickCount>0?setBtn(true):setBtn(false)
                   return (
                     <div 
                       className="filter-list-box-main"
@@ -112,7 +115,7 @@ const clearFliter=()=>{
           </div>
           <div className="filter-filter">
             <div className="filter-filter-container">
-              {/* search   */}
+              {/* search */}
               <div
                 className="filter-filter-search"
                 style={{ display: key[item]?.search == true ? "flex" : "none" }}
@@ -190,7 +193,7 @@ const clearFliter=()=>{
         <div className="filter-text">
           <h1>Filters</h1>
         </div>
-        <a className="filter-clear" onClick={clearFliter}><span>Clear Filters</span></a>
+        {Object.values(click).some((arr)=>arr.length>0) &&<a className="filter-clear" onClick={clearFliter}><span>Clear Filters</span></a>}
       </div>
       <div className="filter-apply">
         <div className="filter-apply-main">

@@ -15,7 +15,6 @@ const BodySection = () => {
     fetchPhone();
   });
 
-  console.log(phone);
   return (
     <>
       <div className="Add">

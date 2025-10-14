@@ -1,12 +1,16 @@
-import React, { useEffect, useMemo, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "../Styles/StyleProductPage.css";
+import { FilterContext } from "./Context/FilterContext";
 
 const ProductPage = () => {
+  const {filters,sort: contextSort,setSort}=useContext(FilterContext)
   const [pic, setPic] = useState([]);
   const [product, setproduct] = useState([]);
   const [popup, setpopup] = useState(false);
-  const [select, setSelect] = useState("Relavance");
+  const [select, setSelect] = useState(contextSort||"Relavance");
+  const [appliedFilters,setAppliedFilters] = useState({})
+  const [result,setResult]=useState([])
 
   async function fetchPic() {
     try {
@@ -19,18 +23,10 @@ const ProductPage = () => {
     }
   }
 
+useEffect(()=>{
+  setAppliedFilters(filters);
+},[filters])
 
-  const location = useLocation();
-  const [appliedFilters,setAppliedFilters] = useState({})
- 
-  useEffect(()=>{
-    if(location.state?.filters){
-      setAppliedFilters(location.state.filters);
-    }
-  },[location.state])
-
-
-const [result,setResult]=useState([])
 useEffect(()=>{
   // sorting 
    let sorted = [...product]
@@ -54,8 +50,8 @@ useEffect(()=>{
   if (appliedFilters.Brand?.length > 0) {
     sorted = sorted.filter((x) => appliedFilters.Brand.includes(x.Brand||x.name));
   }
-  if(appliedFilters["strapMaterial"]?.length>0){
-    sorted=sorted.filter((x)=> appliedFilters["strapMaterial"].includes(x["strapMaterial"]))
+  if(appliedFilters["strap Material"]?.length>0){
+    sorted=sorted.filter((x)=> appliedFilters["strap Material"].includes(x["strap Material"]))
    }
   if(appliedFilters.Type?.length>0){
     sorted=sorted.filter((x)=> appliedFilters.Type.includes(x.Type))
@@ -82,8 +78,12 @@ useEffect(()=>{
   useEffect(() => {
     fetchPic();
   }, []);
-  console.log(appliedFilters)
-
+//sdfsdf
+const handleSortChange = (selectedSort) => {
+  setSelect(selectedSort);
+  setSort(selectedSort)
+  setpopup(false);
+};
   return (
     <>
       <div className="watches">
@@ -181,7 +181,7 @@ useEffect(()=>{
             </a>
           </div>
         </div>
-        {/* sort    */}
+        {/* sort  Area*/}
         <div className="sort-filter">
           <div className="sort-filter-container">
             <div className="sort-filter-container-box">
@@ -245,7 +245,6 @@ useEffect(()=>{
                     ></circle>
                   </svg>
                   <div className="watch-sort-box-text">Filter</div>
-                  
                 </Link>
               </div>
             </div>
@@ -255,6 +254,7 @@ useEffect(()=>{
           <div className="sticker-scroll">
             <div className="sticker-scroll-box">
               <div className="sticker-container">
+                {/* Map */}
                 {pic.map((x,ind) => {
                   return (
                     <div className="sticker-main-box" key={ind}>
@@ -366,7 +366,7 @@ useEffect(()=>{
           </div>
         ))}
       </div>
-      {/* sort */}
+      {/* sort  */}
       {popup && (
         <div className="sort-box">
           <div className="sort-box-text">SORT BY</div>
@@ -418,8 +418,7 @@ useEffect(()=>{
           <div
             className="sort-box-selection"
             onClick={() => {
-              setSelect("Low");
-              setpopup(!popup);
+              handleSortChange("Low");
             }}
           >
             <div className="sort-selection-name">
@@ -441,8 +440,7 @@ useEffect(()=>{
           <div
             className="sort-box-selection"
             onClick={() => {
-              setSelect("High");
-              setpopup(!popup);
+              handleSortChange('High')
             }}
           >
             <div className="sort-selection-name">
@@ -464,8 +462,7 @@ useEffect(()=>{
           <div
             className="sort-box-selection"
             onClick={() => {
-              setSelect("Newest");
-              setpopup(!popup);
+              handleSortChange('Newest')
             }}
           >
             <div className="sort-selection-name">
