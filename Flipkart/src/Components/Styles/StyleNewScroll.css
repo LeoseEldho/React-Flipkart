@@ -1,0 +1,61 @@
+.new-scroll{
+    display: none;
+}
+@media screen and (min-width:768px){
+body{
+    background-color: rgb(241, 243, 246);
+}
+.new-scroll{
+    display: grid;
+    height: calc(100%- 16px);
+    z-index: 10;
+    grid-column: 1/13;
+    order: 1;
+    margin: 8px 16px 16px 16px;
+    background-color: black;
+}
+.main-newscroll{
+    background:#fff;
+    min-height: 126px;
+    overflow-x: scroll;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    scrollbar-width: none;
+}
+.main-newscroll a{
+    padding: 16px 16px 16px 16px;
+    text-align: center;
+    height: 133.6px;
+}
+.main-newscroll a:first-child,.main-newscroll a:last-child{
+    padding-left: 24px;
+}
+.newscroll-pic{
+    display: flex;
+    width: 64px;
+    height: 64px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 13px 4px 13px;
+    position: relative;
+}
+.newscroll-pic img{
+    opacity: 1;
+    max-width: 100%;
+    max-height: 100%;
+}
+.newscroll-text{
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: font3;
+}
+.main-newscroll-line{
+    background-color: rgb(234, 234, 234);
+    height: 1px;
+}
+}

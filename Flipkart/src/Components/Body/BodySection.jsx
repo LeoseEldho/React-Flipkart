@@ -31,6 +31,9 @@ const BodySection = () => {
             <div className="phone-texts">
               <div>Suggested For You</div>
             </div>
+            <div className="phone-texts-tb">
+              <div>Best deals on smartphones</div>
+            </div>
             <div className="phone-icon">
               <div>
                 <svg width="17" height="17" viewBox="0 0 16 16" fill="none">
@@ -105,6 +108,18 @@ const BodySection = () => {
           </div>
         </div>
       </div>
+              <div className="phone-cards">
+          {/* map */}
+          <div className="phone-card-main">
+            <img src="https://rukminim1.flixcart.com/fk-p-flap/640/340/image/c5d0453a8ad30643.jpg?q=60" alt="" />
+          </div>
+          <div className="phone-card-main">
+            <img src="https://rukminim1.flixcart.com/fk-p-flap/640/340/image/c5d0453a8ad30643.jpg?q=60" alt="" />
+          </div>
+          <div className="phone-card-main">
+            <img src="https://rukminim1.flixcart.com/fk-p-flap/640/340/image/c5d0453a8ad30643.jpg?q=60" alt="" />
+          </div>
+        </div>
       <div className="mobile">
         <div className="mobile-main">
           <div className="mobile-top">

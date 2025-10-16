@@ -14,7 +14,7 @@
   font-family: "font4";
   src: url("/Font/Poppins-Regular.ttf") format("truetype");
 }
-
+/* bhgnbh  fgvhbjk */
 *{
   padding: 0%;
   margin: 0%;
@@ -29,6 +29,7 @@
   flex-direction: column;
   width: 100%;
   position: relative;
+  overflow: visible;
 }
 .header-top{
   height: 48px;
@@ -46,7 +47,7 @@
   top: 0;
   width: 100%;
   justify-content: space-between;
-  z-index: 9999;
+  z-index: 999;
 }
 .header-logo{
   display: flex;
@@ -150,16 +151,18 @@
     margin-left: 6px;
 }
 .header-search{
-    background-color: rgba(255,255,255,0);
+     background-color: white;
     flex-direction: column;
     align-items: stretch;
     display: flex;
+    z-index: 100000;
       position:sticky;
      top: 0px;
-      z-index: 999;
 }
 .header-bottom{
+  overflow: visible;
   height: 100%;
+  position: relative;
 }
 .header-search-main{
   display: flex;
@@ -235,6 +238,7 @@
 }
 .header-top{
   height: 67.2px;
+  background-color: white!important;
 }
 .header-container{
   padding: 12px;
@@ -305,4 +309,7 @@
 .header-login{
   padding: 0 6px;
 }
+
 }
+
+/* hjbjm   8i7u6y  gyjhgyhgy */

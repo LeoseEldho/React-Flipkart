@@ -108,3 +108,51 @@
      width: 10px;
     background-color: #e0e0e0;
 }
+.scroll-section-two{
+    display: none;
+}
+@media screen and (min-width:768px){
+
+.scroll-section{
+  order: 2;
+  height: calc(100% - 16px);
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 16px;
+}
+.scroll-section-sub{
+  display: flex;
+}
+.scroll-card-img{
+    aspect-ratio: 211/35;
+}
+.scroll-card-img img{
+    aspect-ratio: 211/35;
+    border-radius: unset;
+    height: 100%;
+}
+.body-section{
+    margin-top: 8px;
+    max-width: 996px;
+    column-gap: 12px;
+    width: 100%;
+}
+.body-section-main{
+    margin: 0 16px;
+}
+.scroll-card-main{
+    margin: unset;
+}
+.scroll-section-two{
+    height: 100%;
+    background-color: #FFFFFF;
+    grid-column: 1/13;
+    order: 1;
+    flex-direction: column;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+}
+.scroll-section{
+    display: none;
+}
+}

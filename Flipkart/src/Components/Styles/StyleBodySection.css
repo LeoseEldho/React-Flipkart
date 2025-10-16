@@ -517,3 +517,95 @@
     letter-spacing: -.01px;
     color: #000;
 }
+.phone-texts-tb {
+    display: none;
+}
+.phone-cards{
+    display: none;
+}
+@media screen and (min-width:768px) {
+.Add{
+    display: none;
+}
+.phone{
+    margin-top: 16px;
+}
+.phone-icon{
+    display: none;
+}
+.phone-text{
+    padding: 16px 12px;
+}
+.phone-texts{
+    display: none;
+}
+.phone-texts-tb {
+    display: block;
+}
+.phone-texts-tb div{
+    display: inline;
+    white-space: nowrap;
+    max-width: 100%;
+    font-size: 22px;
+    line-height: 24px ;
+    letter-spacing: -.01px;
+    font-family: font3;
+}
+/* sfewsdfwsdfw */
+.phone-area{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: unset;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    overflow-y: hidden;
+    margin: unset;
+    padding: 0 6px 12px 6px;
+}
+.phone-container{
+    margin: 8px;
+    width: 172px;
+    flex: 1 1 0%;
+    flex-basis: unset;
+}
+.phone-container a{
+    margin:unset;
+    padding: 12px 24px;
+    height: 184px;
+}
+.phone-pic div{
+    aspect-ratio: 1/1;
+    border-radius: 2px;
+}
+.phone-pic-image img{
+    aspect-ratio: 1/1;
+    height: unset;
+}
+/*   asdwqasdqasd     sdf */
+.phone-cards{
+    display: flex;
+    height: 100%;
+    background-color: rgb(255,255,255);
+    flex-flow: wrap;
+    order: 6;
+    grid-column: 1/13;
+    margin-top: 25px;
+    width: 100%;
+}
+.phone-card-main{
+    flex-basis: 33.33333%;
+    max-width: 33.33333%;
+    flex-shrink: 0;
+    flex-grow: 0;
+    margin: 0 4px;
+    aspect-ratio: 41/22;
+    display: flex;
+}
+.phone-card-main img{
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+    aspect-ratio: 41/22;
+}
+}
+
