@@ -2,15 +2,16 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import "../Styles/StyleProductPage.css";
 import { FilterContext } from "./Context/FilterContext";
+import ProductpageTab from "./ProductpageTab";
 
 const ProductPage = () => {
-  const {filters,sort: contextSort,setSort}=useContext(FilterContext)
+  const { filters, sort: contextSort, setSort } = useContext(FilterContext);
   const [pic, setPic] = useState([]);
   const [product, setproduct] = useState([]);
   const [popup, setpopup] = useState(false);
-  const [select, setSelect] = useState(contextSort||"Relavance");
-  const [appliedFilters,setAppliedFilters] = useState({})
-  const [result,setResult]=useState([])
+  const [select, setSelect] = useState(contextSort || "Relavance");
+  const [appliedFilters, setAppliedFilters] = useState({});
+  const [result, setResult] = useState([]);
 
   async function fetchPic() {
     try {
@@ -23,73 +24,82 @@ const ProductPage = () => {
     }
   }
 
-useEffect(()=>{
-  setAppliedFilters(filters);
-},[filters])
+  useEffect(() => {
+    setAppliedFilters(filters);
+  }, [filters]);
 
-useEffect(()=>{
-  // sorting 
-   let sorted = [...product]
+  useEffect(() => {
+    // sorting
+    let sorted = [...product];
     if (select == "Relavance") {
-    sorted=[...product]
-  } else if (select == "Low") {
-    sorted = [...product].sort(
-      (x, y) => x.price.replace(/,/g, "") - y.price.replace(/,/g, "")
-    );
-  } else if (select == "High") {
-    sorted = [...product].sort(
-      (x, y) => y.price.replace(/,/g, "") - x.price.replace(/,/g, "")
-    );
-  } else if (select == "Popularity") {
-    sorted = [...product].sort(
-      (x, y) => parseFloat(y.rating) - parseFloat(x.rating)
-    );
-  }
- 
- // Filtering
-  if (appliedFilters.Brand?.length > 0) {
-    sorted = sorted.filter((x) => appliedFilters.Brand.includes(x.Brand||x.name));
-  }
-  if(appliedFilters["strap Material"]?.length>0){
-    sorted=sorted.filter((x)=> appliedFilters["strap Material"].includes(x["strap Material"]))
-   }
-  if(appliedFilters.Type?.length>0){
-    sorted=sorted.filter((x)=> appliedFilters.Type.includes(x.Type))
-  }
-  if(appliedFilters["Dial Shape"]?.length>0){
-    sorted=sorted.filter((x)=> appliedFilters["Dial Shape"].includes(x["Dial Shape"]))
-  }
-  if(appliedFilters.price?.length>0){
-    sorted=sorted.filter((x)=> {
-      const productPrice=parseFloat(x.price.replace(/,/g,""))
-      return appliedFilters.price.some((range)=>{
-        if(range.includes("500 and Below")) return productPrice <=500;
-        if(range.includes("501 - Rs. 2000")) return productPrice>=501 && productPrice<=2000;
-        if(range.includes("2001 - Rs. 5000")) return productPrice>=2001 && productPrice<=5000;
-        if(range.includes("5001 - Rs. 10000")) return productPrice>=5001 && productPrice<=10000;
-        return false
-      })
-    })
-  }
+      sorted = [...product];
+    } else if (select == "Low") {
+      sorted = [...product].sort(
+        (x, y) => x.price.replace(/,/g, "") - y.price.replace(/,/g, "")
+      );
+    } else if (select == "High") {
+      sorted = [...product].sort(
+        (x, y) => y.price.replace(/,/g, "") - x.price.replace(/,/g, "")
+      );
+    } else if (select == "Popularity") {
+      sorted = [...product].sort(
+        (x, y) => parseFloat(y.rating) - parseFloat(x.rating)
+      );
+    }
 
-  setResult(sorted);
-},[product,select,appliedFilters]);
+    // Filtering
+    if (appliedFilters.Brand?.length > 0) {
+      sorted = sorted.filter((x) =>
+        appliedFilters.Brand.includes(x.Brand || x.name)
+      );
+    }
+    if (appliedFilters["strap Material"]?.length > 0) {
+      sorted = sorted.filter((x) =>
+        appliedFilters["strap Material"].includes(x["strap Material"])
+      );
+    }
+    if (appliedFilters.Type?.length > 0) {
+      sorted = sorted.filter((x) => appliedFilters.Type.includes(x.Type));
+    }
+    if (appliedFilters["Dial Shape"]?.length > 0) {
+      sorted = sorted.filter((x) =>
+        appliedFilters["Dial Shape"].includes(x["Dial Shape"])
+      );
+    }
+    if (appliedFilters.price?.length > 0) {
+      sorted = sorted.filter((x) => {
+        const productPrice = parseFloat(x.price.replace(/,/g, ""));
+        return appliedFilters.price.some((range) => {
+          if (range.includes("500 and Below")) return productPrice <= 500;
+          if (range.includes("501 - Rs. 2000"))
+            return productPrice >= 501 && productPrice <= 2000;
+          if (range.includes("2001 - Rs. 5000"))
+            return productPrice >= 2001 && productPrice <= 5000;
+          if (range.includes("5001 - Rs. 10000"))
+            return productPrice >= 5001 && productPrice <= 10000;
+          return false;
+        });
+      });
+    }
+
+    setResult(sorted);
+  }, [product, select, appliedFilters]);
 
   useEffect(() => {
     fetchPic();
   }, []);
-//sdfsdf
-const handleSortChange = (selectedSort) => {
-  setSelect(selectedSort);
-  setSort(selectedSort)
-  setpopup(false);
-};
+  //sdfhjb
+  const handleSortChange = (selectedSort) => {
+    setSelect(selectedSort);
+    setSort(selectedSort);
+    setpopup(false);
+  };
   return (
     <>
+    <div className="watch-mobile">
       <div className="watches">
         <div className="watches-header">
           <div className="watches-head">
-            
             <Link href="" className="watch-back" to="/">
               <svg
                 width="19"
@@ -203,8 +213,11 @@ const handleSortChange = (selectedSort) => {
               </div>
               <div className="watch-line"></div>
               <div className="watch-sort">
-                <Link  className="watch-sort-box" to="/filterpage"
-                  state={{ filters: appliedFilters }}>
+                <Link
+                  className="watch-sort-box"
+                  to="/filterpage"
+                  state={{ filters: appliedFilters }}
+                >
                   <svg width="20" height="20" viewBox="0 0 256 256">
                     <path fill="none" d="M0 0h256v256H0z"></path>
                     <path
@@ -255,7 +268,7 @@ const handleSortChange = (selectedSort) => {
             <div className="sticker-scroll-box">
               <div className="sticker-container">
                 {/* Map */}
-                {pic.map((x,ind) => {
+                {pic.map((x, ind) => {
                   return (
                     <div className="sticker-main-box" key={ind}>
                       <div className="sticker-pic">
@@ -281,7 +294,7 @@ const handleSortChange = (selectedSort) => {
       </div>
       <div className="watch-product">
         {result.map((x, index) => (
-          <div key={index}>
+          <div key={index} className="watch-flex">
             <div className="watch-product-main">
               {/* map */}
               <div className="product-watch">
@@ -440,7 +453,7 @@ const handleSortChange = (selectedSort) => {
           <div
             className="sort-box-selection"
             onClick={() => {
-              handleSortChange('High')
+              handleSortChange("High");
             }}
           >
             <div className="sort-selection-name">
@@ -462,7 +475,7 @@ const handleSortChange = (selectedSort) => {
           <div
             className="sort-box-selection"
             onClick={() => {
-              handleSortChange('Newest')
+              handleSortChange("Newest");
             }}
           >
             <div className="sort-selection-name">
@@ -485,6 +498,8 @@ const handleSortChange = (selectedSort) => {
       )}
       <div className="filter-box"></div>
       {popup && <div className="overlay" onClick={() => setpopup(false)}></div>}
+    </div>
+    <ProductpageTab/>
     </>
   );
 };

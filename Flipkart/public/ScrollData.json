@@ -126,42 +126,48 @@
       "rating": "4.4",
       "brand": "OPPO F27 Pro+ (Midnight Navy, 128 GB) 8 GB RAM",
       "price": "18,772",
-      "og": "32,999"
+      "og": "32,999",
+      "name": "OPPO K13x 5G"
     },
     {
       "image": "https://rukminim1.flixcart.com/image/260/340/xif0q/mobile/v/z/z/-original-imahbxpfagg54gcw.jpeg?q=60",
       "rating": "4.3",
       "brand": "vivo Y19 5G (Majestic Green, 64 GB) 4 GB RAM",
       "price": "10,499",
-      "og": "13,999"
+      "og": "13,999",
+      "name": "Moto Edge 60 Pro"
     },
     {
       "image": "https://rukminim1.flixcart.com/image/260/340/xif0q/mobile/j/n/1/-original-imah9gtmya9qhqse.jpeg?q=60",
       "rating": "4.4",
       "brand": "realme P3x 5G (Midnight Blue, 128 GB) 6 GB RAM",
       "price": "10,999",
-      "og": "16,999"
+      "og": "16,999",
+      "name": "realme P3x 5G"
     },
     {
       "image": "https://rukminim1.flixcart.com/image/260/340/xif0q/mobile/y/l/1/-original-imahbfd4cgh53kmh.jpeg?q=60",
       "rating": "4.5",
-      "brand": "OPPO K13 5G with 7000mAh and 80W SUPERVOOC Charger In-The-Box (Prism Black, 128 GB) 8 GB RAM",
+      "brand": "OPPO K13 5G with 7000mAh and 80W SUPERVOOC Charger In-The-Box (Prism Black, 128 GB) 8 GB RAM" ,
       "price": "17,999",
-      "og": "22,999"
+      "og": "22,999",
+      "name": "OPPO K13 5G " 
     },
     {
       "image": "https://rukminim1.flixcart.com/image/260/340/xif0q/mobile/s/v/h/-original-imahd57g62dfepkh.jpeg?q=60",
       "rating": "4.5",
       "brand": "vivo T4 Ultra 5G (Phoenix Gold, 256 GB) 8 GB RAM",
       "price": "35,999",
-      "og": "40,999"
+      "og": "40,999",
+      "name": "vivo T4 Ultra 5G"
     },
     {
       "image": "https://rukminim1.flixcart.com/image/260/340/xif0q/mobile/t/c/y/-original-imahaff2rbuykhcw.jpeg?q=60",
       "rating": "4.4",
       "brand": "realme P3 5G (Space Silver, 128 GB) 6 GB RAM",
       "price": "15,999",
-      "og": "19,999"
+      "og": "19,999",
+      "name": "realme P3 5G"
     }
   ],
   "imageBox": [
@@ -622,6 +628,29 @@
     },
     {
       "image":"https://rukminim1.flixcart.com/fk-p-flap/2020/340/image/45348602ad4b2259.jpg?q=60"
+    }
+  ],
+  "categories":[
+    {
+      "name":"Electonics"
+    },
+    {
+      "name":"TVs & Appliances"
+    },
+    {
+      "name":"Men"
+    },
+    {
+      "name":"Women"
+    },
+    {
+      "name":"Baby & Kids"
+    },
+    {
+      "name":"Home & Furniture"
+    },
+    {
+      "name":"Sports,Books & More"
     }
   ]
 }

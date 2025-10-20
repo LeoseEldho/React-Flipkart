@@ -289,9 +289,6 @@
   display: flex;
   align-items: center;
 }
-.header-shop img{
-  margin-right: 8px;
-}
 .header-option{
   display: flex;
   align-items: center;
@@ -309,7 +306,30 @@
 .header-login{
   padding: 0 6px;
 }
-
+.header-cart-list img{
+  margin-left: 8px;
+  margin-right: 8px;
+}
+#header-login-icon-svg{
+  margin-left: 8px;
+  margin-right: 0;
+}
+.header-shop img{
+  margin-right: 8px;
+}
+.header-option-svg{
+  width: 24px;
+  height: 24px;
+  margin: 0;
+}
+.header-shop-box{
+  padding: 0 6px;
+  display: flex;
+  align-items: center;
+}
+.header-login-text{
+  margin: 0;
+}
 }
 
-/* hjbjm   8i7u6y  gyjhgyhgy */
+/* hjbjm   8i7u6y   sdfjik */

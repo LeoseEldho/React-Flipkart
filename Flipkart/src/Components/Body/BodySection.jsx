@@ -106,6 +106,31 @@ const BodySection = () => {
               );
             })}
           </div>
+            <div className="phone-tab">
+            {
+              phone.map((x)=>{
+                return(
+              <div className="phone-tab-main">
+                <div className="phone-tab-main-box">
+                  <a href="">
+                    <div className="phonetab-box">
+                      <div className="phonetab-pic">
+                        <img src={x.image} alt="" />
+                      </div>
+
+                      <div className="phonetab-details">
+                        <div className="phonetab-name">{x.name}</div>
+                        <div className="phonetab-price">From ₹{x.price}*</div>
+                    </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+                )
+              })
+            }
+            </div>
+
         </div>
       </div>
               <div className="phone-cards">
@@ -172,10 +197,10 @@ const BodySection = () => {
       </div>
 
     </>
-
   );
 };
 
 export default BodySection;
 
 
+//sdhfujksdf    hgyjfhvh

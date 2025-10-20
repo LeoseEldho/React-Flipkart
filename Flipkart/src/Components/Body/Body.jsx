@@ -27,5 +27,4 @@ const Body = () => {
     </>
   )
 }
-//tfjghgyjh sdhfukj hgyjhgy
 export default Body

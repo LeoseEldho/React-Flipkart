@@ -14,45 +14,45 @@ const Footer = () => {
     <div className="footer">
       <div>
       <div className='footer-box-text'>ABOUT</div>
-      <a href="">Contact Us</a>
-      <a href="">About Us</a>
-      <a href="">Careers</a>
-      <a href="">Flipkart Stories</a>
-      <a href="">Press</a>
-      <a href="">Corporate Information</a>
+      <a className='footer-links' href="">Contact Us</a>
+      <a href="" className='footer-links'>About Us</a>
+      <a className='footer-links' href="">Careers</a>
+      <a className='footer-links' href="">Flipkart Stories</a>
+      <a className='footer-links' href="">Press</a>
+      <a className='footer-links' href="">Corporate Information</a>
       </div>
       <div>
         <div className='footer-box-text'>GROUP COMPANIES</div>
-        <a href="">Myntra</a>
-        <a href="">Cleartrip</a>
-        <a href="">Shopsy</a>
+        <a className='footer-links' href="">Myntra</a>
+        <a className='footer-links' href="">Cleartrip</a>
+        <a className='footer-links' href="">Shopsy</a>
       </div>
       <div>
         <div className='footer-box-text'>HELP</div>
-        <a href="">Payments</a>
-        <a href="">Shipping</a>
-        <a href="">Cancellation & Returns</a>
-        <a href="">FAQ</a>
+        <a className='footer-links' href="">Payments</a>
+        <a className='footer-links' href="">Shipping</a>
+        <a className='footer-links' href="">Cancellation & Returns</a>
+        <a className='footer-links' href="">FAQ</a>
       </div>
-      <div>
+      <div className='consumer-policy'>
         <div className='footer-box-text'>CONSUMER POLICY</div>
-        <a href="">Cancellation & Returns</a>
-        <a href="">Terms Of Use</a>
-        <a href="">Security</a>
-        <a href="">Privacy</a>
-        <a href="">Sitemap</a>
-        <a href="">Grievance Redressal</a>
-        <a href="">EPR Compliance</a>
+        <a className='footer-links' href="">Cancellation & Returns</a>
+        <a className='footer-links' href="">Terms Of Use</a>
+        <a className='footer-links' href="">Security</a>
+        <a className='footer-links' href="">Privacy</a>
+        <a className='footer-links' href="">Sitemap</a>
+        <a className='footer-links' href="">Grievance Redressal</a>
+        <a className='footer-links' href="">EPR Compliance</a>
       </div>
       <div className='footer-boxText'>
         <div className='footer-box-text'>Mail US:</div>
         <div className="footer-box-text-box">
-          <p className='footer-box-text'>Flipkart Internet Private Limited,</p>
-          <p className='footer-box-text'>Buildings Alyssa, Begonia &</p>
-          <p className='footer-box-text'>Clove Embassy Tech Village,</p>
-          <p className='footer-box-text'>Outer Ring Road, Devarabeesanahalli Village,</p>
-          <p className='footer-box-text'></p>Bengaluru, 560103,
-          <p className='footer-box-text'>Karnataka, India</p>
+          <p className='footer-links'>Flipkart Internet Private Limited,</p>
+          <p className='footer-links'>Buildings Alyssa, Begonia &</p>
+          <p className='footer-links'>Clove Embassy Tech Village,</p>
+          <p className='footer-links'>Outer Ring Road, Devarabeesanahalli Village,</p>
+          <p className='footer-links'>Bengaluru, 560103,</p>
+          <p className='footer-links'>Karnataka, India</p>
         </div>
         <div className='footer-box-text'>Social:</div>
          <div className="footer-box-logo">
@@ -62,16 +62,16 @@ const Footer = () => {
           <div className="footer-box-logo-item"><img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/InstagramLogo-43f906.svg" alt="Instagram" width="20" height="20"/></div>
          </div>
       </div>
-      <div className='footerboxText'>
+      <div className='footer-boxText'>
         <div className="footer-box-text">Registered Office Address</div>
-        <p className='footer-box-text'>Flipkart Internet Privete Limited,</p>
-        <p className='footer-box-text'>Buldings Alyssa,Begonia &</p>
-        <p className='footer-box-text'>Clove Embassy Tech Village</p>
-        <p className='footer-box-text'>Outer Ring Road, Devarabeesanahalli Village,</p>
-        <p className='footer-box-text'>Bengaluru, 560103,</p>
-        <p className='footer-box-text'>Karnataka, India</p>
-        <p className='footer-box-text'>CIN : U51109KA2012PTC066107</p>
-        <p className='footer-box-text'>Telephone: <a className='phno' href="">044-45614700/044-67415800</a></p>
+        <p className='footer-links'>Flipkart Internet Privete Limited,</p>
+        <p className='footer-links'>Buldings Alyssa,Begonia &</p>
+        <p className='footer-links'>Clove Embassy Tech Village</p>
+        <p className='footer-links'>Outer Ring Road, Devarabeesanahalli Village,</p>
+        <p className='footer-links'>Bengaluru, 560103,</p>
+        <p className='footer-links'>Karnataka, India</p>
+        <p className='footer-links'>CIN : U51109KA2012PTC066107</p>
+        <p className='footer-links'>Telephone: <a className='phno' href="">044-45614700 <div>/</div> 044-67415800</a></p>
       </div>
     </div>
     <div className="footer-logo">

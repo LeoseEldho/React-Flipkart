@@ -41,9 +41,3 @@ const NewScroll = () => {
 };
 
 export default NewScroll;
-//tgftrfhg  rtfghg   fgnhtfh
-
-ryfghyhj   txgfghf
-
-tygjhgjh//rtfg  tgfgh
-jhbvm
