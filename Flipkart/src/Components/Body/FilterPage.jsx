@@ -4,10 +4,12 @@ import { Link, useNavigate } from "react-router-dom";
 import { FilterContext } from "./Context/FilterContext";
 
 const FilterPage = () => {
-  const {filters,setFilters,sort,setSort}=useContext(FilterContext)
+  const {filters,setFilters,setSort,defaultFilters}=useContext(FilterContext)
 
   const [key, setkey] = useState([]);
   const [item, setitem] = useState(0);
+// console.log("key",key[item])
+// console.log(item,"item")
 
   async function fetchKey() {
     let res = await fetch("./ScrollData.json");
@@ -19,28 +21,7 @@ const FilterPage = () => {
     fetchKey();
   }, []); 
 
-//filter  sdfewsdfew
-  const defaultFilters = {
-    Brand: [],
-    "strap Material": [],
-    strapColor: [],
-    "Dial Shape": [],
-    Type: [],
-    price: [],
-    movement: [],
-    occasion: [],
-    customerrating: [],
-    discount: [],
-    fassured: [],
-    features: [],
-    offers: [],
-    collections: [],
-    newarrivals: [],
-    idealfor: [],
-    availabilty: [],
-    category: [],
-  };
-
+//filter    sdfew
   const [click, setClick] = useState({ ...defaultFilters, ...filters });
 
   const filterProduct = (category, value) => {
@@ -208,6 +189,6 @@ const FilterPage = () => {
       </div>
     </div>
   );
-};
+};// jhbk
 
 export default FilterPage;

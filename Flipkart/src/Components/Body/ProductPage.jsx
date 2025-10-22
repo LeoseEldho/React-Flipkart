@@ -5,12 +5,11 @@ import { FilterContext } from "./Context/FilterContext";
 import ProductpageTab from "./ProductpageTab";
 
 const ProductPage = () => {
-  const { filters, sort: contextSort, setSort } = useContext(FilterContext);
+  const { filters, sort: contextSort, setSort} = useContext(FilterContext);
   const [pic, setPic] = useState([]);
   const [product, setproduct] = useState([]);
   const [popup, setpopup] = useState(false);
   const [select, setSelect] = useState(contextSort || "Relavance");
-  const [appliedFilters, setAppliedFilters] = useState({});
   const [result, setResult] = useState([]);
 
   async function fetchPic() {
@@ -23,13 +22,9 @@ const ProductPage = () => {
       console.log(error);
     }
   }
-
+//  huksdbf  sdf
   useEffect(() => {
-    setAppliedFilters(filters);
-  }, [filters]);
-
-  useEffect(() => {
-    // sorting
+    // sorting 
     let sorted = [...product];
     if (select == "Relavance") {
       sorted = [...product];
@@ -47,29 +42,29 @@ const ProductPage = () => {
       );
     }
 
-    // Filtering
-    if (appliedFilters.Brand?.length > 0) {
+    // Filtering   sdfew
+    if (filters.Brand?.length > 0) {
       sorted = sorted.filter((x) =>
-        appliedFilters.Brand.includes(x.Brand || x.name)
+        filters.Brand.includes(x.Brand || x.name)
       );
     }
-    if (appliedFilters["strap Material"]?.length > 0) {
+    if (filters["strap Material"]?.length > 0) {
       sorted = sorted.filter((x) =>
-        appliedFilters["strap Material"].includes(x["strap Material"])
+        filters["strap Material"].includes(x["strap Material"])
       );
     }
-    if (appliedFilters.Type?.length > 0) {
-      sorted = sorted.filter((x) => appliedFilters.Type.includes(x.Type));
+    if (filters.Type?.length > 0) {
+      sorted = sorted.filter((x) => filters.Type.includes(x.Type));
     }
-    if (appliedFilters["Dial Shape"]?.length > 0) {
+    if (filters["Dial Shape"]?.length > 0) {
       sorted = sorted.filter((x) =>
-        appliedFilters["Dial Shape"].includes(x["Dial Shape"])
+        filters["Dial Shape"].includes(x["Dial Shape"])
       );
     }
-    if (appliedFilters.price?.length > 0) {
+    if (filters.price?.length > 0) {
       sorted = sorted.filter((x) => {
         const productPrice = parseFloat(x.price.replace(/,/g, ""));
-        return appliedFilters.price.some((range) => {
+        return filters.price.some((range) => {
           if (range.includes("500 and Below")) return productPrice <= 500;
           if (range.includes("501 - Rs. 2000"))
             return productPrice >= 501 && productPrice <= 2000;
@@ -83,7 +78,7 @@ const ProductPage = () => {
     }
 
     setResult(sorted);
-  }, [product, select, appliedFilters]);
+  }, [product, select, filters]);
 
   useEffect(() => {
     fetchPic();
@@ -216,7 +211,7 @@ const ProductPage = () => {
                 <Link
                   className="watch-sort-box"
                   to="/filterpage"
-                  state={{ filters: appliedFilters }}
+                  
                 >
                   <svg width="20" height="20" viewBox="0 0 256 256">
                     <path fill="none" d="M0 0h256v256H0z"></path>
@@ -503,5 +498,5 @@ const ProductPage = () => {
     </>
   );
 };
-
+//fgvbhj
 export default ProductPage;

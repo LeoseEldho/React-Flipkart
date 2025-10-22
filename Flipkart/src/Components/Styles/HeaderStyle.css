@@ -14,7 +14,23 @@
   font-family: "font4";
   src: url("/Font/Poppins-Regular.ttf") format("truetype");
 }
-/* bhgnbh  fgvhbjk */
+@font-face {
+  font-family: "font5";
+  src: url("/Font/Inter-ExtraBold.woff2");
+}
+@font-face {
+  font-family: "font6";
+  src: url("/Font/roboto-medium.woff2");
+}
+@font-face {
+  font-family: "font7";
+  src: url("/Font/roboto-regular.woff2");
+}
+@font-face {
+  font-family: "font8";
+  src: url("/Font/roboto-regular\ \(2\).woff2");
+}
+/* sdfewsdfwsdf  sdfesdf */
 *{
   padding: 0%;
   margin: 0%;

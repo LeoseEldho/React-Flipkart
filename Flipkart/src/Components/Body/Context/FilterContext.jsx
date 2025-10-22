@@ -3,12 +3,33 @@ import { createContext, useState } from "react";
 export const FilterContext = createContext();
 
 export const FilterProvider = ({ children }) => {
-  const [filters, setFilters] = useState({});
+    const defaultFilters = {
+      Brand: [],
+      "strap Material": [],
+      strapColor: [],
+      "Dial Shape": [],
+      Type: [],
+      price: [],
+      movement: [],
+      occasion: [],
+      customerrating: [],
+      discount: [],
+      fassured: [],
+      features: [],
+      offers: [],
+      collections: [],
+      newarrivals: [],
+      idealfor: [],
+      availabilty: [],
+      category: [],
+    };
+  const [filters, setFilters] = useState(defaultFilters);
   const [sort, setSort] = useState("Relavance");
 
   return (
-    <FilterContext.Provider value={{ filters, setFilters, sort, setSort }}>
+    <FilterContext.Provider value={{ filters,defaultFilters, setFilters, sort, setSort }}>
       {children}
     </FilterContext.Provider>
   );
 };
+//sdfewdf

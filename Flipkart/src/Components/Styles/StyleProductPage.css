@@ -552,7 +552,7 @@
     padding-bottom: 24px;
     position: fixed;
     bottom: 0;
-    width: 375px;
+    width: 100%;
     z-index: 12;
 }
 .sort-box-text{

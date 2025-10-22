@@ -309,7 +309,7 @@
       "users": "2k",
       "name": "CASIO",
       "details": "Vintage Black Dial Silver Stainless Steel Band Digital Watch  - For Men & Women D338 ( A159WA-N1DF)",
-      "off": "20%",
+      "off": "20",
       "discount": "1,995",
       "price": "1,595",
       "bankoff": "1,515",
@@ -651,6 +651,26 @@
     },
     {
       "name":"Sports,Books & More"
+    }
+  ],
+  "sort":[
+    {
+        "name":"Sort By"
+    },
+    {
+      "name":"Relevance"
+    },
+    {
+      "name":"Popularity"
+    },
+    {
+      "name":"Price -- Low to High"
+    },
+    {
+      "name":"Price -- High to Low"
+    },
+    {
+      "name":"Newest First"
     }
   ]
 }
