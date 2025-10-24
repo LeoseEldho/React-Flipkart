@@ -8,8 +8,6 @@ const FilterPage = () => {
 
   const [key, setkey] = useState([]);
   const [item, setitem] = useState(0);
-// console.log("key",key[item])
-// console.log(item,"item")
 
   async function fetchKey() {
     let res = await fetch("./ScrollData.json");
@@ -21,7 +19,7 @@ const FilterPage = () => {
     fetchKey();
   }, []); 
 
-//filter    sdfew
+//filter    
   const [click, setClick] = useState({ ...defaultFilters, ...filters });
 
   const filterProduct = (category, value) => {
@@ -189,6 +187,6 @@ const FilterPage = () => {
       </div>
     </div>
   );
-};// jhbk
+};
 
 export default FilterPage;

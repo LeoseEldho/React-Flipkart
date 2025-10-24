@@ -22,7 +22,7 @@ const ProductPage = () => {
       console.log(error);
     }
   }
-//  huksdbf  sdf
+
   useEffect(() => {
     // sorting 
     let sorted = [...product];
@@ -42,7 +42,7 @@ const ProductPage = () => {
       );
     }
 
-    // Filtering   sdfew
+    // Filter
     if (filters.Brand?.length > 0) {
       sorted = sorted.filter((x) =>
         filters.Brand.includes(x.Brand || x.name)
@@ -76,14 +76,13 @@ const ProductPage = () => {
         });
       });
     }
-
     setResult(sorted);
   }, [product, select, filters]);
 
   useEffect(() => {
     fetchPic();
   }, []);
-  //sdfhjb
+
   const handleSortChange = (selectedSort) => {
     setSelect(selectedSort);
     setSort(selectedSort);
@@ -211,7 +210,6 @@ const ProductPage = () => {
                 <Link
                   className="watch-sort-box"
                   to="/filterpage"
-                  
                 >
                   <svg width="20" height="20" viewBox="0 0 256 256">
                     <path fill="none" d="M0 0h256v256H0z"></path>
@@ -498,5 +496,5 @@ const ProductPage = () => {
     </>
   );
 };
-//fgvbhj
+
 export default ProductPage;

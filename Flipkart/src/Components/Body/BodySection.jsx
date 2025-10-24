@@ -201,6 +201,3 @@ const BodySection = () => {
 };
 
 export default BodySection;
-
-
-//sdhfujksdf    hgyjfhvh

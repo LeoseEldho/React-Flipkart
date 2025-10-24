@@ -44,7 +44,6 @@
     transform: translateZ(0px);
     overflow-y: auto;
     flex-shrink: 1;
-    /* background-color: rgb(241, 243, 246); */
     flex-grow: 1;
     flex-direction: column;
     scrollbar-width: none;

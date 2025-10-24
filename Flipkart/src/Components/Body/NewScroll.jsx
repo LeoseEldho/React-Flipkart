@@ -13,8 +13,6 @@ const NewScroll = () => {
     scrollFetch();
   }, []);
 
-  console.log(scroll);
-  //hukj   sfewsdfsdf
   return (
     <div className="new-scroll">
          <div className="main-newscroll">

@@ -1,39 +1,56 @@
-import React, { use, useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "../Styles/StyleBodySection.css";
 import { FilterContext } from "./Context/FilterContext";
 const ProductpageTab = () => {
-  const{filters,setFilters}=useContext(FilterContext)
+  const{filters,setFilters,sort,setSort}=useContext(FilterContext)
   const [item, setItem] = useState([]);
   const [name, setName] = useState([]);
-  const [sort, setSort] = useState([]);
+  const [sortItem, setSortItem] = useState([]);
   const [product, setProduct] = useState([]);
-  const [click,setClick]=useState(true)
+  const [result,setResult]=useState([])
+  const [popup,setPopup]=useState([])
 
- 
+
   async function fetchCategorie() {
     let res = await fetch("./ScrollData.json");
     let data = await res.json();
     setItem(data.categories);
     setName(data.filterKey);
-    setSort(data.sort);
+    setSortItem(data.sort);
     setProduct(data.ProductPagee);
   }
-  let allData=[...name]
+useEffect(()=>{
+    let allData = [...product]
       if (filters.Brand?.length > 0) {
       allData = allData.filter((x) =>
-        filters.Brand.includes(x.Brand || x.name)
-      );
+        filters.Brand.includes(x.Brand)
+      )
     }
-//   dfgre  dfgredfgre
-  let filterLogic=(x,y)=>{
+    console.log(filters)
+
+  let sortData=[...allData]
+  if(sort==="Popularity"){
+    sortData.sort((a,b)=> b.rating.replace(/,/g, "")-a.rating.replace(/,/g, ""))
+  }
+  if(sort==="Price -- Low to High"){
+    sortData.sort((a,b)=> a.price.replace(/,/g, "")-b.price.replace(/,/g, ""))
+  }
+  if(sort==="Price -- High to Low"){
+    sortData.sort((a,b)=> b.price.replace(/,/g, "")-a.price.replace(/,/g, ""))
+  }
+
+  setResult(sortData)
+},[filters,product,sort]) 
+
+let filterLogic=(x,y)=>{
+    console.log(y)
     setFilters((prevfilters)=>{
     let current=prevfilters[x.name]||[]
     let already=current.includes(y)
     let updateValue=
-    already?current.filter((x)=>!x==y):
+    already?current.filter((val)=>val!==y):
     [...current,y]
     return{...prevfilters,[x.name]:updateValue}
-
     })
   }
 
@@ -271,7 +288,7 @@ const ProductpageTab = () => {
                     <span>?</span>
                   </div>
                 </section>
-                {/* To Map Box  */}
+                {/* To Map Box */}
                 {name.map((x, index) => {
                   return (
                     <section className="tab-filter-box" key={index}>
@@ -304,7 +321,7 @@ const ProductpageTab = () => {
                           </svg>
                           <input type="text" placeholder="Search Brand" />
                         </div>
-                        {/* Map   */}
+                        {/* Map */}
                         {x.value.map((y, ind) => {
                           
                           return (
@@ -313,10 +330,10 @@ const ProductpageTab = () => {
                                 className="tab-filter-product-name"
                                 htmlFor=""
                               >
-                                <div className="tab-checkbox" onClick={()=>{setClick(!click); filterLogic(x,y)}} >
-                                 {click ? 
-                                 <img src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png"></img>:
-                                 <img src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png"></img>}
+                                <div className="tab-checkbox" onClick={ ()=>filterLogic(x,y)}>
+                                
+                                 <img src={filters[x.name]?.includes(y)?"https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png":"https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png"}/>
+                                
                                 </div>
                                 <div className="tab-assured-pic">{y}</div>
                               </label>
@@ -405,15 +422,15 @@ const ProductpageTab = () => {
                   Showing 1- 40 of 3,89,908 results for "Wrist Watch"
                 </div>
                 <div className="tab-product-heading-sort">
-                  {sort.map((x) => {
-                    return <span className="tab-product-sort">{x.name}</span>;
+                  {sortItem.map((x) => {
+                    return <span className="tab-product-sort" onClick={()=>setSort(x.name)}>{x.name}</span>;
                   })}
                 </div>
               </div>
             </div>
             <div className="tab-product-box">
               {/* Product to Map */}
-              {product.map((x,ind) => {
+              {result.map((x,ind) => {
                 return (
                   <div className="tab-product-box-main-box" key={ind}>
                     <div className="tab-product-box-main">
@@ -485,8 +502,5 @@ const ProductpageTab = () => {
     </div>
   );
 };
-
-
-
 
 export default ProductpageTab;

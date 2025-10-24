@@ -129,9 +129,6 @@ ease-in-out;
     height: 67.17px;
     object-fit: cover;
 }
-
-
-
 .product-items-text{
     font-size: 10px;
     line-height: 14px;
@@ -174,5 +171,4 @@ ease-in-out;
 .product-scroll{
     display: none;
 }
-/* ghkjhu */
 }

@@ -97,7 +97,6 @@
     overflow: hidden;
     transform: translateY(0px);
 }
-/* sdfesdfe */
 .sort-filter-container{
     background-color: rgb(255, 255, 255);
     flex-direction: column;
@@ -202,7 +201,6 @@
      border-radius: 4px;
     width: 100%;
 }
-/* sdfewsdfewsdfew */
 .sticker-pic{
     display: flex;
     justify-content: space-between;
@@ -248,7 +246,6 @@
 .watch-product{
     display: flex;
     align-items: stretch;
-    /* width: 375px; */
     width: 100%;
     flex: 1;
     justify-content: space-between;
@@ -275,7 +272,6 @@
     position: relative;
 }
 .watch-box{
-    /* width: 165.5px; */
     width: 100%;
     flex-direction: column;
     align-items: flex-start;
@@ -312,8 +308,6 @@
 .watch-item-pic{
     display: flex;
     flex: 1;
-    /* width: 165.5px; */
-    /* height: 220.115px; */
     width: 100%;
     height: 100%;
     justify-content: flex-start;
@@ -365,7 +359,6 @@
     letter-spacing: 0.01px;
     display: inline;
 }
-
 .watch-rating-star{
     display: flex;
     position: relative;
@@ -457,7 +450,6 @@
     color: rgb(75, 181, 80);
     display: inline;
 }
-
 .watch-item-priceog{
     margin-right: 4px;
     display: flex;
@@ -543,7 +535,7 @@
     display: flex;
     display: none;
 }
-/* sort Section */
+/*-------------- sort Section --------------*/
 .sort-box{
     display: flex;
     flex-direction: column;
@@ -612,7 +604,4 @@
     opacity: 1;
     background-color: rgb(0, 0, 0,0.5);
     z-index: 10;
-}
-.filter-box{
-    
 }

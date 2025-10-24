@@ -106,5 +106,5 @@ const Product = () => {
     </Link>
   );
 };
-//s dfewesdf
+
 export default Product;

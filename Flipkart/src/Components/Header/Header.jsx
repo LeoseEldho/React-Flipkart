@@ -1,6 +1,6 @@
 import React from "react";
 import "../Styles/HeaderStyle.css";
-// sdfsdf
+
 const Header = () => {
   return (
     <div className="header">
@@ -125,6 +125,3 @@ const Header = () => {
 };
 
 export default Header;
-//sdfsdf   sdfsdfw
-
-//sdjknsf
