@@ -901,13 +901,62 @@
 .tab-filter-section-title{
     padding: 16px 16px 12px 16px;
     border: 1px solid #f0f0f0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     font-size: 18px;
     width: 100%;
     font-weight: 700;
     font-family: font3;
+}
+.tab-filter-section-title-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.tab-filter-section-title-clear{
+    color: #2874f0;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.4;
+    font-family: font3;
+}
+.clear-items{
+    position: relative;
+    max-height: 104px;
+    overflow: hidden;
+    margin: 8px 0 0 -4px;
+}
+.clear-item-data{
+    display: inline-block;
+    font-size: 12px;
+    background-color: #e0e0e0;
+    box-shadow: 0 2px 4px 0 hsla(0, 0%, 100%, .5);
+    border-radius: 3px;
+    margin: 2px 4px ;
+    overflow: hidden;
+    max-width: 200px;
+    padding: 8px;
+    font-weight: 400;
+    color: #212121;
+    line-height: 1.4;
+}
+.clear-x{
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 400;
+    color:#212121;
+    line-height: 1.4;
+}
+.clear-name{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    vertical-align: bottom;
+    margin-left: 8px;
+    max-width: 90%;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 400;
+    color: #212121;
+    line-height: 1.4;
 }
 .tab-categories{
     font-size: 14px;
@@ -1209,8 +1258,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* margin: -16px;
-    padding: -16px; */
+    margin: -16px;
+    padding: 16px;
 }
 .tab-filter-name-product{
     font-size: 14px;
@@ -1228,6 +1277,7 @@
 }
 .tab-filter-product{
     margin: 7px 0;
+    /* display: none; */
 }
 .tab-filter-product-search{
     margin-bottom: 7px;

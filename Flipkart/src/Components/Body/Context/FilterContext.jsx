@@ -6,7 +6,7 @@ export const FilterProvider = ({ children }) => {
     const defaultFilters = {
       Brand: [],
       "strap Material": [],
-      strapColor: [],
+      "strap Color": [],
       "Dial Shape": [],
       Type: [],
       price: [],
@@ -32,3 +32,6 @@ export const FilterProvider = ({ children }) => {
     </FilterContext.Provider>
   );
 };
+
+
+//tsdfjlkn

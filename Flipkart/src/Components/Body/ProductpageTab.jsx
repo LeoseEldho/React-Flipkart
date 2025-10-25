@@ -2,14 +2,14 @@ import React, { useContext, useEffect, useState } from "react";
 import "../Styles/StyleBodySection.css";
 import { FilterContext } from "./Context/FilterContext";
 const ProductpageTab = () => {
-  const{filters,setFilters,sort,setSort}=useContext(FilterContext)
+  const { filters, setFilters, sort, setSort } = useContext(FilterContext);
   const [item, setItem] = useState([]);
   const [name, setName] = useState([]);
   const [sortItem, setSortItem] = useState([]);
   const [product, setProduct] = useState([]);
-  const [result,setResult]=useState([])
-  const [popup,setPopup]=useState([])
-
+  const [result, setResult] = useState([]);
+  const [popup, setPopup] = useState([]);
+  const [clearName, setClearName] = useState([]);
 
   async function fetchCategorie() {
     let res = await fetch("./ScrollData.json");
@@ -19,40 +19,97 @@ const ProductpageTab = () => {
     setSortItem(data.sort);
     setProduct(data.ProductPagee);
   }
-useEffect(()=>{
-    let allData = [...product]
-      if (filters.Brand?.length > 0) {
-      allData = allData.filter((x) =>
-        filters.Brand.includes(x.Brand)
-      )
+  useEffect(() => {
+    let allData = [...product];
+    if (filters.Brand?.length > 0) {
+      allData = allData.filter((x) => filters.Brand.includes(x.Brand));
     }
-    console.log(filters)
 
-  let sortData=[...allData]
-  if(sort==="Popularity"){
-    sortData.sort((a,b)=> b.rating.replace(/,/g, "")-a.rating.replace(/,/g, ""))
-  }
-  if(sort==="Price -- Low to High"){
-    sortData.sort((a,b)=> a.price.replace(/,/g, "")-b.price.replace(/,/g, ""))
-  }
-  if(sort==="Price -- High to Low"){
-    sortData.sort((a,b)=> b.price.replace(/,/g, "")-a.price.replace(/,/g, ""))
-  }
+    if (filters["strap Material"]?.length > 0) {
+      allData = allData.filter((x) =>
+        filters["strap Material"].includes(x["strap Material"])
+      );
+    }
+    if (filters["Dial Shape"]?.length > 0) {
+      allData = allData.filter((x) =>
+        filters["Dial Shape"].includes(x["Dial Shape"])
+      );
+    }
+    if (filters["strap Color"]?.length > 0) {
+      allData = allData.filter((x) =>
+        filters["strap Color"].includes(x["strap Color"])
+      );
+    }
+    if (filters.Type?.length > 0) {
+      allData = allData.filter((x) => filters.Type.includes(x.Type));
+    }
 
-  setResult(sortData)
-},[filters,product,sort]) 
+    let sortData = [...allData];
+    if (sort === "Popularity") {
+      sortData.sort(
+        (a, b) => b.rating.replace(/,/g, "") - a.rating.replace(/,/g, "")
+      );
+    }
+    if (sort === "Price -- Low to High") {
+      sortData.sort(
+        (a, b) => a.price.replace(/,/g, "") - b.price.replace(/,/g, "")
+      );
+    }
+    if (sort === "Price -- High to Low") {
+      sortData.sort(
+        (a, b) => b.price.replace(/,/g, "") - a.price.replace(/,/g, "")
+      );
+    }
 
-let filterLogic=(x,y)=>{
-    console.log(y)
-    setFilters((prevfilters)=>{
-    let current=prevfilters[x.name]||[]
-    let already=current.includes(y)
-    let updateValue=
-    already?current.filter((val)=>val!==y):
-    [...current,y]
-    return{...prevfilters,[x.name]:updateValue}
-    })
-  }
+    setResult(sortData);
+  }, [filters, product, sort]);
+
+  let ClearBtn = (valueToRemove) => {
+    setClearName((prev) => prev.filter((item) => item !== valueToRemove));
+
+    setFilters((prev) => {
+      const updatedFilters = {};
+
+      for (let key in prev) {
+        const values = Array.isArray(prev[key]) ? prev[key] : [prev[key]];
+        const filteredValues = values.filter((val) => val !== valueToRemove);
+
+        if (filteredValues.length > 0) {
+          updatedFilters[key] = filteredValues;
+        }
+      }
+
+      return updatedFilters;
+    });
+  };
+
+  let clearAllFilters = () => {
+    setFilters({});
+    setClearName([]);
+    setPopup([]);
+  };
+
+  let btnClicked = (x) => {
+    setPopup((prevpopup) => {
+      if (prevpopup.includes(x)) {
+        return prevpopup.filter((a) => a !== x);
+      } else {
+        return [...prevpopup, x];
+      }
+    });
+  };
+
+  let filterLogic = (x, y) => {
+    setClearName((prevclearName) => [...prevclearName, y]);
+    setFilters((prevfilters) => {
+      let current = prevfilters[x.name] || [];
+      let already = current.includes(y);
+      let updateValue = already
+        ? current.filter((val) => val !== y)
+        : [...current, y];
+      return { ...prevfilters, [x.name]: updateValue };
+    });
+  };
 
   useEffect(() => {
     fetchCategorie();
@@ -185,7 +242,34 @@ let filterLogic=(x,y)=>{
             <div className="tab-filter-main">
               <div className="tab-filter-sections">
                 <section className="tab-filter-section-title">
-                  <span>Filters</span>
+                  <div className="tab-filter-section-title-box">
+                    <span>Filters</span>
+                    {clearName.length > 0 && (
+                      <div
+                        className="tab-filter-section-title-clear"
+                        onClick={clearAllFilters}
+                      >
+                        CLEAR ALL
+                      </div>
+                    )}
+                  </div>
+                  {clearName.length > 0 && (
+                    <div className="clear-items">
+                      {clearName.map((x, ind) => {
+                        return (
+                          <div className="clear-item-data" key={ind}>
+                            <div
+                              className="clear-x"
+                              onClick={() => ClearBtn(x)}
+                            >
+                              X
+                            </div>
+                            <div className="clear-name">{x} </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  )}
                 </section>
                 <div className="tab-categories">
                   <div className="tab-filter-box">
@@ -272,7 +356,6 @@ let filterLogic=(x,y)=>{
                 </section>
                 <section className="tab-assured">
                   <label htmlFor="" className="tab-assured-text">
-         
                     <div className="tab-checkbox">
                       <img src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png"></img>
                     </div>
@@ -288,11 +371,14 @@ let filterLogic=(x,y)=>{
                     <span>?</span>
                   </div>
                 </section>
-                {/* To Map Box */}
+                {/* To Map Box  */}
                 {name.map((x, index) => {
                   return (
                     <section className="tab-filter-box" key={index}>
-                      <div className="tab-filter-name">
+                      <div
+                        className="tab-filter-name"
+                        onClick={() => btnClicked(x.name)}
+                      >
                         <div className="tab-filter-name-product">{x.name}</div>
                         <svg
                           width="16"
@@ -306,41 +392,54 @@ let filterLogic=(x,y)=>{
                           ></path>
                         </svg>
                       </div>
-                      <div className="tab-filter-product" >
-                        <div className="tab-filter-product-search">
-                          <svg
-                            width="20"
-                            height="20"
-                            viewBox="0 0 17 18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <g fill="#2874F1" fillRule="evenodd">
-                              <path d="m11.618 9.897l4.225 4.212c.092.092.101.232.02.313l-1.465 1.46c-.081.081-.221.072-.314-.02l-4.216-4.203"></path>
-                              <path d="m6.486 10.901c-2.42 0-4.381-1.956-4.381-4.368 0-2.413 1.961-4.369 4.381-4.369 2.42 0 4.381 1.956 4.381 4.369 0 2.413-1.961 4.368-4.381 4.368m0-10.835c-3.582 0-6.486 2.895-6.486 6.467 0 3.572 2.904 6.467 6.486 6.467 3.582 0 6.486-2.895 6.486-6.467 0-3.572-2.904-6.467-6.486-6.467"></path>
-                            </g>
-                          </svg>
-                          <input type="text" placeholder="Search Brand" />
-                        </div>
-                        {/* Map */}
-                        {x.value.map((y, ind) => {
-                          
-                          return (
-                            <div className="tab-filter-product-name" key={ind}>
-                              <label
-                                className="tab-filter-product-name"
-                                htmlFor=""
+                      {popup.includes(x.name) && (
+                        <div className="tab-filter-product">
+                          {x.search == true && (
+                            <div className="tab-filter-product-search">
+                              <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 17 18"
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <div className="tab-checkbox" onClick={ ()=>filterLogic(x,y)}>
-                                
-                                 <img src={filters[x.name]?.includes(y)?"https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png":"https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png"}/>
-                                
-                                </div>
-                                <div className="tab-assured-pic">{y}</div>
-                              </label>
+                                <g fill="#2874F1" fillRule="evenodd">
+                                  <path d="m11.618 9.897l4.225 4.212c.092.092.101.232.02.313l-1.465 1.46c-.081.081-.221.072-.314-.02l-4.216-4.203"></path>
+                                  <path d="m6.486 10.901c-2.42 0-4.381-1.956-4.381-4.368 0-2.413 1.961-4.369 4.381-4.369 2.42 0 4.381 1.956 4.381 4.369 0 2.413-1.961 4.368-4.381 4.368m0-10.835c-3.582 0-6.486 2.895-6.486 6.467 0 3.572 2.904 6.467 6.486 6.467 3.582 0 6.486-2.895 6.486-6.467 0-3.572-2.904-6.467-6.486-6.467"></path>
+                                </g>
+                              </svg>
+                              <input type="text" placeholder="Search Brand" />
                             </div>
-                          );
-                        })}
-                      </div>
+                          )}
+                          {/* Map */}
+                          {x.value.map((y, ind) => {
+                            return (
+                              <div
+                                className="tab-filter-product-name"
+                                key={ind}
+                              >
+                                <label
+                                  className="tab-filter-product-name"
+                                  htmlFor=""
+                                >
+                                  <div
+                                    className="tab-checkbox"
+                                    onClick={() => filterLogic(x, y)}
+                                  >
+                                    <img
+                                      src={
+                                        filters[x.name]?.includes(y)
+                                          ? "https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png"
+                                          : "https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png"
+                                      }
+                                    />
+                                  </div>
+                                  <div className="tab-assured-pic">{y}</div>
+                                </label>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      )}
                     </section>
                   );
                 })}
@@ -423,14 +522,21 @@ let filterLogic=(x,y)=>{
                 </div>
                 <div className="tab-product-heading-sort">
                   {sortItem.map((x) => {
-                    return <span className="tab-product-sort" onClick={()=>setSort(x.name)}>{x.name}</span>;
+                    return (
+                      <span
+                        className="tab-product-sort"
+                        onClick={() => setSort(x.name)}
+                      >
+                        {x.name}
+                      </span>
+                    );
                   })}
                 </div>
               </div>
             </div>
             <div className="tab-product-box">
               {/* Product to Map */}
-              {result.map((x,ind) => {
+              {result.map((x, ind) => {
                 return (
                   <div className="tab-product-box-main-box" key={ind}>
                     <div className="tab-product-box-main">

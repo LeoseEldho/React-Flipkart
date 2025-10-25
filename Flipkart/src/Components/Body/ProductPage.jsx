@@ -24,7 +24,7 @@ const ProductPage = () => {
   }
 
   useEffect(() => {
-    // sorting 
+    // sorting   
     let sorted = [...product];
     if (select == "Relavance") {
       sorted = [...product];
@@ -47,6 +47,10 @@ const ProductPage = () => {
       sorted = sorted.filter((x) =>
         filters.Brand.includes(x.Brand || x.name)
       );
+    }
+    if(filters["strap Color"]?.length>0){
+      sorted=sorted.filter((x)=>
+      filters["strap Color"].includes(x["strap Color"]))
     }
     if (filters["strap Material"]?.length > 0) {
       sorted = sorted.filter((x) =>
