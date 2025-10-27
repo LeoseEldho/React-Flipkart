@@ -1,7 +1,5 @@
 import { createContext, useState } from "react";
-
 export const FilterContext = createContext();
-
 export const FilterProvider = ({ children }) => {
     const defaultFilters = {
       Brand: [],
@@ -9,7 +7,7 @@ export const FilterProvider = ({ children }) => {
       "strap Color": [],
       "Dial Shape": [],
       Type: [],
-      price: [],
+      Price: [],
       movement: [],
       occasion: [],
       customerrating: [],
@@ -34,4 +32,4 @@ export const FilterProvider = ({ children }) => {
 };
 
 
-//tsdfjlkn
+//sdfewsdfewsew  ; 

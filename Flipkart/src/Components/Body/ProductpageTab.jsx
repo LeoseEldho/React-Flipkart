@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import "../Styles/StyleBodySection.css";
 import { FilterContext } from "./Context/FilterContext";
+import PriceSlider from "./PriceSlider";
 const ProductpageTab = () => {
   const { filters, setFilters, sort, setSort } = useContext(FilterContext);
   const [item, setItem] = useState([]);
@@ -10,6 +11,9 @@ const ProductpageTab = () => {
   const [result, setResult] = useState([]);
   const [popup, setPopup] = useState([]);
   const [clearName, setClearName] = useState([]);
+  const [price, setPrice] = useState([]);
+  const [minPrice,setminPrice]=useState(" ")
+  const [maxPrice,setMaxPrice]=useState("20000+")
 
   async function fetchCategorie() {
     let res = await fetch("./ScrollData.json");
@@ -18,7 +22,9 @@ const ProductpageTab = () => {
     setName(data.filterKey);
     setSortItem(data.sort);
     setProduct(data.ProductPagee);
+    setPrice(data.priceBox);
   }
+//xcvsxcvxcvs
   useEffect(() => {
     let allData = [...product];
     if (filters.Brand?.length > 0) {
@@ -43,7 +49,14 @@ const ProductpageTab = () => {
     if (filters.Type?.length > 0) {
       allData = allData.filter((x) => filters.Type.includes(x.Type));
     }
+    let min=parseFloat(minPrice)||0;
+    let max=maxPrice==="20000+" ? Infinity: parseFloat(maxPrice)
 
+     allData=allData.filter((x)=>{
+      const priceValue=parseFloat(x.Price.replace(/,/g,""))
+      return priceValue>=min && priceValue<=max
+    })
+//sfsdfewsdewdfewsdf wer32wer32
     let sortData = [...allData];
     if (sort === "Popularity") {
       sortData.sort(
@@ -52,17 +65,17 @@ const ProductpageTab = () => {
     }
     if (sort === "Price -- Low to High") {
       sortData.sort(
-        (a, b) => a.price.replace(/,/g, "") - b.price.replace(/,/g, "")
+        (a, b) => a.Price.replace(/,/g, "") - b.Price.replace(/,/g, "")
       );
     }
     if (sort === "Price -- High to Low") {
       sortData.sort(
-        (a, b) => b.price.replace(/,/g, "") - a.price.replace(/,/g, "")
+        (a, b) => b.Price.replace(/,/g, "") - a.Price.replace(/,/g, "")
       );
     }
 
     setResult(sortData);
-  }, [filters, product, sort]);
+  }, [filters, product, sort,minPrice,maxPrice]);
 
   let ClearBtn = (valueToRemove) => {
     setClearName((prev) => prev.filter((item) => item !== valueToRemove));
@@ -82,6 +95,8 @@ const ProductpageTab = () => {
       return updatedFilters;
     });
   };
+
+//sdfewsdfwsdf
 
   let clearAllFilters = () => {
     setFilters({});
@@ -214,9 +229,9 @@ const ProductpageTab = () => {
       <div className="tab-categories">
         <div className="tab-categories-item">
           {/* map */}
-          {item.map((x) => {
+          {item.map((x,i) => {
             return (
-              <span className="tab-categories-box">
+              <span className="tab-categories-box" key={i}>
                 {x.name}
                 <svg
                   width="4.7"
@@ -310,16 +325,17 @@ const ProductpageTab = () => {
                     </div>
                   </div>
                   <div>
-                    <div className="tab-price-range">
+                    {/* <div className="tab-price-range">
                       <div className="tab-price-left">
                         <div className="tab-price-left-ball"></div>
                       </div>
                       <div className="tab-price-right">
-                        <div className="tab-price-right-ball"></div>
+                        <sdfewsdfw className="tab-price-right-ball"></sdfewsdfw>
                       </div>
                       <div className="tab-price-line"></div>
                       <div className="tab-price-strick"></div>
-                    </div>
+                    </div> */}
+                    <PriceSlider/>
                     <div className="tab-price-ranges">
                       <div className="tab-price-range-dot">.</div>
                       <div className="tab-price-range-dot">.</div>
@@ -330,29 +346,28 @@ const ProductpageTab = () => {
                       <div className="tab-price-range-dot">.</div>
                     </div>
                   </div>
-                  <div className="tab-price-price">
-                    <div className="tab-price-min">
-                      <select className="tab-price-min-box">
-                        <option value="Min">Min</option>
-                        <option value="500">₹500</option>
-                        <option value="2000">₹2000</option>
-                        <option value="5000">₹5000</option>
-                        <option value="10000">₹10000</option>
-                        <option value="20000">₹20000</option>
-                      </select>
-                    </div>
-                    <div className="tab-price-to">to</div>
-                    <div className="tab-price-max">
-                      <select className="tab-price-min-box">
-                        <option value="500">₹500</option>
-                        <option value="2000">₹2000</option>
-                        <option value="5000">₹5000</option>
-                        <option value="10000">₹10000</option>
-                        <option value="20000">₹20000</option>
-                        <option value="Max">₹20000+</option>
-                      </select>
-                    </div>
-                  </div>
+
+                  {price.map((x,i) => {
+                    return (
+                      <div className="tab-price-price" key={i}>
+                        <div className="tab-price-min">
+                          <select className="tab-price-min-box"  value={minPrice} onChange={(e)=>setminPrice(e.target.value)}>
+                            {x.price[0]?.map((a, i) => {
+                              return <option value={a} key={i} >{a}</option>;
+                            })}
+                          </select>
+                        </div>
+                        <div className="tab-price-to">to</div>
+                        <div className="tab-price-max">
+                          <select className="tab-price-min-box" value={maxPrice} onChange={(e)=>setMaxPrice(e.target.value)}>
+                            {x.price[1]?.map((a, i) => {
+                              return <option key={i} value={a} >{a}</option>;
+                            })}
+                          </select>
+                        </div>
+                      </div>
+                    );
+                  })}
                 </section>
                 <section className="tab-assured">
                   <label htmlFor="" className="tab-assured-text">
@@ -521,10 +536,10 @@ const ProductpageTab = () => {
                   Showing 1- 40 of 3,89,908 results for "Wrist Watch"
                 </div>
                 <div className="tab-product-heading-sort">
-                  {sortItem.map((x) => {
+                  {sortItem.map((x,i) => {
                     return (
                       <span
-                        className="tab-product-sort"
+                        className="tab-product-sort" key={i}
                         onClick={() => setSort(x.name)}
                       >
                         {x.name}
@@ -546,7 +561,7 @@ const ProductpageTab = () => {
                             <img alt="" src={x.image} />
                           </div>
                         </div>
-                        <div className="tab-product-like">
+                        <div className="tab-product-like" >
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="28"
@@ -555,7 +570,8 @@ const ProductpageTab = () => {
                           >
                             <path
                               d="M8.695 16.682C4.06 12.382 1 9.536 1 6.065 1 3.219 3.178 1 5.95 1c1.566 0 3.069.746 4.05 1.915C10.981 1.745 12.484 1 14.05 1 16.822 1 19 3.22 19 6.065c0 3.471-3.06 6.316-7.695 10.617L10 17.897l-1.305-1.215z"
-                              fill="#2874F0"
+                              // fill="#2874F0"
+                              // fill="red"
                               stroke="#FFF"
                               fillRule="evenodd"
                               opacity=".9"
@@ -586,7 +602,7 @@ const ProductpageTab = () => {
                           ></img>
                         </div>
                         <a className="tab-product-price-box">
-                          <div className="tab-product-og"> ₹{x.price}</div>
+                          <div className="tab-product-og"> ₹{x.Price}</div>
                           <div className="tab-product-discount">
                             {" "}
                             ₹ {x.discount}

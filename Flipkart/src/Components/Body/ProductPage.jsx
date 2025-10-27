@@ -22,7 +22,6 @@ const ProductPage = () => {
       console.log(error);
     }
   }
-
   useEffect(() => {
     // sorting   
     let sorted = [...product];
@@ -30,11 +29,11 @@ const ProductPage = () => {
       sorted = [...product];
     } else if (select == "Low") {
       sorted = [...product].sort(
-        (x, y) => x.price.replace(/,/g, "") - y.price.replace(/,/g, "")
+        (x, y) => x.Price.replace(/,/g, "") - y.Price.replace(/,/g, "")
       );
     } else if (select == "High") {
       sorted = [...product].sort(
-        (x, y) => y.price.replace(/,/g, "") - x.price.replace(/,/g, "")
+        (x, y) => y.Price.replace(/,/g, "") - x.Price.replace(/,/g, "")
       );
     } else if (select == "Popularity") {
       sorted = [...product].sort(
@@ -65,21 +64,22 @@ const ProductPage = () => {
         filters["Dial Shape"].includes(x["Dial Shape"])
       );
     }
-    if (filters.price?.length > 0) {
+    if (filters.Price?.length > 0) {
       sorted = sorted.filter((x) => {
-        const productPrice = parseFloat(x.price.replace(/,/g, ""));
-        return filters.price.some((range) => {
-          if (range.includes("500 and Below")) return productPrice <= 500;
-          if (range.includes("501 - Rs. 2000"))
+        const productPrice = parseFloat(x.Price.replace(/,/g, ""));
+        return filters.Price.some((range) => {
+          if (range.includes("Rs. 500 and Below")) return productPrice <= 500;
+          if (range.includes("Rs. 501 - Rs. 2000"))
             return productPrice >= 501 && productPrice <= 2000;
-          if (range.includes("2001 - Rs. 5000"))
+          if (range.includes("Rs. 2001 - Rs. 5000"))
             return productPrice >= 2001 && productPrice <= 5000;
-          if (range.includes("5001 - Rs. 10000"))
+          if (range.includes("Rs. 5001 - Rs. 10000"))
             return productPrice >= 5001 && productPrice <= 10000;
           return false;
         });
       });
     }
+
     setResult(sorted);
   }, [product, select, filters]);
 
@@ -340,7 +340,7 @@ const ProductPage = () => {
                           </div>
                         </div>
                         <div className="watch-item-priceog">₹{x.discount}</div>
-                        <div className="watch-item-pricesale">₹{x.price}</div>
+                        <div className="watch-item-pricesale">₹{x.Price}</div>
                       </div>
                       <div className="watch-item-text-offer">
                         <div className="watch-textoffer-pic">
