@@ -1,9 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
 import "../Styles/StyleBodySection.css";
 import { FilterContext } from "./Context/FilterContext";
-import PriceSlider from "./PriceSlider";
+import PriceFilter from "./PriceSlider";
+
 const ProductpageTab = () => {
-  const { filters, setFilters, sort, setSort } = useContext(FilterContext);
+  const { filters, setFilters, sort, setSort, priceSteps } =
+    useContext(FilterContext);
   const [item, setItem] = useState([]);
   const [name, setName] = useState([]);
   const [sortItem, setSortItem] = useState([]);
@@ -11,9 +13,29 @@ const ProductpageTab = () => {
   const [result, setResult] = useState([]);
   const [popup, setPopup] = useState([]);
   const [clearName, setClearName] = useState([]);
-  const [price, setPrice] = useState([]);
-  const [minPrice,setminPrice]=useState(" ")
-  const [maxPrice,setMaxPrice]=useState("20000+")
+  const [minPrice, setminPrice] = useState("Min");
+  const [maxPrice, setMaxPrice] = useState("20000+");
+  const [min, setMin] = useState("0");
+  const [max, setMax] = useState("20000+");
+
+//sdfew
+  const handleMinChange = (e) => {
+    const index = parseInt(e.target.value);
+    const value = priceSteps[index];
+    if (index < priceSteps.indexOf(max)) {
+      setMin(value);
+      setminPrice(value);
+    }
+  };
+
+  const handleMaxChange = (e) => {
+    const index = parseInt(e.target.value);
+    const value = priceSteps[index];
+    if (index > priceSteps.indexOf(min)) {
+      setMax(value);
+      setMaxPrice(value);
+    }
+  };
 
   async function fetchCategorie() {
     let res = await fetch("./ScrollData.json");
@@ -22,9 +44,8 @@ const ProductpageTab = () => {
     setName(data.filterKey);
     setSortItem(data.sort);
     setProduct(data.ProductPagee);
-    setPrice(data.priceBox);
   }
-//xcvsxcvxcvs
+
   useEffect(() => {
     let allData = [...product];
     if (filters.Brand?.length > 0) {
@@ -49,14 +70,14 @@ const ProductpageTab = () => {
     if (filters.Type?.length > 0) {
       allData = allData.filter((x) => filters.Type.includes(x.Type));
     }
-    let min=parseFloat(minPrice)||0;
-    let max=maxPrice==="20000+" ? Infinity: parseFloat(maxPrice)
+    let min = parseFloat(minPrice) || 0;
+    let max = maxPrice === "20000+" ? Infinity : parseFloat(maxPrice);
 
-     allData=allData.filter((x)=>{
-      const priceValue=parseFloat(x.Price.replace(/,/g,""))
-      return priceValue>=min && priceValue<=max
-    })
-//sfsdfewsdewdfewsdf wer32wer32
+    allData = allData.filter((x) => {
+      const priceValue = parseFloat(x.Price.replace(/,/g, ""));
+      return priceValue >= min && priceValue <= max;
+    });
+
     let sortData = [...allData];
     if (sort === "Popularity") {
       sortData.sort(
@@ -75,33 +96,66 @@ const ProductpageTab = () => {
     }
 
     setResult(sortData);
-  }, [filters, product, sort,minPrice,maxPrice]);
+  }, [filters, product, sort, minPrice, maxPrice]);
+
+  useEffect(() => {
+    if (
+      (minPrice === "Min" && maxPrice === "20000+") ||
+      (minPrice === "0" && maxPrice === "20000+")
+    ) {
+      setClearName((prev) =>
+        prev.filter((x) => typeof x === "string" && !x.startsWith("Price"))
+      );
+      return;
+    }
+
+    const rangeText = `Price: ${minPrice} - ${maxPrice}`;
+
+    setClearName((prev) => {
+      const others = prev.filter(
+        (x) => typeof x === "string" && !x.startsWith("Price")
+      );
+      return [...others, rangeText];
+    });
+  }, [minPrice, maxPrice]);
 
   let ClearBtn = (valueToRemove) => {
-    setClearName((prev) => prev.filter((item) => item !== valueToRemove));
+    console.log(valueToRemove);
+    if (valueToRemove.includes("Price")) {
+      setminPrice("Min");
+      setMax("20000+");
+      setMin("0");
+      setMaxPrice("20000+");
+    }
+    setClearName((prev) =>
+      prev.filter((item) => item !== valueToRemove)
+    );
+//dfgredgredfgr   sdf
+setFilters((prev) => {
+  const newFilters = { ...prev };
 
-    setFilters((prev) => {
-      const updatedFilters = {};
+  for (let key in newFilters) {
+    newFilters[key] = newFilters[key].filter(
+      (item) => item !== valueToRemove
+    );
+    if (newFilters[key].length === 0) {
+      delete newFilters[key];
+    }
+  }
 
-      for (let key in prev) {
-        const values = Array.isArray(prev[key]) ? prev[key] : [prev[key]];
-        const filteredValues = values.filter((val) => val !== valueToRemove);
+  return newFilters;
+});
 
-        if (filteredValues.length > 0) {
-          updatedFilters[key] = filteredValues;
-        }
-      }
-
-      return updatedFilters;
-    });
   };
-
-//sdfewsdfwsdf
 
   let clearAllFilters = () => {
     setFilters({});
     setClearName([]);
     setPopup([]);
+    setminPrice("Min");
+    setMin("0");
+    setMax("20000+");
+    setMaxPrice("20000+");
   };
 
   let btnClicked = (x) => {
@@ -115,7 +169,12 @@ const ProductpageTab = () => {
   };
 
   let filterLogic = (x, y) => {
-    setClearName((prevclearName) => [...prevclearName, y]);
+    setClearName((prev) => {
+      if (prev.includes(y)) {
+        return prev.filter((a) => a !== y);
+      }
+      return [...prev, y];
+    });
     setFilters((prevfilters) => {
       let current = prevfilters[x.name] || [];
       let already = current.includes(y);
@@ -126,6 +185,29 @@ const ProductpageTab = () => {
     });
   };
 
+  const clearCategoryFilters = (categoryName) => {
+    setFilters((prev) => {
+      const updated = { ...prev };
+      delete updated[categoryName];
+      return updated;
+    });
+    setClearName((prev) =>
+      prev.filter(
+        (label) =>
+          !(
+            Array.isArray(filters[categoryName]) &&
+            filters[categoryName].some((v) => label === v)
+          )
+      )
+    );
+  };
+  //sdfew sdfngklsnk  sdfewsdfew
+  let clearPrice=()=>{
+    setMin("0")
+    setminPrice("Min")
+    setMax("20000+")
+    setMaxPrice("20000+")
+  }
   useEffect(() => {
     fetchCategorie();
   }, []);
@@ -229,7 +311,7 @@ const ProductpageTab = () => {
       <div className="tab-categories">
         <div className="tab-categories-item">
           {/* map */}
-          {item.map((x,i) => {
+          {item.map((x, i) => {
             return (
               <span className="tab-categories-box" key={i}>
                 {x.name}
@@ -312,63 +394,20 @@ const ProductpageTab = () => {
                     </div>
                   </div>
                 </div>
-                <section className="tab-price">
-                  <div className=".tab-price-text">PRICE</div>
-                  <div className="tab-price-graph">
-                    <div className="tab-price-graph-main">
-                      <div className="graph-h"></div>
-                      <div className="graph-h"></div>
-                      <div className="graph-h"></div>
-                      <div className="graph-m"></div>
-                      <div className="graph-l"></div>
-                      <div className="graph-l"></div>
-                    </div>
-                  </div>
-                  <div>
-                    {/* <div className="tab-price-range">
-                      <div className="tab-price-left">
-                        <div className="tab-price-left-ball"></div>
-                      </div>
-                      <div className="tab-price-right">
-                        <sdfewsdfw className="tab-price-right-ball"></sdfewsdfw>
-                      </div>
-                      <div className="tab-price-line"></div>
-                      <div className="tab-price-strick"></div>
-                    </div> */}
-                    <PriceSlider/>
-                    <div className="tab-price-ranges">
-                      <div className="tab-price-range-dot">.</div>
-                      <div className="tab-price-range-dot">.</div>
-                      <div className="tab-price-range-dot">.</div>
-                      <div className="tab-price-range-dot">.</div>
-                      <div className="tab-price-range-dot">.</div>
-                      <div className="tab-price-range-dot">.</div>
-                      <div className="tab-price-range-dot">.</div>
-                    </div>
-                  </div>
-
-                  {price.map((x,i) => {
-                    return (
-                      <div className="tab-price-price" key={i}>
-                        <div className="tab-price-min">
-                          <select className="tab-price-min-box"  value={minPrice} onChange={(e)=>setminPrice(e.target.value)}>
-                            {x.price[0]?.map((a, i) => {
-                              return <option value={a} key={i} >{a}</option>;
-                            })}
-                          </select>
-                        </div>
-                        <div className="tab-price-to">to</div>
-                        <div className="tab-price-max">
-                          <select className="tab-price-min-box" value={maxPrice} onChange={(e)=>setMaxPrice(e.target.value)}>
-                            {x.price[1]?.map((a, i) => {
-                              return <option key={i} value={a} >{a}</option>;
-                            })}
-                          </select>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </section>
+                <PriceFilter
+                  min={min}
+                  max={max}
+                  minPrice={minPrice}
+                  maxPrice={maxPrice}
+                  priceSteps={priceSteps}
+                  handleMinChange={handleMinChange}
+                  handleMaxChange={handleMaxChange}
+                  setMin={setMin}
+                  setMax={setMax}
+                  setminPrice={setminPrice}
+                  setMaxPrice={setMaxPrice}
+                  clearPrice={clearPrice}
+                />
                 <section className="tab-assured">
                   <label htmlFor="" className="tab-assured-text">
                     <div className="tab-checkbox">
@@ -395,20 +434,50 @@ const ProductpageTab = () => {
                         onClick={() => btnClicked(x.name)}
                       >
                         <div className="tab-filter-name-product">{x.name}</div>
-                        <svg
-                          width="16"
-                          height="27"
-                          viewBox="0 0 16 27"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z"
-                            fill=" fill: #878787"
-                          ></path>
-                        </svg>
+                        {popup.includes(x.name) ? (
+                          <svg
+                            className="svg-up"
+                            width="16"
+                            height="27"
+                            viewBox="0 0 16 27"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z"
+                              fill=" fill: #878787"
+                            ></path>
+                          </svg>
+                        ) : (
+                          <svg
+                            className="svg-down"
+                            width="16"
+                            height="27"
+                            viewBox="0 0 16 27"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z"
+                              fill="#2b1515ff"
+                            ></path>
+                          </svg>
+                        )}
                       </div>
+
                       {popup.includes(x.name) && (
                         <div className="tab-filter-product">
+                          {filters[x.name]?.length > 0 && (
+                            <div className="tab-filter-product-name">
+                              <div
+                                className="tab-filter-product-name-x"
+                                onClick={() => clearCategoryFilters(x.name)}
+                              >
+                                X
+                              </div>
+                              <div className="tab-filter-product-name-clear">
+                                Clear all
+                              </div>
+                            </div>
+                          )}
                           {x.search == true && (
                             <div className="tab-filter-product-search">
                               <svg
@@ -536,10 +605,11 @@ const ProductpageTab = () => {
                   Showing 1- 40 of 3,89,908 results for "Wrist Watch"
                 </div>
                 <div className="tab-product-heading-sort">
-                  {sortItem.map((x,i) => {
+                  {sortItem.map((x, i) => {
                     return (
                       <span
-                        className="tab-product-sort" key={i}
+                        className="tab-product-sort"
+                        key={i}
                         onClick={() => setSort(x.name)}
                       >
                         {x.name}
@@ -561,7 +631,7 @@ const ProductpageTab = () => {
                             <img alt="" src={x.image} />
                           </div>
                         </div>
-                        <div className="tab-product-like" >
+                        <div className="tab-product-like">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="28"

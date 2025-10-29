@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../Styles/StyleProductPage.css";
 import { FilterContext } from "./Context/FilterContext";
 import ProductpageTab from "./ProductpageTab";
@@ -11,6 +11,8 @@ const ProductPage = () => {
   const [popup, setpopup] = useState(false);
   const [select, setSelect] = useState(contextSort || "Relavance");
   const [result, setResult] = useState([]);
+
+  const navigate=useNavigate()
 
   async function fetchPic() {
     try {
@@ -291,7 +293,7 @@ const ProductPage = () => {
       </div>
       <div className="watch-product">
         {result.map((x, index) => (
-          <div key={index} className="watch-flex">
+          <div key={index} className="watch-flex" onClick={()=>navigate("/productPage/productdetails")}>
             <div className="watch-product-main">
               {/* map */}
               <div className="product-watch">

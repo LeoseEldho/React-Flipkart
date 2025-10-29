@@ -1,7 +1,7 @@
-.price-slider-container {
+.price-slider-container{
+  position: relative;
   width: 100%;
-  font-family: "Roboto", sans-serif;
-  color: #212121;
+  margin-top: 2.5px;
 }
 .slider-inputs {
   display: flex;
@@ -9,13 +9,11 @@
   align-items: center;
   margin-bottom: 2px;
 }
-
 .slider-inputs label {
   font-size: 12px;
   color: #878787;
   margin-right: 4px;
 }
-
 .slider-inputs input {
   height: 30px;
   padding: 4px;
@@ -26,10 +24,12 @@
   outline: none;
   color: #212121;
   transition: border-color 0.2s;
+  overflow: hidden;
 }
 
 .slider-inputs input:focus {
   border-color: #2874f0;
+
 }
 
 .slider-range {
@@ -55,6 +55,9 @@
   background-color: #2874f0;
   border-radius: 2px;
   top: 0;
+  left: 0;
+  right: 0;
+  transition: all 0.1s linear;
   z-index: 1;
 }
 .slider-range input[type="range"]::-webkit-slider-thumb {

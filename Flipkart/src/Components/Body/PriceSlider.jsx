@@ -1,60 +1,146 @@
-import { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "../Styles/PriceSlider.css";
+import { FilterContext } from "./Context/FilterContext";
 
-function PriceSlider() {
-  const [min, setMin] = useState(0);
-  const [max, setMax] = useState(20000);
+const PriceFilter = ({
+  min,
+  max,
+  minPrice,
+  maxPrice,
+  handleMinChange,
+  handleMaxChange,
+  setMin,
+  setMax,
+  setminPrice,
+  setMaxPrice,
+  clearPrice
+}) => {
+    const {priceSteps,filters}=useContext(FilterContext)
+    const [price ,setPrice]=useState([])
 
-  const handleMinChange = (e) => {
-    const value = Math.min(Number(e.target.value), max - 100);
-    setMin(value);
-  };
+    async function fetchPrice() {
+        let res=await fetch("./ScrollData.json")
+        let data= await res.json()
+        setPrice(data.priceBox)
+    }
 
-  const handleMaxChange = (e) => {
-    const value = Math.max(Number(e.target.value), min + 100);
-    setMax(value);
-  };
-
+    useEffect(()=>{
+        fetchPrice()
+    },[])
   return (
-    <div className="price-slider-container">
-      <div className="slider-inputs">
-        <span>₹{min.toLocaleString()}</span>
-        <span>₹{max.toLocaleString()}</span>
+    <section className="tab-price">
+        <div className="tab-price-box">
+        <div className="tab-price-text">PRICE</div>
+        {<div className="tab-price-text-clear" onClick={clearPrice}>CLEAR</div>}
+        </div>
+      <div className="tab-price-graph">
+        <div className="tab-price-graph-main">
+          <div className="graph-h"></div>
+          <div className="graph-h"></div>
+          <div className="graph-h"></div>
+          <div className="graph-m"></div>
+          <div className="graph-l"></div>
+          <div className="graph-l"></div>
+        </div>
       </div>
 
-      <div className="slider-range">
-        <input
-          type="range"
-          min="0"
-          max="20000"
-          step="100"               
-          value={min}
-          onChange={handleMinChange}
-          className="thumb thumb-left"
-        />
-        <input
-          type="range"
-          min="0"
-          max="20000"
-          step="100"               
-          value={max}
-          onChange={handleMaxChange}
-          className="thumb thumb-right"
-        />
-        <div
-          className="slider-track"
-          style={{
-            left: `${(min / 20000) * 100}%`,
-            right: `${100 - (max / 20000) * 100}%`,
-          }}
-        />
+      <div className="price-slider-container">
+        <div className="slider-range">
+          <div
+            className="slider-track"
+            style={{
+              left: `${
+                (priceSteps.indexOf(min) / (priceSteps.length - 1)) * 100
+              }%`,
+              width: `${
+                ((priceSteps.indexOf(max) - priceSteps.indexOf(min)) /
+                  (priceSteps.length - 1)) *
+                100
+              }%`,
+            }}
+          />
+          <input
+            type="range"
+            min="0"
+            max={priceSteps.length - 1}
+            value={priceSteps.indexOf(min)}
+            onChange={handleMinChange}
+            className="thumb thumb-left"
+          />
+          <input
+            type="range"
+            min="0"
+            max={priceSteps.length - 1}
+            value={priceSteps.indexOf(max)}
+            onChange={handleMaxChange}
+            className="thumb thumb-right"
+          />
+        </div>
+
+        <div className="tab-price-ranges">
+          {priceSteps.map((_, i) => (
+            <div key={i} className="tab-price-range-dot">
+              .
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+
+      {price.map((x, i) => (
+        <div className="tab-price-price" key={i}>
+          <div className="tab-price-min">
+            <select
+              className="tab-price-min-box"
+              value={minPrice}
+              onChange={(e) => {
+                const val = e.target.value;
+                setminPrice(val);
+                setMin(val);
+                if (priceSteps.indexOf(val) >= priceSteps.indexOf(max)) {
+                  const next =
+                    priceSteps[priceSteps.indexOf(val) + 1] || "20000+";
+                  setMax(next);
+                  setMaxPrice(next);
+                }
+              }}
+            >
+              {x.price[0]?.map((a, i) => (
+                <option value={a} key={i}>
+                  {a}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <div className="tab-price-to">to</div>
+
+          <div className="tab-price-max">
+            <select
+              className="tab-price-min-box"
+              value={maxPrice}
+              onChange={(e) => {
+                const val = e.target.value;
+                setMaxPrice(val);
+                setMax(val);
+                if (priceSteps.indexOf(val) <= priceSteps.indexOf(min)) {
+                  const prev =
+                    priceSteps[priceSteps.indexOf(val) - 1] || 0;
+                  setMin(prev);
+                  setminPrice(prev);
+                }
+              }}
+            >
+              {x.price[1]?.map((a, i) => (
+                <option key={i} value={a}>
+                  {a}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
+      ))}
+    </section>
   );
-}
+};
 
-export default PriceSlider;
-//ytdg   6ut6tuj
-erdtfy5rtfy
-ytetydtydeytd
-wythdthn   fghfghj   erdtfghyuitgyhuifghjnmk  sdfsdf
+export default PriceFilter;
