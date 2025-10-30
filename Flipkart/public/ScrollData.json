@@ -493,7 +493,11 @@
       "strap Material":"Metal",
       "Dial Shape":"Rectangle",
       "Type":"Digital",
-      "strap Color":"Black"
+      "strap Color":"Black",
+      "colors":["https://rukminim1.flixcart.com/image/120/160/xif0q/watch/v/k/s/1-spm01-spinner-men-original-imahesvhzraft57x.jpeg?q=60",
+        "https://rukminim1.flixcart.com/image/120/160/xif0q/watch/z/n/6/1-spm01-spinner-men-original-imahfyktxa3ffkb9.jpeg?q=60","https://rukminim1.flixcart.com/image/120/160/xif0q/watch/a/1/c/1-sp01-spinner-men-original-imahesvzfjkc6yer.jpeg?q=60",
+        "https://rukminim1.flixcart.com/image/120/160/xif0q/watch/9/l/v/-original-imahfspszbbfz8gq.jpeg?q=60","https://rukminim1.flixcart.com/image/120/160/xif0q/watch/q/x/b/1-sp01-spinner-men-original-imahesvqrzxhd7ez.jpeg?q=60"
+      ]
     }
   ],
   "filterKey":[
