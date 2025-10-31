@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from "react";
 import "../Styles/StyleBodySection.css";
 const HeaderTab = () => {
-      const [item, setItem] = useState([]);
+  const [item, setItem] = useState([]);
 
-    async function fetchCategorie() {
+  async function fetchCategorie() {
     let res = await fetch("/ScrollData.json");
     let data = await res.json();
-    setItem(data.categories||[]);
+    setItem(data.categories || []);
   }
-  console.log(item)
-  useEffect(()=>{
-    fetchCategorie()
-  },[])
+  useEffect(() => {
+    fetchCategorie();
+  }, []);
   return (
     <>
       <div className="tab-header">
@@ -109,7 +108,7 @@ const HeaderTab = () => {
         </div>
         <div className="tab-header-position"></div>
       </div>
-            <div className="tab-categories">
+      <div className="tab-categories">
         <div className="tab-categories-item">
           {/* map */}
           {item.map((x, i) => {
