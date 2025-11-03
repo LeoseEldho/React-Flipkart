@@ -114,8 +114,8 @@ ease-in-out;
 }
 .items-product{
     position: absolute;
-    top: 8px;
-    left: 3.5px;
+    top: 12px;
+    left: 7.5px;
     height: 100%;
     object-fit: cover;
     width: 44.59px;
@@ -164,9 +164,15 @@ ease-in-out;
 .product-one,.product-two{
     width: 76px;
 }
+.items-product{
+    width: 55px;
+    left: 4.5px;
 }
-
-
+.item-product-sec{
+    width: 67px;
+    top: -6px;
+}
+}
 @media screen and (min-width:768px){
 .product-scroll{
     display: none;

@@ -20,11 +20,11 @@ const Header = () => {
                 <picture title="Flipkart"><source srcSet="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/fkheaderlogo_exploreplus-44005d.svg" media="(min-width:767px)"/><source srcSet="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/fkheaderlogo_exploreplus_mobile-39120d.svg" media="(max-width:766px)"/><img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/fkheaderlogo_exploreplus-44005d.svg" width="160" height="40" title="Flipkart"/></picture>
               </a>
             </div>
-            <div>
+            <div className="header-sec-box">
               <div className="header-search-box">
                 <div className="header-search-container">
                   <div className="header-search-container-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><title>Search Icon</title><path d="M10.5 18C14.6421 18 18 14.6421 18 10.5C18 6.35786 14.6421 3 10.5 3C6.35786 3 3 6.35786 3 10.5C3 14.6421 6.35786 18 10.5 18Z" stroke="#717478" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"></path><path d="M16 16L21 21" stroke="#717478" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"></path></svg></div>
-                  <div className="header-search-container-text"><input  type="text" title="Search for Products, Brands and More" name="q" placeholder="Search for Products, Brands and More" fdprocessedid="40if6a"/></div>
+                  <div className="header-search-container-text"><input  type="text" name="q" placeholder="Search for Products, Brands and More" fdprocessedid="40if6a"/></div>
                 </div>
               </div>
             </div>
@@ -64,11 +64,15 @@ const Header = () => {
                     width="24"
                     height="24"
                   />
+                  <a className="Header-cart-name">Cart</a>
                 </a>
               </div>
             </div>
             <div>
-              <div className="header-shop"><img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/Store-9eeae2.svg" alt="Become a Seller"/></div>
+              <div className="header-shop">
+                <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/Store-9eeae2.svg" alt="Become a Seller"/>
+                <a className="Header-cart-name">Become a Seller</a>
+                </div>
             </div>
             <div><div className="header-shop-box"><div className="header-option"><img className="header-option-svg" src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/header_3verticalDots-ea7819.svg" width="24" height="24" alt="Dropdown with more help links"/></div></div></div>
           </div>

@@ -3,6 +3,7 @@ import "../Styles/StyleBodySection.css";
 import { FilterContext } from "./Context/FilterContext";
 import PriceFilter from "./PriceSlider";
 import HeaderTab from "../Header/HeaderTab";
+import { useNavigate } from "react-router-dom";
 
 const ProductpageTab = () => {
   const { filters, setFilters, sort, setSort, priceSteps } = useContext(FilterContext);
@@ -16,6 +17,8 @@ const ProductpageTab = () => {
   const [maxPrice, setMaxPrice] = useState("20000+");
   const [min, setMin] = useState("0");
   const [max, setMax] = useState("20000+");
+
+  const navigate=useNavigate()
 
   const handleMinChange = (e) => {
     const index = parseInt(e.target.value);
@@ -500,7 +503,7 @@ setFilters((prev) => {
               {/* Product to Map */}
               {result.map((x, ind) => {
                 return (
-                  <div className="tab-product-box-main-box" key={ind}>
+                  <div className="tab-product-box-main-box" key={ind} onClick={() => navigate(`/productPage/productdetails/${ind}`)} >
                     <div className="tab-product-box-main">
                       <a href="" className="tab-product-box-main-a">
                         <div className="tab-product-pic-box">

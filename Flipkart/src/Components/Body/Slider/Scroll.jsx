@@ -1,4 +1,4 @@
-import '../Styles/StyleScroll.css'
+import "../../Styles/StyleScroll.css"
 import React, { useEffect, useState } from 'react'
 
 const Scroll = () => {

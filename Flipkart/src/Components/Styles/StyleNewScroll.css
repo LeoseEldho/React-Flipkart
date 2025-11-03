@@ -12,7 +12,6 @@ body{
     grid-column: 1/13;
     order: 1;
     margin: 8px 16px 16px 16px;
-    background-color: black;
 }
 .main-newscroll{
     background:#fff;
@@ -59,3 +58,9 @@ body{
     height: 1px;
 }
 }
+@media screen and (min-width:1194px) {
+.newscroll-pic{
+  margin-bottom: 12px;
+}
+}
+/* sdfew */

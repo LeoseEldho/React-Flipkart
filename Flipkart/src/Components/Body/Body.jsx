@@ -1,19 +1,19 @@
 import React from 'react'
-import Scroll from './Scroll'
+import ScrollTwo from './Slider/ScrollTwo'
 import '../Styles/StyleScroll.css'
 import Product from './Product'
 import BodySection from './BodySection'
 import Footer from '../Footer/Footer'
-import Items from './Items'
 import Header from '../Header/Header'
 import NewScroll from './NewScroll'
-import ScrollTwo from './ScrollTwo'
+
+import Scroll from './Slider/Scroll'
 
 const Body = () => {
   return (
     <>
-      <Header/>
-      <NewScroll/>
+    <Header/>
+    <NewScroll/>
     <div className="body-section-main">
     <div className='body-section'>
       <Scroll/>
@@ -22,7 +22,6 @@ const Body = () => {
       <BodySection/>
     </div>
     </div>
-    <Items/>
     <Footer/>
     </>
   )

@@ -47,6 +47,7 @@
     font-size: 12px;
     margin-bottom: 12px;
     display: block;
+    width: 194.58px;
 }
 .footer-links{
     font-size: 12px;
@@ -54,8 +55,20 @@
     display: block;
     line-height: 18px;
     white-space: nowrap;
-    font-family: font1;
+    font-family: font2;
 } 
+.footers-links{
+    font-size: 12px;
+    color: #fff;
+    display: block;
+    line-height: 18px;
+    white-space: nowrap;
+    font-family: font1;
+}
+.footer-links div{
+    display: inline-block;
+    color: #fff;
+}
 .footer-boxText{
     margin-top: 20px;
     font-size: 12px;
@@ -66,6 +79,7 @@
 }
 .phno{
     color: #2874f0;
+    white-space: nowrap;
 }
 .footer-box-logo{
     display: flex;

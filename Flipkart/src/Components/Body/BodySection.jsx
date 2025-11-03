@@ -18,7 +18,7 @@ const BodySection = () => {
   return (
     <>
       <div className="Add">
-        <a href="">
+        <a >
           <img
             src="https://rukminim2.flixcart.com/fk-p-flap/880/200/image/965f1b90f21c6b6a.jpeg?q=60"
             alt=""
@@ -59,7 +59,7 @@ const BodySection = () => {
             {phone.map((x) => {
               return (
                 <div className="phone-container">
-                  <a href="">
+                  <a >
                     <div className="phone-pic">
                       <div>
                         <div className="phone-pic-image">

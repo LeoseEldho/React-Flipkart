@@ -5,6 +5,8 @@ import ProductPage from './Components/Body/ProductPage'
 import FilterPage from './Components/Body/FilterPage'
 import { FilterProvider } from './Components/Body/Context/FilterContext'
 import ProductDetails from './Components/Body/ProductDetails'
+import ProductDetailsTab from './Components/Body/ProductDetailsTab'
+
 
 function App() {
   return (
@@ -20,4 +22,6 @@ function App() {
     </>
   )
 }
+
+
 export default App

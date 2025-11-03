@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../Styles/StyleNewScroll.css";
+import { Link } from "react-router-dom";
 
 const NewScroll = () => {
   const [scroll, setScroll] = useState([]);
@@ -12,15 +13,15 @@ const NewScroll = () => {
   useEffect(() => {
     scrollFetch();
   }, []);
-
+//sfewsdfewsdfew
   return (
     <div className="new-scroll">
-         <div className="main-newscroll">
+         <div  className="main-newscroll"   >
       {/* map */}
       {scroll.map((x) => {
         return (
          
-            <a href="">
+            <Link  to="/productPage">
               <div className="newscroll-pic">
                 <img
                   alt="Minutes"
@@ -28,7 +29,7 @@ const NewScroll = () => {
                 ></img>
               </div>
               <span className="newscroll-text">{x.text}</span>
-            </a>
+            </Link>
          
         );
       })}

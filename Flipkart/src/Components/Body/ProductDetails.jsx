@@ -275,9 +275,9 @@ const ProductDetails = () => {
             </div>
           </div> */}
       </div>
-      <ProductDetailsTab />
+      <ProductDetailsTab product={product}/>
     </>
   );
 };
-//sdfew
+//wer32wer32
 export default ProductDetails;

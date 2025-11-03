@@ -1,6 +1,6 @@
 import React from "react";
 
-const DetailText = () => {
+const DetailText = ({product}) => {
   return (
     <>
       <div className="screen-text-body">
@@ -63,17 +63,16 @@ const DetailText = () => {
         <div className="screen-body-content">
           <div className="screen-body-content-name">
             <h1 className="screen-body-content-name-text">
-              <div>OMSALESS</div>{" "}
+              <div>{product.name}</div>{" "}
               <span>
-                OMSALESS analog watch for men.stainless steel watch. Analog
-                Watch - For Men spinner
+               {product.details}
               </span>
             </h1>
             <div className="screen-body-content-name-price">
               <div>
-                <div className="screen-body-price">₹498</div>
-                <div className="screen-body-dicount">₹ 999</div>
-                <div className="screen-body-off">50% off</div>
+                <div className="screen-body-price">₹{product.Price}</div>
+                <div className="screen-body-dicount">₹ {product.discount}</div>
+                <div className="screen-body-off">{product.off}% off</div>
               </div>
               <div className="screen-body-icon">
                 <svg
@@ -122,13 +121,13 @@ const DetailText = () => {
                   </defs>
                   <g fill="none" fillRule="evenodd">
                     <g transform="translate(2 1)">
-                      <use fill="#000" filter="url(#a)" xlink:href="#b"></use>
+                      <use fill="#000" filter="url(#a)" ></use>
                       <use
                         fill="#0f0c0cff"
                         stroke="#000"
                         strokeOpacity=".3"
                         strokeWidth=".8"
-                        xlink:href="#b"
+                        xlinkHref="#b"
                       ></use>
                     </g>
                     <text
@@ -231,7 +230,7 @@ const DetailText = () => {
                         <span>Deliver to</span>
                         </div>
                         <div className="screen-body-pincode">
-                            <input placeholder="Enter delivery pincode" type="text" maxlength="6" autocomplete="off" value=""></input>
+                            <input placeholder="Enter delivery pincode" type="text"></input>
                             <span>Check</span>
                         </div>
                     </div>
@@ -262,19 +261,33 @@ const DetailText = () => {
                 <div className="padd-body">
                     <div className="body-seller">Seller</div>
                     <div>
-                        <div className="body-seller-name">OMSALESS <span>3.2 <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg=="></img></span></div>
-                        <div className="body-date"></div>
-                        <div className="body-other"></div>
+                        <div className="body-seller-name">{product.name} <span>{product.rating} <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg=="></img></span></div>
+                        <div className="body-date"><div>10 days return policy</div></div>
+                        <div className="body-other">See other sellers</div>
                     </div>
                 </div>
             </div>
-            <div className="body-delivary-box-padd"></div>
-            <div className="body-delivary-box"></div>
-            <div className="body-delivary-box"></div>
+            <div className="body-delivary-box-padd">
+              <div className="body-delivary-box-padd-box">Product Details</div>
+              <span><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNCIgaGVpZ2h0PSIxNCI+PHBhdGggZmlsbD0iIzg3ODc4NyIgZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNMTQgOEg4djZINlY4SDBWNmg2VjBoMnY2aDZ6Ii8+PC9zdmc+"/></span>
+            </div>
+            <div className="body-delivary-box">
+              <div className="body-delivary-box-container">
+                <div className="body-delivary-text">Be the first one to rate</div>
+                <span></span>
+                </div>
+                
+                </div>
+            <div className="body-delivary-box">
+              <div className="body-delivary-question">
+                <span>Be the first to ask about this product</span>
+                <button>Post Your Question</button>
+              </div>
+            </div>
         </div>
       </div>
     </>
   );
 };
-// dfhu jhukgbkhkgjjj,jmhjngfd  sdfew
+
 export default DetailText;

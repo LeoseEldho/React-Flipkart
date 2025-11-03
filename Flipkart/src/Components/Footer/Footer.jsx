@@ -14,38 +14,38 @@ const Footer = () => {
     <div className="footer">
       <div>
       <div className='footer-box-text'>ABOUT</div>
-      <a className='footer-links' href="">Contact Us</a>
-      <a href="" className='footer-links'>About Us</a>
-      <a className='footer-links' href="">Careers</a>
-      <a className='footer-links' href="">Flipkart Stories</a>
-      <a className='footer-links' href="">Press</a>
-      <a className='footer-links' href="">Corporate Information</a>
+      <a className='footers-links' href="">Contact Us</a>
+      <a href="" className='footers-links'>About Us</a>
+      <a className='footers-links' href="">Careers</a>
+      <a className='footers-links' href="">Flipkart Stories</a>
+      <a className='footers-links' href="">Press</a>
+      <a className='footers-links' href="">Corporate Information</a>
       </div>
       <div>
         <div className='footer-box-text'>GROUP COMPANIES</div>
-        <a className='footer-links' href="">Myntra</a>
-        <a className='footer-links' href="">Cleartrip</a>
-        <a className='footer-links' href="">Shopsy</a>
+        <a className='footers-links' href="">Myntra</a>
+        <a className='footers-links' href="">Cleartrip</a>
+        <a className='footers-links' href="">Shopsy</a>
       </div>
       <div>
         <div className='footer-box-text'>HELP</div>
-        <a className='footer-links' href="">Payments</a>
-        <a className='footer-links' href="">Shipping</a>
-        <a className='footer-links' href="">Cancellation & Returns</a>
-        <a className='footer-links' href="">FAQ</a>
+        <a className='footers-links' href="">Payments</a>
+        <a className='footers-links' href="">Shipping</a>
+        <a className='footers-links' href="">Cancellation & Returns</a>
+        <a className='footers-links' href="">FAQ</a>
       </div>
       <div className='consumer-policy'>
         <div className='footer-box-text'>CONSUMER POLICY</div>
-        <a className='footer-links' href="">Cancellation & Returns</a>
-        <a className='footer-links' href="">Terms Of Use</a>
-        <a className='footer-links' href="">Security</a>
-        <a className='footer-links' href="">Privacy</a>
-        <a className='footer-links' href="">Sitemap</a>
-        <a className='footer-links' href="">Grievance Redressal</a>
-        <a className='footer-links' href="">EPR Compliance</a>
+        <a className='footers-links' href="">Cancellation & Returns</a>
+        <a className='footers-links' href="">Terms Of Use</a>
+        <a className='footers-links' href="">Security</a>
+        <a className='footers-links' href="">Privacy</a>
+        <a className='footers-links' href="">Sitemap</a>
+        <a className='footers-links' href="">Grievance Redressal</a>
+        <a className='footers-links' href="">EPR Compliance</a>
       </div>
       <div className='footer-boxText'>
-        <div className='footer-box-text'>Mail US:</div>
+        <div className='footer-box-text'>Mail Us:</div>
         <div className="footer-box-text-box">
           <p className='footer-links'>Flipkart Internet Private Limited,</p>
           <p className='footer-links'>Buildings Alyssa, Begonia &</p>
@@ -63,10 +63,10 @@ const Footer = () => {
          </div>
       </div>
       <div className='footer-boxText'>
-        <div className="footer-box-text">Registered Office Address</div>
+        <div className="footer-box-text">Registered Office Address:</div>
         <p className='footer-links'>Flipkart Internet Privete Limited,</p>
-        <p className='footer-links'>Buldings Alyssa,Begonia &</p>
-        <p className='footer-links'>Clove Embassy Tech Village</p>
+        <p className='footer-links'>Buildings Alyssa, Begonia &</p>
+        <p className='footer-links'>Clove Embassy Tech Village,</p>
         <p className='footer-links'>Outer Ring Road, Devarabeesanahalli Village,</p>
         <p className='footer-links'>Bengaluru, 560103,</p>
         <p className='footer-links'>Karnataka, India</p>
