@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from "react";
-import "../Styles/StyleBodySection.css";
 import { FilterContext } from "./Context/FilterContext";
 import PriceFilter from "./PriceSlider";
 import HeaderTab from "../Header/HeaderTab";

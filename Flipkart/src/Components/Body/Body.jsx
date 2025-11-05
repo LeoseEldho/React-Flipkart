@@ -6,7 +6,6 @@ import BodySection from './BodySection'
 import Footer from '../Footer/Footer'
 import Header from '../Header/Header'
 import NewScroll from './NewScroll'
-
 import Scroll from './Slider/Scroll'
 
 const Body = () => {
@@ -16,7 +15,8 @@ const Body = () => {
     <NewScroll/>
     <div className="body-section-main">
     <div className='body-section'>
-      <Scroll/>
+    {/* <Scroll/> */}
+    <Scroll></Scroll>
       <ScrollTwo/>
       <Product/>
       <BodySection/>

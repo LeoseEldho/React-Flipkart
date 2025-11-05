@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "../Styles/StyleBodySection.css";
 const HeaderTab = () => {
   const [item, setItem] = useState([]);
 

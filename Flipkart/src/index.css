@@ -1,0 +1,11 @@
+@import '../src/Components/Styles/StyleTop.css';
+@import '../src/Components/Styles/HeaderStyle.css';
+@import '../src/Components/Styles/PriceSlider.css';
+@import '../src/Components/Styles/StyleBodySection.css';
+@import '../src/Components/Styles/StyleFilter.css';
+@import '../src/Components/Styles/StyleFooter.css';
+@import '../src/Components/Styles/StyleNewScroll.css';
+@import '../src/Components/Styles/StyleProduct.css';
+@import '../src/Components/Styles/StyleProductDetails.css';
+@import '../src/Components/Styles/StyleProductPage.css';
+@import '../src/Components/Styles/StyleScroll.css';

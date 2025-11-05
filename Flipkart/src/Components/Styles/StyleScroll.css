@@ -141,9 +141,11 @@
     margin-top: 8px;
     column-gap: 12px;
     width: 100%;
+    overflow: unset;
 }
 .body-section-main{
     margin: 0 16px;
+    margin-bottom: 16px;
 }
 .scroll-card-main{
     margin: unset;

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "../Styles/StyleProduct.css";
 import { Link } from "react-router-dom";
 const Product = () => {
   const [prod, setprod] = useState([]);
@@ -56,9 +55,9 @@ const Product = () => {
                 </div>
               </div>
              {
-              prod.map((x)=>{
+              prod.map((x,i)=>{
                 return(
-                  <div className="product-one">
+                  <div className="product-one" key={i}>
                 <div className="product-item">
                   <div className="product-items">
                     <div className="product-items-pic">
@@ -78,9 +77,9 @@ const Product = () => {
             </div>
             <div className="product">
              {
-              prodTwo.map((x)=>{
+              prodTwo.map((x,i)=>{
                 return(
-                   <div className="product-two">
+                   <div className="product-two" key={i}>
                 <div className="product-item">
                   <div className="product-items">
                     <div className="product-items-pic">

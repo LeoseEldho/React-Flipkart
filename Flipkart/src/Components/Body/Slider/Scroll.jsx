@@ -1,5 +1,6 @@
-import "../../Styles/StyleScroll.css"
 import React, { useEffect, useState } from 'react'
+import "../../Styles/StyleScroll.css"
+
 
 const Scroll = () => {
   const [Alldata, setAlldata] = useState([])

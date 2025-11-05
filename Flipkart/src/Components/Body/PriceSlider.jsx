@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from "react";
-import "../Styles/PriceSlider.css";
 import { FilterContext } from "./Context/FilterContext";
 
 const PriceFilter = ({

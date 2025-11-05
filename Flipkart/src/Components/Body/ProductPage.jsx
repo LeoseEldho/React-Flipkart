@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "../Styles/StyleProductPage.css";
 import { FilterContext } from "./Context/FilterContext";
 import ProductpageTab from "./ProductpageTab";
 

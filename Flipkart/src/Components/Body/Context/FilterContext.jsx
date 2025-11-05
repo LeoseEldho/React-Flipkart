@@ -25,13 +25,13 @@ export const FilterProvider = ({ children }) => {
   const [filters, setFilters] = useState(defaultFilters);
   const [sort, setSort] = useState("Relavance");
   const [allData,setAllData]=useState([])
-
-  useEffect(()=>{
     const fetchData =async () => {
-    let res=await fetch('./ScrollData.json')
+    let res=await fetch("/ScrollData.json")
     let data=await res.json()
     setAllData(data)
   }
+  useEffect(()=>{
+
     fetchData()
   },[])
   return (
@@ -40,4 +40,4 @@ export const FilterProvider = ({ children }) => {
     </FilterContext.Provider>
   );
 };
-//sdfew  sdfew
+//sdfew   sdfewsdfew   sdfewsdfew

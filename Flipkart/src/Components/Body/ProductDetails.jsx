@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "../Styles/StyleProductDetails.css";
 import { Link, useParams } from "react-router-dom";
 import ProductDetailsTab from "./ProductDetailsTab";
 

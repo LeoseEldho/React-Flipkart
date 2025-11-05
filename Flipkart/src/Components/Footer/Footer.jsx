@@ -1,5 +1,4 @@
 import React from 'react'
-import '../Styles/StyleFooter.css'
 const Footer = () => {
   return (
     <>
@@ -71,7 +70,7 @@ const Footer = () => {
         <p className='footer-links'>Bengaluru, 560103,</p>
         <p className='footer-links'>Karnataka, India</p>
         <p className='footer-links'>CIN : U51109KA2012PTC066107</p>
-        <p className='footer-links'>Telephone: <a className='phno' href="">044-45614700 <div>/</div> 044-67415800</a></p>
+        <p className='footer-links'>Telephone: <a className='phno' href="">044-45614700 <>/</> 044-67415800</a></p>
       </div>
     </div>
     <div className="footer-logo">

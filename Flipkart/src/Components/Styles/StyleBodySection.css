@@ -12,6 +12,10 @@
 .Add img{
     border-radius: 16px;
 }
+.Phone-New{
+    order: 7;
+    grid-column: 1/13;
+}
 .phone{
     order: 4;
     height: 100%;
@@ -118,6 +122,8 @@
     aspect-ratio: 13/17;
     width: 100%;
     position: relative;
+    background-color: #f2f2f2;
+    border-radius: 8px;
 }
 .phone-pic-image img{
     aspect-ratio: 13/17;
@@ -384,9 +390,18 @@
 .tab{
     display: none;
 }
+.top{
+    display: none;
+}
 @media screen and (min-width:768px) {
 .Add{
     display: none;
+}
+.mobile{
+    display: none;
+}
+.top{
+    display: block;
 }
 .phone{
     margin-top: 16px;

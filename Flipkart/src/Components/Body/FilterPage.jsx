@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from "react";
-import "../Styles/StyleFilter.css";
 import { Link, useNavigate } from "react-router-dom";
 import { FilterContext } from "./Context/FilterContext";
 

@@ -1,4 +1,3 @@
-import "../Styles/StyleBodySection.css";
 import React from 'react'
 const Button = () => {
   return (

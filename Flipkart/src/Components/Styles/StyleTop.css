@@ -1,0 +1,111 @@
+@media screen and (min-width:768px) {
+.Top{
+    grid-column: 1/13;
+    order: 8;
+}
+    .top{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    grid-column: 1/13;
+    order: 6;
+    background: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255));
+    margin-top: 29px;
+}
+.top-heading{
+    align-items: center;
+    display: flex;
+    flex: 1 1 0%;
+    flex-direction: row;
+    min-height: 80px;
+    padding: 16px;
+    justify-content: space-between;
+}
+.top-heading-text{
+    display: inline;
+    color: rgb(31, 31, 31);
+    max-width: 100%;
+    vertical-align: middle;
+    font-size: 22px;
+    line-height: 30px;
+    letter-spacing: -.02px;
+    font-family: font3;
+}
+.top-heading-btn{
+    margin: 4px;
+    display: flex;
+    background-color: rgb(42, 85, 229);
+    border-radius: 42px;
+}
+.top-heading-btn svg{
+    margin: 4px;
+}
+.top-container{
+    background: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255));
+    padding: 0 12px ;
+    flex-flow: wrap;
+    display: flex;
+    padding-bottom: 4px;
+}
+.top-box{
+        flex-basis: 25%;
+    max-width: 25%;
+    /* flex-basis: 50%;
+    max-width: 50%; */
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+.top-box-main{
+    margin: 0 4px 8px 4px;
+    display: flex;
+    border-radius: 4px ;
+    border: 1px solid #ebebeb;
+    padding: 12px; 
+    flex-direction: column;
+}
+.top-pic{
+    padding: 8px 8px 0px;
+    display: flex;
+}
+.top-pic-box{
+    flex: 1 1 0%;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 4px;
+    aspect-ratio: 1/1;
+    width: 100%;
+}
+.top-pic-box img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.top-text{
+    padding-top: 16px;
+    display: flex;
+    flex-direction: column;
+}
+.top-text-name{
+    display: inline;
+    white-space: nowrap;
+    overflow: normal;
+    max-width: 100%;
+    text-overflow: ellipsis;
+    font-size: 17px;
+    line-height: 24px;
+    letter-spacing: -.01px;
+    color: #1f1f1f;
+}
+.top-collection{
+    display: inline;
+    white-space: nowrap;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 6px;
+    font-size: 17px;
+    line-height: 24px;
+    letter-spacing: -.01px;
+    color: #108934;
+}
+}

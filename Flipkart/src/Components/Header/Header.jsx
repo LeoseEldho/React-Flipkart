@@ -1,5 +1,4 @@
 import React from "react";
-import "../Styles/HeaderStyle.css";
 
 const Header = () => {
   return (
@@ -64,7 +63,7 @@ const Header = () => {
                     width="24"
                     height="24"
                   />
-                  <a className="Header-cart-name">Cart</a>
+                  <span className="Header-cart-name">Cart</span>
                 </a>
               </div>
             </div>

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "../Styles/StyleNewScroll.css";
 import { Link } from "react-router-dom";
 
 const NewScroll = () => {
@@ -18,10 +17,10 @@ const NewScroll = () => {
     <div className="new-scroll">
          <div  className="main-newscroll"   >
       {/* map */}
-      {scroll.map((x) => {
+      {scroll.map((x,i) => {
         return (
          
-            <Link  to="/productPage">
+            <Link  to="/productPage" key={i}>
               <div className="newscroll-pic">
                 <img
                   alt="Minutes"
