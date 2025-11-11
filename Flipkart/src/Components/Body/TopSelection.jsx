@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import { FilterContext } from './Context/FilterContext'
 const TopSelection = ({item}) => {
   return (
+    <>
     <div className='top'>
       <div className="top-heading">
         <div className="top-heading-text">Top Selection</div>
@@ -28,7 +30,7 @@ const TopSelection = ({item}) => {
     }
       </div>
     </div>
+    </>
   )
 }
-
 export default TopSelection

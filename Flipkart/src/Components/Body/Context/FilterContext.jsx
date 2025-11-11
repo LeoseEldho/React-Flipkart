@@ -30,6 +30,7 @@ export const FilterProvider = ({ children }) => {
     let data=await res.json()
     setAllData(data)
   }
+
   useEffect(()=>{
 
     fetchData()
@@ -40,4 +41,4 @@ export const FilterProvider = ({ children }) => {
     </FilterContext.Provider>
   );
 };
-//sdfew   sdfewsdfew   sdfewsdfew
+

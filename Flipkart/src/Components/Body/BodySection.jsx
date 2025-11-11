@@ -2,6 +2,7 @@ import React, {  useEffect, useState } from "react";
 import Button from "../Elements/Button";
 import PhoneItems from "./PhoneItems";
 import TopSelection from "./TopSelection";
+import Deals from "./Deals";
 
 const BodySection = () => {
   const [phoneImg,setPhoneImg]=useState([])
@@ -33,7 +34,7 @@ const BodySection = () => {
           />
         </a>
       </div>
-      {/* phone */}
+      <Deals/>
       <PhoneItems phone={phone}/>
               <div className="phone-cards">
           {/* map */}
@@ -48,6 +49,11 @@ const BodySection = () => {
           </div>
         </div>
         <TopSelection item={top}/>
+            <div className="top-add">
+      <div className="top-add-pic">
+        <img src="https://rukminim1.flixcart.com/www/1060/1500/promos/26/09/2023/6c3c5fe2-c236-4fa2-8d97-595e1e01da01.jpg?q=60" alt="" />
+      </div>
+    </div>
       <div className="mobile">
         <div className="mobile-main">
           <div className="mobile-top">

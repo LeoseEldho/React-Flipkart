@@ -730,7 +730,7 @@
       "name": "BCK4022 Lihtweight"
     },
     {
-      "image":"https://rukminim2.flixcart.com/image/260/340/xif0q/shoe/y/y/7/7-bis-snk-eva-852-blk-7-bruton-black-original-imahbndjehggmwqj.jpeg?q=60",
+      "image":"https://rukminim1.flixcart.com/image/900/900/xif0q/shoe/q/2/f/10-cosco-mehandi-10-clymb-olive-original-imahfnxefhf79srs.jpeg?q=60",
             "rating": "2.5",
       "brand": "Bucik",
       "price": "1,999",
@@ -804,6 +804,48 @@
       "image":"https://rukminim1.flixcart.com/image/260/260/xif0q/smartwatch/n/b/n/-original-imahgpwfwkhjeybt.jpeg?q=60",
       "name":"Wearable Smart Device",
       "top":"Top Sellers"
+    }
+  ],
+  "deals":[
+    {
+      "image":"https://rukminim1.flixcart.com/image/220/220/xif0q/projector/4/x/3/atom-3x-native-fhd-1080p-4k-support-13-0-android-projector-300-original-imahbxepqgqurfh7.jpeg?q=60",
+      "name":"Projector",
+      "price":"6990"
+    },
+    {
+      "image":"https://rukminim2.flixcart.com/image/220/220/kcf4lu80/speaker/mobile-tablet-speaker/h/u/f/srs-xb23-sony-original-imaftk66vjxp86h5.jpeg?q=60",
+      "name":"Best Selling Mobile Speakers",
+      "price":"499"
+    },
+    {
+      "image":"https://rukminim1.flixcart.com/image/220/220/xif0q/monitor/g/9/9/-original-imahbk3vrnvhvhrn.jpeg?q=60",
+      "name":"Monitors",
+      "price":"6599"
+    },
+    {
+      "image":"https://rukminim1.flixcart.com/image/220/220/xif0q/monitor/w/i/f/-original-imahagy2cefszqgy.jpeg?q=60",
+      "name":"Monitor",
+      "price":"8279"
+    },
+    {
+      "image":"https://rukminim1.flixcart.com/image/220/220/xif0q/dslr-camera/i/o/c/eos-r100-24-1-eos-r100-kit-canon-original-imagqeydhsxgacxp.jpeg?q=60",
+      "name":"Top Mirrorless Cameras",
+      "price":"Shop Now!"
+    },
+    {
+      "image":"https://rukminim1.flixcart.com/image/220/220/xif0q/smartwatch/5/v/s/-original-imagxrhetgfuebnn.jpeg?q=60",
+      "name":"Fastrack Smartwatches",
+      "price":"1,399"
+    },
+    {
+      "image":"https://rukminim1.flixcart.com/image/220/220/l58iaa80/headphone/k/z/m/nord-buds-ce-oneplus-original-imagfyk4hyvgg6ze.jpeg?q=60",
+      "name":"Best Truewireless Headphones",
+      "price":"Grab Now"
+    },
+    {
+      "image":"https://rukminim1.flixcart.com/image/220/220/xif0q/printer/s/8/d/-original-imafkykednshkhx5.jpeg?q=60",
+      "name":"Printers",
+      "price":"2336"
     }
   ]
 }
