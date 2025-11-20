@@ -26,10 +26,10 @@
   font-family: "font7";
   src: url("/Font/roboto-regular.woff2");
 }
-@font-face {
+/* @font-face {
   font-family: "font8";
   src: url("/Font/roboto-regular\ \(2\).woff2");
-}
+} */
 
 *{
   padding: 0%;

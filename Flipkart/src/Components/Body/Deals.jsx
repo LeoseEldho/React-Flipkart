@@ -21,9 +21,9 @@ const Deals = () => {
         <div className="deal-container">
           <div className="deal-scroll">
             {/* map */}
-            {data.map((x) => {
+            {data.map((x,i) => {
               return (
-                <div className="deal-mainbox">
+                <div className="deal-mainbox" key={i}>
                 <div className="deal-main">
                   <a className="deal-main-box">
                     <div className="deal-main-container">
@@ -48,4 +48,3 @@ const Deals = () => {
 };
 
 export default Deals;
-//sdfsdfsdf

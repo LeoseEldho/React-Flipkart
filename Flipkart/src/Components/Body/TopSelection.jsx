@@ -12,9 +12,9 @@ const TopSelection = ({item}) => {
       <div className="top-container">
         {/* map Items */}
     {
-      item.map((x)=>{
+      item.map((x,i)=>{
         return(
-                  <div className="top-box">
+                  <div className="top-box" key={i}>
             <div className="top-box-main">
                 <div className="top-pic">
                     <div className="top-pic-box"><img src={x.image} alt="" /></div>

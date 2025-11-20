@@ -44,7 +44,7 @@ const Product = () => {
                           />
                           <img
                             className="item-product-sec"
-                            src="pic/download.webp"
+                            src="/pic/download.webp"
                             alt=""
                           />
                         </div>
