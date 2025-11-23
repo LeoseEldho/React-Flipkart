@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import HeaderTab from "../Header/HeaderTab";
 import DetailText from "./DetailText";
+import Footer from "../Footer/Footer";
 
 const ProductDetailsTab = ({ product }) => {
   const [hover, setHover] = useState(null);
@@ -135,6 +136,7 @@ const ProductDetailsTab = ({ product }) => {
         </div>
         <DetailText product={product} />
       </div>
+      <Footer></Footer>
     </div>
   );
 };

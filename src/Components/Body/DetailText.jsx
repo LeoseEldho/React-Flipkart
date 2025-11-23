@@ -286,6 +286,7 @@ const DetailText = ({product}) => {
             </div>
         </div>
       </div>
+      
     </>
   );
 };

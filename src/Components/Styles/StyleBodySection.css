@@ -430,9 +430,6 @@
 .phone-area{
     display: none;
 }
-.tab{
-    display: block;
-}
 .phone-tab{
     display: flex;
     padding: 0 6px 12px 6px;
@@ -508,13 +505,10 @@
     color: #1f1f1f; 
     font-family: font1;
 }
-.watch-mobile{
-    display: none;
-}
 /* -------------------new Page  -------------*/
 .tab-header{
     padding-bottom: 56px;
-    min-width: 978px;
+    /* min-width: 978px; */
     position: relative;
 }
 .tab-header-items{
@@ -716,7 +710,7 @@
     margin: 0 8px;
 }
 .tab-header-position{
-    position: fixed;
+    /* position: fixed; */
     top: 53px;
     height: 3px;
     background-color: #2874f0;
@@ -733,7 +727,7 @@
     position: relative;
 }
 .tab-categories-item{
-    min-width: 978px;
+    /* min-width: 978px; */
     background-color: #fff;
     display: flex;
     align-items: center;
@@ -758,9 +752,17 @@
     transform: rotate(270deg);
     color: #000;
 }
+}
+@media screen and (min-width:1000px){
+    .tab{
+    display: block;
+}
+    .watch-mobile{
+    display: none;
+}
 .tab-main{
     margin: 0 auto;
-    min-width: 978px;
+    /* min-width: 978px; */
     max-width: 1680px;
     padding: 8px;
     width: 100%;
@@ -1431,6 +1433,7 @@
     font-family: font1;
 }
 }
+
 @media screen and (min-width:1194px) {
     .top{
         margin-top: 16px;

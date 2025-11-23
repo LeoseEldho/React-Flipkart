@@ -3,6 +3,7 @@ import { FilterContext } from "./Context/FilterContext";
 import PriceFilter from "./PriceSlider";
 import HeaderTab from "../Header/HeaderTab";
 import { useNavigate } from "react-router-dom";
+import Footer from "../Footer/Footer";
 
 const ProductpageTab = () => {
   const { filters, setFilters, sort, setSort, priceSteps } = useContext(FilterContext);
@@ -570,6 +571,7 @@ setFilters((prev) => {
         <div></div>
         <div></div>
       </div>
+      <Footer></Footer>
     </div>
   );
 };
